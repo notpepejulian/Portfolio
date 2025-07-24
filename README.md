@@ -1,48 +1,62 @@
-# Astro Starter Kit: Basics
+# Portfolio Web - Admin Cloud
 
 ```sh
 npm create astro@latest -- --template basics
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/tuusuario/portfolio-web)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/tuusuario/portfolio-web)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/tuusuario/portfolio-web?devcontainer_path=.devcontainer/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🧑‍💻 Portfolio basado en comandos y terminales. He plasmado mis conocimientos, certificaciones y experiencia como administrador de sistemas y cloud.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![portfolio-terminal](https://github.com/tuusuario/portfolio-web/assets/banner.png)
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Estructura del Proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/                # Archivos estáticos (favicon, logos)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/        # Componentes reutilizables (terminal, layout, etc.)
+│   ├── pages/             # Páginas principales del sitio
+│   ├── layouts/           # Estructura visual
+│   └── styles/            # Estilos globales (Tailwind u otros)
+├── .github/workflows/     # CI/CD con GitHub Actions
+├── .env.example           # Variables de entorno ejemplo
+├── package.json           # Dependencias y scripts
+└── astro.config.mjs       # Configuración de Astro
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 Comandos
 
-## 🧞 Commands
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-All commands are run from the root of the project, from a terminal:
+| Comando                   | Acción                                                 |
+| ------------------------- | ------------------------------------------------------ |
+| `npm install`             | Instala dependencias                                   |
+| `npm run dev`             | Inicia servidor local de desarrollo (`localhost:4321`) |
+| `npm run build`           | Genera versión de producción en `./dist/`              |
+| `npm run preview`         | Previsualiza la build localmente                       |
+| `npm run astro ...`       | Ejecuta comandos CLI de Astro                          |
+| `npm run astro -- --help` | Ayuda para comandos CLI                                |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📂 Contenido
 
-## 👀 Want to learn more?
+* Introducción profesional y enfoque cloud/sistemas
+* Proyectos técnicos con capturas y enlaces a GitHub
+* Certificaciones relevantes
+* Stack de herramientas utilizadas
+* Contacto y redes
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🔗 Despliegue
+
+Este sitio está desplegado en \[URL de producción], usando \[Vercel/Netlify/GitHub Pages].
+
+## 📜 Licencia
+
+Este repositorio está bajo la licencia \[MIT/Apache 2.0/u otra].
+
+## 📖 Más información
+
+Consulta la [documentación oficial de Astro](https://docs.astro.build/es/) o accede a su [Discord](https://astro.build/chat) para soporte.
