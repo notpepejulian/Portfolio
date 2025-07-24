@@ -31,19 +31,6 @@ npm create astro@latest -- --template basics
 └── astro.config.mjs       # Configuración de Astro
 ```
 
-## 🧞 Comandos
-
-Todos los comandos se ejecutan desde la raíz del proyecto:
-
-| Comando                   | Acción                                                 |
-| ------------------------- | ------------------------------------------------------ |
-| `npm install`             | Instala dependencias                                   |
-| `npm run dev`             | Inicia servidor local de desarrollo (`localhost:4321`) |
-| `npm run build`           | Genera versión de producción en `./dist/`              |
-| `npm run preview`         | Previsualiza la build localmente                       |
-| `npm run astro ...`       | Ejecuta comandos CLI de Astro                          |
-| `npm run astro -- --help` | Ayuda para comandos CLI                                |
-
 ## 📂 Contenido
 
 * Introducción profesional y enfoque cloud/sistemas
