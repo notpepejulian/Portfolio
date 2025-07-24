@@ -10,7 +10,10 @@ npm create astro@latest -- --template basics
 
 > 🧑‍💻 Portfolio basado en comandos y terminales. He plasmado mis conocimientos, certificaciones y experiencia como administrador de sistemas y cloud.
 
-![portfolio-terminal](https://github.com/tuusuario/portfolio-web/assets/banner.png)
+<img width="2396" height="1148" alt="image" src="https://github.com/user-attachments/assets/1c3be3a7-b1eb-4a55-a091-850137e2e523" />
+<img width="2396" height="1148" alt="image" src="https://github.com/user-attachments/assets/25f56267-b0fb-4f3e-a6a6-f7b42bba3029" />
+<img width="2396" height="1148" alt="image" src="https://github.com/user-attachments/assets/b5916e7a-d946-4061-81d5-e4a5021cf018" />
+
 
 ## 🚀 Estructura del Proyecto
 
