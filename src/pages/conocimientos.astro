@@ -1,0 +1,479 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+		<div class="max-w-2xl w-full text-center z-10">
+			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 bg-clip-text text-transparent mb-6 tracking-tight">
+				Conocimientos
+			</h1>
+			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+				| Cloud | SysOps | DevOps |&nbsp; Infraestructura |&nbsp; Desarrollo Web
+			</p>
+			<p class="text-lg text-gray-300 mb-10">
+				Diseño, administro y optimizo infraestructuras cloud modernas, seguras y escalables, aplicando las mejores prácticas y tecnologías en mi día a día profesional.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="#stack" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<span>Ver stack</span>
+					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+				</a>
+				<a href="./certificaciones" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+					<i class="fa-solid fa-certificate mr-2"></i>
+					Certificaciones
+				</a>
+			</div>
+		</div>
+	</main>
+
+
+	<section class="mt-10 mb-40">
+		<div class="mb-10 flex flex-col items-center justify-center">
+			<h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 mb-6 tracking-tight drop-shadow-lg flex items-center gap-3 justify-center">
+				<i class="fa-solid fa-brain text-cyan-400 animate-pulse"></i>
+				<span>&gt; Stack de Conocimientos</span>
+			</h2>
+			<p class="text-xl text-gray-300 max-w-3xl text-center mb-4 leading-relaxed">
+				A continuación, te muestro un resumen de las tecnologías, herramientas y áreas en las que tengo experiencia profesional.
+			</p>
+			<p class="text-lg text-gray-400 max-w-3xl text-center leading-relaxed">
+				Mi enfoque principal es la administración de infraestructuras cloud, automatización, DevOps y desarrollo web, aplicando siempre las mejores prácticas para lograr soluciones eficientes, seguras y escalables.
+			</p>
+		</div>
+		<div class="relative">
+			<!-- Carousel Container -->
+			<div class="relative flex flex-col items-center w-full">
+				<!-- Carrusel de tarjetas -->
+				<div 
+					id="conocimientos-cards-carousel"
+					class="flex gap-8 overflow-x-auto scrollbar-hide px-4 py-2 snap-x snap-mandatory cursor-grab active:cursor-grabbing transition-all duration-300"
+					style="scroll-behavior: smooth; min-height: 0;"
+				>
+					<!-- AWS -->
+					<div class="conocimiento-card bg-gradient-to-br from-yellow-900/60 via-slate-800/60 to-yellow-700/40 border border-yellow-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="aws" data-terminal="aws">
+						<i class="fa-brands fa-aws text-4xl text-yellow-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">AWS</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Servicios en la Nube</p>
+						<p class="text-white text-center text-sm">
+							Experiencia en la gestión y despliegue de servicios en AWS (EC2, S3, RDS, ECS, WAF, CloudFront). Diseño de arquitecturas escalables y seguras. Uso de IaC (AWS CDK).
+						</p>
+					</div>
+					<!-- Web Development -->
+					<div class="conocimiento-card bg-gradient-to-br from-pink-900/60 via-slate-800/60 to-pink-700/40 border border-pink-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="web" data-terminal="web">
+						<i class="fa-solid fa-code text-4xl text-pink-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Desarrollo Web</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Frontend & Backend</p>
+						<p class="text-white text-center text-sm">
+							Desarrollo de aplicaciones web modernas con HTML, CSS, JavaScript y Node.js. Creación de soluciones completas, seguras y escalables.
+						</p>
+					</div>
+					<!-- Bases de Datos -->
+					<div class="conocimiento-card bg-gradient-to-br from-emerald-900/60 via-slate-800/60 to-emerald-700/40 border border-emerald-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="db" data-terminal="db">
+						<i class="fa-solid fa-database text-4xl text-emerald-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Bases de Datos</h3>
+						<p class="text-gray-300 text-center text-base mb-2">SQL & NoSQL</p>
+						<p class="text-white text-center text-sm">
+							Experiencia en administración y optimización de bases de datos relacionales (MySQL, PostgreSQL) y NoSQL (MongoDB, DynamoDB). Diseño de esquemas, consultas eficientes y respaldo seguro.
+						</p>
+					</div>
+					<!-- Linux -->
+					<div class="conocimiento-card bg-gradient-to-br from-cyan-900/60 via-slate-800/60 to-cyan-700/40 border border-cyan-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="linux" data-terminal="linux">
+						<i class="fa-brands fa-linux text-4xl text-cyan-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Linux</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Administración de Sistemas</p>
+						<p class="text-white text-center text-sm">
+							Administración avanzada de sistemas Linux: configuración de servidores, gestión de usuarios, automatización de tareas con scripts y optimización de entornos.
+						</p>
+					</div>
+					<!-- Docker -->
+					<div class="conocimiento-card bg-gradient-to-br from-blue-900/60 via-slate-800/60 to-blue-700/40 border border-blue-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-blue-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="docker" data-terminal="docker">
+						<i class="fa-brands fa-docker text-4xl text-blue-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Docker</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Contenerización</p>
+						<p class="text-white text-center text-sm">
+							Gestión de contenedores Docker para desarrollo y despliegue de aplicaciones. Consistencia y portabilidad entre entornos. Configuración para alta disponibilidad.
+						</p>
+					</div>
+					<!-- IaC -->
+					<div class="conocimiento-card bg-gradient-to-br from-green-900/60 via-slate-800/60 to-green-700/40 border border-green-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-green-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="iac" data-terminal="iac">
+						<i class="fa-solid fa-code text-4xl text-green-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">IaC</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Infrastructure as Code</p>
+						<p class="text-white text-center text-sm">
+							Implementación de infraestructuras mediante código (AWS CDK, Terraform). Automatización, seguridad y escalabilidad en la gestión de recursos cloud.
+						</p>
+					</div>
+					<!-- Windows / Active Directory -->
+					<div class="conocimiento-card bg-gradient-to-br from-sky-900/60 via-slate-800/60 to-sky-700/40 border border-sky-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-sky-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="windows" data-terminal="windows">
+						<i class="fa-brands fa-windows text-4xl text-sky-400 mb-4"></i>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Windows</h3>
+						<p class="text-gray-300 text-center text-base mb-2">Active Directory</p>
+						<p class="text-white text-center text-sm">
+							Gestión de Active Directory: administración de usuarios, grupos y políticas de seguridad. Implementación y mantenimiento de entornos de red seguros y eficientes.
+						</p>
+					</div>
+				</div>
+				<!-- Terminal centrada debajo del carrusel -->
+				<div id="terminal-contenedor-externo" class="w-full flex justify-center mt-8 min-h-[0px] transition-all duration-300">
+					<!-- Consola dinámica se inyecta aquí -->
+				</div>
+				<!-- Plantillas ocultas de terminales -->
+				<template id="terminal-aws">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-yellow-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-yellow-800/60 to-slate-800/60 border-b border-yellow-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-yellow-300 font-mono text-sm">bash</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-yellow-200 text-base bg-gradient-to-br from-yellow-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@aws</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">aws s3 ls</span>
+								<br>
+								2024-06-01  bucket-portfolio-nacho
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@aws</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Automatizando la nube con pasión ☁️🚀"</span>
+								<br>
+								Automatizando la nube con pasión ☁️🚀
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-web">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-pink-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-pink-800/60 to-slate-800/60 border-b border-pink-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-pink-300 font-mono text-sm">bash</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-pink-200 text-base bg-gradient-to-br from-pink-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@web</span>:<span class="text-yellow-400">~/portfolio</span>$ <span class="text-white">npm run dev</span>
+								<br>
+								Servidor iniciado en http://localhost:3000 🚀
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@web</span>:<span class="text-yellow-400">~/portfolio</span>$ <span class="text-white">echo "El código es arte y funcionalidad 💻🎨"</span>
+								<br>
+								El código es arte y funcionalidad 💻🎨
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-db">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-emerald-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-emerald-800/60 to-slate-800/60 border-b border-emerald-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-emerald-300 font-mono text-sm">mysql</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-emerald-200 text-base bg-gradient-to-br from-emerald-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@db</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">SELECT COUNT(*) FROM proyectos;</span>
+								<br>
+								5
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@db</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Datos seguros y siempre disponibles 🗄️"</span>
+								<br>
+								Datos seguros y siempre disponibles 🗄️
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-linux">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-cyan-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-800/60 to-slate-800/60 border-b border-cyan-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-cyan-300 font-mono text-sm">bash</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-cyan-200 text-base bg-gradient-to-br from-cyan-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@linux</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">uname -a</span>
+								<br>
+								Linux nacho-pc 6.1.0-portfolio #1 SMP x86_64 GNU/Linux
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@linux</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "El terminal es mi segundo hogar 🐧"</span>
+								<br>
+								El terminal es mi segundo hogar 🐧
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-docker">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-blue-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-blue-800/60 to-slate-800/60 border-b border-blue-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-blue-300 font-mono text-sm">bash</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-blue-200 text-base bg-gradient-to-br from-blue-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@docker</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">docker ps</span>
+								<br>
+								CONTAINER ID   IMAGE         STATUS    PORTS
+								<br>
+								1234abcd       portfolio     running   80/tcp
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@docker</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">cat "docker.txt"</span>
+								<br>
+								¡Todo corre en contenedores! 🐳
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-iac">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-green-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-green-800/60 to-slate-800/60 border-b border-green-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-green-300 font-mono text-sm">bash</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-green-200 text-base bg-gradient-to-br from-green-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@iac</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">terraform plan</span>
+								<br>
+								Plan: 3 to add, 0 to change, 0 to destroy.
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@iac</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Infraestructura reproducible, segura y eficiente 💻"</span>
+								<br>
+								Infraestructura reproducible, segura y eficiente 💻
+							</p>
+						</div>
+					</div>
+				</template>
+				<template id="terminal-windows">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-sky-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-sky-800/60 to-slate-800/60 border-b border-sky-400/10">
+							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+							<span class="h-3 w-3 rounded-full bg-green-500"></span>
+							<span class="ml-4 text-sky-300 font-mono text-sm">powershell</span>
+						</div>
+						<div class="px-6 py-6 font-mono text-sky-200 text-base bg-gradient-to-br from-sky-900/40 to-slate-900/40">
+							<p>
+								<span class="text-cyan-400">nacho@windows</span>:<span class="text-yellow-400">C:\Users\Nacho</span>&gt; <span class="text-white">Get-ADUser -Filter *</span>
+								<br>
+								Mostrando usuarios del dominio...
+							</p>
+							<p class="mt-4">
+								<span class="text-cyan-400">nacho@windows</span>:<span class="text-yellow-400">C:\Users\Nacho</span>&gt; <span class="text-white">echo "Administrando redes con precisión 🪟"</span>
+								<br>
+								Administrando redes con precisión 🪟
+							</p>
+						</div>
+					</div>
+				</template>
+				<style>
+					.conocimiento-card.blurred {
+						filter: blur(3px) grayscale(0.5) brightness(0.7);
+						opacity: 0.7;
+						transition: filter 0.3s, opacity 0.3s;
+					}
+					.conocimiento-card.focused {
+						filter: none;
+						opacity: 1;
+						box-shadow: 0 0 0 4px #fff3, 0 8px 32px 0 rgba(0,0,0,0.25);
+						z-index: 10;
+						transition: box-shadow 0.3s, filter 0.3s, opacity 0.3s;
+					}
+					#terminal-contenedor-externo {
+						min-height: 0;
+						transition: min-height 0.3s;
+					}
+					#terminal-contenedor-externo.has-terminal {
+						min-height: 320px;
+					}
+				</style>
+				<script>
+					// Solución robusta para el carrusel y el drag
+					document.addEventListener('DOMContentLoaded', () => {
+						const cards = document.querySelectorAll('.conocimiento-card');
+						const terminalContenedor = document.getElementById('terminal-contenedor-externo');
+						const carousel = document.getElementById('conocimientos-cards-carousel');
+						let focusedCard = null;
+
+						const terminalTemplates = {
+							aws: document.getElementById('terminal-aws'),
+							linux: document.getElementById('terminal-linux'),
+							docker: document.getElementById('terminal-docker'),
+							iac: document.getElementById('terminal-iac'),
+							windows: document.getElementById('terminal-windows'),
+							web: document.getElementById('terminal-web'),
+							db: document.getElementById('terminal-db'),
+						};
+
+						function focusCard(card) {
+							cards.forEach(c => {
+								if (c === card) {
+									c.classList.add('focused');
+									c.classList.remove('blurred');
+								} else {
+									c.classList.remove('focused');
+									c.classList.add('blurred');
+								}
+							});
+							const terminalKey = card.getAttribute('data-terminal');
+							if (terminalContenedor) {
+								terminalContenedor.innerHTML = '';
+								if (terminalTemplates[terminalKey]) {
+									const clone = terminalTemplates[terminalKey].content.cloneNode(true);
+									terminalContenedor.appendChild(clone);
+									terminalContenedor.classList.add('has-terminal');
+								} else {
+									terminalContenedor.classList.remove('has-terminal');
+								}
+							}
+							if (carousel && carousel.parentElement) {
+								carousel.parentElement.style.minHeight = '600px';
+							}
+						}
+
+						function clearFocus() {
+							cards.forEach(c => {
+								c.classList.remove('focused');
+								c.classList.remove('blurred');
+							});
+							if (terminalContenedor) {
+								terminalContenedor.innerHTML = '';
+								terminalContenedor.classList.remove('has-terminal');
+							}
+							if (carousel && carousel.parentElement) {
+								carousel.parentElement.style.minHeight = '';
+							}
+						}
+
+						cards.forEach(card => {
+							card.addEventListener('click', function(e) {
+								e.preventDefault();
+								if (focusedCard === this) {
+									clearFocus();
+									focusedCard = null;
+								} else {
+									focusCard(this);
+									focusedCard = this;
+								}
+							});
+						});
+
+						// Click fuera para quitar foco
+						document.addEventListener('click', function(e) {
+							const target = e.target;
+							const isCard = target && target.closest ? target.closest('.conocimiento-card') : null;
+							const isTerminal = target && target.closest ? target.closest('#terminal-contenedor-externo') : null;
+							if (!isCard && !isTerminal) {
+								clearFocus();
+								focusedCard = null;
+							}
+						});
+
+						// Botones de flecha del carrusel
+						const btnLeft = document.getElementById('carousel-left');
+						const btnRight = document.getElementById('carousel-right');
+						const getCardWidth = () => {
+							if (!carousel) return 350;
+							const firstCard = carousel.querySelector('.conocimiento-card');
+							if (firstCard) {
+								const style = window.getComputedStyle(firstCard);
+								const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+								return (firstCard instanceof HTMLElement ? firstCard.offsetWidth : 350) + margin + 32;
+							}
+							return 350;
+						};
+
+						if (btnLeft) {
+							btnLeft.addEventListener('click', (e) => {
+								e.preventDefault();
+								if (carousel) {
+									carousel.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+								}
+							});
+						}
+						if (btnRight) {
+							btnRight.addEventListener('click', (e) => {
+								e.preventDefault();
+								if (carousel) {
+									carousel.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+								}
+							});
+						}
+
+						// Drag para scroll horizontal
+						let isDown = false;
+						let startX = 0;
+						let scrollLeft = 0;
+
+						if (carousel) {
+							carousel.addEventListener('mousedown', (e) => {
+								isDown = true;
+								carousel.classList.add('active');
+								startX = e.pageX - carousel.offsetLeft;
+								scrollLeft = carousel.scrollLeft;
+							});
+							carousel.addEventListener('mouseleave', () => {
+								isDown = false;
+								carousel.classList.remove('active');
+							});
+							carousel.addEventListener('mouseup', () => {
+								isDown = false;
+								carousel.classList.remove('active');
+							});
+							carousel.addEventListener('mousemove', (e) => {
+								if (!isDown) return;
+								e.preventDefault();
+								const x = e.pageX - carousel.offsetLeft;
+								const walk = (x - startX) * 1.5;
+								carousel.scrollLeft = scrollLeft - walk;
+							});
+
+							// Soporte para touch
+							let touchStartX = 0;
+							let touchScrollLeft = 0;
+							carousel.addEventListener('touchstart', (e) => {
+								if (e.touches.length === 1) {
+									touchStartX = e.touches[0].pageX;
+									touchScrollLeft = carousel.scrollLeft;
+								}
+							});
+							carousel.addEventListener('touchmove', (e) => {
+								if (e.touches.length === 1) {
+									const x = e.touches[0].pageX;
+									const walk = (x - touchStartX) * 1.5;
+									carousel.scrollLeft = touchScrollLeft - walk;
+								}
+							});
+						}
+					});
+				</script>
+			</div>
+			<!-- Carousel Arrows -->
+			<button id="carousel-left" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg transition-all" aria-label="Anterior" type="button">
+				<i class="fa-solid fa-chevron-left"></i>
+			</button>
+			<button id="carousel-right" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg transition-all" aria-label="Siguiente" type="button">
+				<i class="fa-solid fa-chevron-right"></i>
+			</button>
+		</div>
+		<style>
+			/* Ocultar scrollbar para todos los navegadores */
+			#conocimientos-cards-carousel {
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+			#conocimientos-cards-carousel::-webkit-scrollbar {
+				display: none;
+			}
+		</style>
+	</section>
+</Layout>

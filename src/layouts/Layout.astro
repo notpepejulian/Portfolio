@@ -1,0 +1,78 @@
+---
+import '../styles/base.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Nacho Sánchez | SysAdmin</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<style>
+			body {
+				background-color: #000;
+				background-image: 
+				radial-gradient(circle at 35% 50%, #081f12, transparent 50%),
+				radial-gradient(circle at 65% 50%, #080f1f, transparent 50%), 
+				radial-gradient(circle at 50% 65%, #15081f, transparent 50%);
+
+				background-attachment: fixed;
+				
+				scroll-behavior: smooth;
+			}
+			/*.icon-hover:hover {
+				box-shadow: 0 0 30px 10px rgba(17, 66, 69, 0.808);
+				transition: box-shadow 0.5s ease-in-out,
+			}*/
+		</style>
+	</head>
+	<body class="text-white font-mono scrollbar-custom">
+
+		<header class="fixed top-0 left-0 w-full px-8 py-3 flex justify-between items-center bg-black/30 backdrop-blur-xl shadow-xl z-30 transition-all duration-300">
+			<div class="flex items-center space-x-3">
+				<a href="../" class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-green-400 via-blue-400 to-purple-400 shadow hover:scale-105 transition-transform duration-200">
+					<i class="fa-solid fa-house text-white text-xl"></i>
+				</a>
+				<span class="ml-2 text-lg font-bold text-slate-100 tracking-tight select-none drop-shadow-sm">Nacho Sánchez</span>
+			</div>
+			<nav class="flex items-center space-x-4">
+				<a href="https://github.com/notpepejulian" target="_blank" class="icon-hover flex items-center justify-center w-9 h-9 rounded-full bg-black/30 hover:bg-green-400 hover:text-white transition-all duration-200 shadow-md hover:scale-110">
+					<i class="fa-brands fa-github text-xl"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa-92840327a/" target="_blank" class="icon-hover flex items-center justify-center w-9 h-9 rounded-full bg-black/30 hover:bg-blue-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110">
+					<i class="fa-brands fa-linkedin text-xl"></i>
+				</a>
+				<a href="mailto:nacho.sanchez@email.com" class="icon-hover flex items-center justify-center w-9 h-9 rounded-full bg-black/30 hover:bg-purple-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110">
+					<i class="fa-solid fa-envelope text-xl"></i>
+				</a>
+			</nav>
+		</header>
+
+		<slot />
+
+		<footer class="w-full py-8 bg-gradient-to-t from-black/80 via-slate-900/60 to-transparent flex flex-col items-center gap-4 mt-24 border-t border-slate-800">
+			<div class="flex items-center gap-3 mb-2">
+				<a href="https://github.com/notpepejulian" target="_blank" aria-label="GitHub" class="icon-hover transition-transform hover:scale-110 hover:text-green-400 text-2xl">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/nacho-sanchez" target="_blank" aria-label="LinkedIn" class="icon-hover transition-transform hover:scale-110 hover:text-blue-400 text-2xl">
+					<i class="fa-brands fa-linkedin"></i>
+				</a>
+			</div>
+			<p class="text-slate-300 text-base font-semibold tracking-wide">
+				Nacho Sánchez &mdash; <span id="footer-year"></span>
+			</p>
+			<p class="text-slate-500 text-xs mt-1">De la terminal al cielo ☁️</p>
+		</footer>
+		
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const year = new Date().getFullYear();
+				document.getElementById('footer-year').textContent = year;
+			});
+		</script>
+	</body>
+</html>
