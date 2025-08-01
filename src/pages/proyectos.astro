@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<style>
+	html {
+	  scroll-behavior: smooth;
+	}
+  </style>
+
+<Layout>
+    <main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+		<div class="max-w-2xl w-full text-center z-10">
+			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 bg-clip-text text-transparent mb-6 tracking-tight">
+				<i class="fa-solid fa-rocket text-cyan-400 mr-3 animate-pulse"></i>Proyectos
+			</h1>
+			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+				Aquí encontrarás una selección de proyectos que he desarrollado e ideas en las que estoy trabajando actualmente.
+			</p>
+			<p class="text-lg text-gray-300 mb-10">
+				Proyectos cloud, automatización y apps web. Algunos ya en producción, otros en desarrollo o como ideas.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="#proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<span>Ver proyectos</span>
+					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+				</a>
+				<a href="./conocimientos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+					<i class="fa-solid fa-brain mr-2"></i>
+					Conocimientos
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>
