@@ -48,7 +48,7 @@ export default {
             background: 'transparent',
           },
           '&::-webkit-scrollbar-thumb': {
-            backgroundColor: 'rgba(29, 80, 82, 0.5)',
+            backgroundColor: 'rgba(51, 65, 85, 0.35)', // Se adapta al fondo oscuro del body (slate-700 con transparencia)
             borderRadius: '6px',
             border: '3px solid transparent',
           },

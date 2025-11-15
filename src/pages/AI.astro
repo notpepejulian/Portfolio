@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<style>
+	html {
+	  scroll-behavior: smooth;
+	}
+  </style>
+
+  <Layout>
+    <main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+		<div class="max-w-2xl w-full text-center z-10">
+			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 bg-clip-text text-transparent mb-6 tracking-tight">
+				Terminal AI 
+			</h1>
+			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+				Chatbot interactivo sobre mi
+			</p>
+			<p class="text-lg text-gray-300 mb-10">
+				Explora este chatbot tematizado como una terminal, donde puedes hacerme preguntas sobre mi experiencia, mis proyectos, mis ideas o cualquier aspecto profesional que te interese. ¡Interactúa y descubre más sobre mí de forma dinámica y personalizada!
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="#chatbot" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<span>Pregunta</span>
+					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+				</a>
+				<a href="#sobre-mi" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+					<i class="fa-solid fa-rocket mr-2"></i>
+					Proyectos
+				</a>
+			</div>
+		</div>
+	</main>
+  <section id="chatbot" class="w-full max-w-3xl mx-auto mt-12 mb-24">
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-[#232946cc] via-[#1a1a2e99] to-[#0f172acc] border border-slate-700/40 backdrop-blur-2xl" style="box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);">
+      <!-- Barra superior tipo Mac, simple y moderna -->
+      <div class="flex items-center px-6 py-3 bg-slate-800/70 border-b border-slate-700/30 backdrop-blur-md">
+        <span class="h-3 w-3 rounded-full bg-red-500 mr-2 shadow" title="Cerrar"></span>
+        <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2 shadow" title="Minimizar"></span>
+        <span class="h-3 w-3 rounded-full bg-green-500 mr-4 shadow" title="Maximizar"></span>
+      </div>
+      <!-- Ventana de mensajes, más grande y clara -->
+      <div class="px-10 py-10 font-mono text-base bg-gradient-to-br from-[#232946cc] via-[#1a1a2e99] to-[#0f172acc] min-h-[400px] max-h-[600px] overflow-y-auto scrollbar-custom backdrop-blur-xl bg-opacity-95" id="chat-window">
+        <!-- Mensajes del chat aparecerán aquí -->
+        <div id="chat-messages"></div>
+      </div>
+      <!-- Input sencillo y moderno -->
+      <form id="chat-form" class="flex items-center border-t border-slate-700/30 bg-slate-800/70 px-6 py-4 gap-3 backdrop-blur-md">
+        <span class="text-slate-400 font-mono font-bold">nacho@ai</span>
+        <span class="text-slate-500 font-mono">:</span>
+        <input
+          id="chat-input"
+          type="text"
+          class="flex-1 bg-transparent outline-none text-white font-mono px-3 py-2 rounded-md border border-slate-700/40 focus:border-slate-400 transition-all duration-200 placeholder:text-slate-400"
+          placeholder="Escribe tu pregunta y pulsa Enter..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="ml-2 px-5 py-2 rounded-md bg-slate-700 hover:bg-slate-600 text-white font-semibold shadow transition-all duration-200 flex items-center gap-2">
+          <i class="fa-solid fa-comment-dots"></i>
+        </button>
+      </form>
+    </div>
+    <style>
+      /* Scrollbar personalizada, simple y moderna */
+      #chat-window::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+      }
+      #chat-window::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 8px;
+      }
+      #chat-window {
+        scrollbar-width: thin;
+        scrollbar-color: #334155 #0000;
+      }
+      /* Fondo más difuminado y con efecto glassmorphism */
+      #chatbot .rounded-xl {
+        background: linear-gradient(135deg, #232946cc 0%, #1a1a2e99 50%, #0f172acc 100%);
+        backdrop-filter: blur(24px) saturate(160%);
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
+        border: 1.5px solid rgba(255,255,255,0.08);
+      }
+      #chat-window {
+        background: linear-gradient(135deg, #232946cc 0%, #1a1a2e99 50%, #0f172acc 100%);
+        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
+      }
+      #chat-form {
+        background: rgba(30,41,59,0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
+    <script>
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatWindow = document.getElementById('chat-window');
+
+      // Función para escapar caracteres HTML
+      function escapeHtml(text) {
+        return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      // Muestra el mensaje del usuario y de la IA en formato terminal sencillo y moderno
+      function appendMessage(content, from = 'user') {
+        const msg = document.createElement('div');
+        if (from === 'user') {
+          msg.innerHTML = `
+            <div class="flex items-start gap-2 mb-2">
+              <div>
+                <span class="text-slate-400 font-mono font-bold">nacho@ai</span>
+                <span class="text-slate-500 font-mono">:</span>
+                <span class="text-white ml-2">${escapeHtml(content)}</span>
+              </div>
+            </div>
+          `;
+        } else if (from === 'bot') {
+          msg.innerHTML = `
+            <div class="flex items-start gap-2 mb-2">
+              <div>
+                <pre class="bg-slate-800/90 rounded-md p-4 text-slate-200 font-mono text-base whitespace-pre-wrap border border-slate-700/40" style="backdrop-filter: blur(8px); background: rgba(30,41,59,0.7);">$ ${escapeHtml(content)}</pre>
+              </div>
+            </div>
+          `;
+        } else if (from === 'thinking') {
+          msg.innerHTML = `
+            <div class="flex items-center gap-2 mb-2">
+              <span class="inline-block h-3 w-3 rounded-full bg-slate-400 animate-pulse"></span>
+              <span class="italic text-slate-400">Pensando...</span>
+            </div>
+          `;
+        }
+        if (chatMessages) chatMessages.appendChild(msg);
+        if (chatWindow) chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      if (chatForm && chatInput && chatMessages && chatWindow) {
+        chatForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const pregunta = /** @type {HTMLInputElement} */(chatInput).value.trim();
+          if (!pregunta) return;
+          appendMessage(pregunta, 'user');
+          /** @type {HTMLInputElement} */(chatInput).value = '';
+          appendMessage('', 'thinking');
+          chatWindow.scrollTop = chatWindow.scrollHeight;
+
+          try {
+            const res = await fetch('/api/ia', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ mensaje: pregunta })
+            });
+            const data = await res.json();
+            // Eliminar el mensaje "Pensando..."
+            const lastMsg = chatMessages.lastChild;
+            if (lastMsg && lastMsg.textContent && lastMsg.textContent.includes('Pensando')) {
+              chatMessages.removeChild(lastMsg);
+            }
+            if (data.respuesta) {
+              appendMessage(data.respuesta, 'bot');
+            } else {
+              appendMessage('No se pudo obtener respuesta.', 'bot');
+            }
+          } catch (err) {
+            // Eliminar el mensaje "Pensando..."
+            const lastMsg = chatMessages.lastChild;
+            if (lastMsg && lastMsg.textContent && lastMsg.textContent.includes('Pensando')) {
+              chatMessages.removeChild(lastMsg);
+            }
+            appendMessage('Ocurrió un error al conectar con la IA.', 'bot');
+          }
+        });
+      }
+    </script>
+  </section>
+  </Layout>
