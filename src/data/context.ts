@@ -1,0 +1,3 @@
+export const userContext = `
+Mi nombre es Nacho. Soy Cloud Engineer con experiencia en AWS, CDK, Docker, Linux, administración de sistemas, redes y desarrollo web. Estoy aprendiendo automatización, CI/CD y plataformas en la nube (especialmente AWS). He trabajado en entornos productivos, optimizado pipelines y realizado migraciones cloud-native. Tengo 20 años, estudié ASIR y NEORIS me dio la oportunidad de lanzarme al sector laboral de IT, siendo este mi primer puesto de trabajo en el sector como "Cloud Engineer JR (Junior). Me apasiona la informática, empecé a interesarme en ella desde los 16 años, haciendo paginas web básicas e informandome acerca de Ciberseguridad"
+`;

@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
+<style>
+	html {
+	  scroll-behavior: smooth;
+	}
+  </style>
+
 <Layout>
 	<main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
 		<div class="max-w-2xl w-full text-center z-10">
@@ -12,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
 				| Cloud | SysOps | DevOps |&nbsp; Infraestructura |&nbsp; Desarrollo Web
 			</p>
 			<p class="text-lg text-gray-300 mb-10">
-				Diseño, administro y optimizo infraestructuras cloud modernas, seguras y escalables, aplicando las mejores prácticas y tecnologías en mi día a día profesional.
+				Estos son los principales conocimientos y áreas técnicas que domino, adquiridos a lo largo de mi experiencia profesional y formación continua en el sector.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 				<a href="#stack" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
@@ -20,7 +26,6 @@ import Layout from '../layouts/Layout.astro';
 					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
 				</a>
 				<a href="./certificaciones" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
-					<i class="fa-solid fa-certificate mr-2"></i>
 					Certificaciones
 				</a>
 			</div>
@@ -31,7 +36,6 @@ import Layout from '../layouts/Layout.astro';
 	<section class="mt-10 mb-40" id="stack">
 		<div class="mb-10 flex flex-col items-center justify-center">
 			<h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 mb-6 tracking-tight drop-shadow-lg flex items-center gap-3 justify-center">
-				<i class="fa-solid fa-brain text-cyan-400 animate-pulse"></i>
 				<span>Stack de Conocimientos</span>
 			</h2>
 			<p class="text-xl text-gray-300 max-w-3xl text-center mb-4 leading-relaxed">
@@ -41,22 +45,22 @@ import Layout from '../layouts/Layout.astro';
 				Mi enfoque principal es la administración de infraestructuras cloud, automatización, DevOps y desarrollo web, aplicando siempre las mejores prácticas para lograr soluciones eficientes, seguras y escalables.
 			</p>
 		</div>
-		<div class="relative">
+		<div class="relative w-full px-4 sm:px-8 max-w-[95rem] mx-auto">
 			<!-- Carousel Container -->
 			<div class="relative flex flex-col items-center w-full">
 				<!-- Carrusel de tarjetas -->
 				<div 
 					id="conocimientos-cards-carousel"
-					class="flex gap-8 overflow-x-auto scrollbar-hide px-4 py-2 snap-x snap-mandatory cursor-grab active:cursor-grabbing transition-all duration-300 pb-10 pt-10"
+					class="flex gap-8 overflow-x-auto scrollbar-hide px-4 py-2 snap-x snap-mandatory cursor-grab active:cursor-grabbing transition-all duration-300 pb-10 pt-10 w-full"
 					style="scroll-behavior: smooth; min-height: 0;"
 				>
 					<!-- AWS -->
 					<div class="conocimiento-card bg-gradient-to-br from-yellow-900/60 via-slate-800/60 to-yellow-700/40 border border-yellow-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="aws" data-terminal="aws">
 						<i class="fa-brands fa-aws text-4xl text-yellow-400 mb-4"></i>
-						<h3 class="text-2xl font-semibold text-white text-center mb-2">AWS</h3>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Amazon West Services</h3>
 						<p class="text-gray-300 text-center text-base mb-2">Servicios en la Nube</p>
 						<p class="text-white text-center text-sm">
-							Experiencia en la gestión y despliegue de servicios en AWS (EC2, S3, RDS, ECS, WAF, CloudFront). Diseño de arquitecturas escalables y seguras. Uso de IaC (AWS CDK).
+							Experiencia en la gestión y despliegue de servicios en AWS (EC2, S3, RDS, ECS, WAF, CloudFront...). Diseño de arquitecturas escalables y seguras. Uso de IaC (AWS CDK).
 						</p>
 					</div>
 					<!-- Web Development -->
@@ -65,7 +69,7 @@ import Layout from '../layouts/Layout.astro';
 						<h3 class="text-2xl font-semibold text-white text-center mb-2">Desarrollo Web</h3>
 						<p class="text-gray-300 text-center text-base mb-2">Frontend & Backend</p>
 						<p class="text-white text-center text-sm">
-							Desarrollo de aplicaciones web modernas con HTML, CSS, JavaScript y Node.js. Creación de soluciones completas, seguras y escalables.
+							Desarrollo de aplicaciones web modernas con HTML, CSS, JavaScript y Frameworks como Node.js o Astro. Creación de soluciones completas, seguras y escalables.
 						</p>
 					</div>
 					<!-- Bases de Datos -->
@@ -83,7 +87,7 @@ import Layout from '../layouts/Layout.astro';
 						<h3 class="text-2xl font-semibold text-white text-center mb-2">Linux</h3>
 						<p class="text-gray-300 text-center text-base mb-2">Administración de Sistemas</p>
 						<p class="text-white text-center text-sm">
-							Administración avanzada de sistemas Linux: configuración de servidores, gestión de usuarios, automatización de tareas con scripts y optimización de entornos.
+							Administración avanzada de sistemas Linux: configuración de servidores, gestión de usuarios, automatización de tareas con scripts, optimización y mantenimiento de entornos.
 						</p>
 					</div>
 					<!-- Docker -->
@@ -120,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 				<!-- Plantillas ocultas de terminales -->
 				<template id="terminal-aws">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-yellow-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-yellow-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-yellow-800/60 to-slate-800/60 border-b border-yellow-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -131,18 +135,18 @@ import Layout from '../layouts/Layout.astro';
 							<p>
 								<span class="text-cyan-400">nacho@aws</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">aws s3 ls</span>
 								<br>
-								2024-06-01  bucket-portfolio-nacho
+								2025-06-27  bucket-portfolio-nacho
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@aws</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Automatizando la nube con pasión ☁️🚀"</span>
+								<span class="text-cyan-400">nacho@aws</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Automatizando la nube con pasión"</span>
 								<br>
-								Automatizando la nube con pasión ☁️🚀
+								Automatizando la nube con pasión
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-web">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-pink-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-pink-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-pink-800/60 to-slate-800/60 border-b border-pink-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -153,18 +157,18 @@ import Layout from '../layouts/Layout.astro';
 							<p>
 								<span class="text-cyan-400">nacho@web</span>:<span class="text-yellow-400">~/portfolio</span>$ <span class="text-white">npm run dev</span>
 								<br>
-								Servidor iniciado en http://localhost:3000 🚀
+								Servidor iniciado en http://localhost:3000 
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@web</span>:<span class="text-yellow-400">~/portfolio</span>$ <span class="text-white">echo "El código es arte y funcionalidad 💻🎨"</span>
+								<span class="text-cyan-400">nacho@web</span>:<span class="text-yellow-400">~/portfolio</span>$ <span class="text-white">echo "El código es arte y funcionalidad "</span>
 								<br>
-								El código es arte y funcionalidad 💻🎨
+								El código es arte y funcionalidad 
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-db">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-emerald-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-emerald-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-emerald-800/60 to-slate-800/60 border-b border-emerald-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -178,15 +182,15 @@ import Layout from '../layouts/Layout.astro';
 								5
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@db</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Datos seguros y siempre disponibles 🗄️"</span>
+								<span class="text-cyan-400">nacho@db</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Datos seguros y siempre disponibles"</span>
 								<br>
-								Datos seguros y siempre disponibles 🗄️
+								Datos seguros y siempre disponibles
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-linux">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-cyan-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-cyan-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-800/60 to-slate-800/60 border-b border-cyan-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -200,15 +204,15 @@ import Layout from '../layouts/Layout.astro';
 								Linux nacho-pc 6.1.0-portfolio #1 SMP x86_64 GNU/Linux
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@linux</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "El terminal es mi segundo hogar 🐧"</span>
+								<span class="text-cyan-400">nacho@linux</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "El terminal es mi segundo hogar"</span>
 								<br>
-								El terminal es mi segundo hogar 🐧
+								El terminal es mi segundo hogar
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-docker">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-blue-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-blue-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-blue-800/60 to-slate-800/60 border-b border-blue-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -226,13 +230,13 @@ import Layout from '../layouts/Layout.astro';
 							<p class="mt-4">
 								<span class="text-cyan-400">nacho@docker</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">cat "docker.txt"</span>
 								<br>
-								¡Todo corre en contenedores! 🐳
+								¡Todo corre en contenedores!
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-iac">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-green-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-green-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-green-800/60 to-slate-800/60 border-b border-green-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -246,15 +250,15 @@ import Layout from '../layouts/Layout.astro';
 								Plan: 3 to add, 0 to change, 0 to destroy.
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@iac</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Infraestructura reproducible, segura y eficiente 💻"</span>
+								<span class="text-cyan-400">nacho@iac</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Infraestructura reproducible, segura y eficiente"</span>
 								<br>
-								Infraestructura reproducible, segura y eficiente 💻
+								Infraestructura reproducible, segura y eficiente
 							</p>
 						</div>
 					</div>
 				</template>
 				<template id="terminal-windows">
-					<div class="rounded-xl overflow-hidden shadow-lg border border-sky-400/20 bg-black/40 backdrop-blur-md w-full max-w-2xl">
+					<div class="rounded-xl overflow-hidden shadow-lg border border-sky-400/20 bg-transparent w-full max-w-2xl">
 						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-sky-800/60 to-slate-800/60 border-b border-sky-400/10">
 							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
 							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
@@ -268,9 +272,9 @@ import Layout from '../layouts/Layout.astro';
 								Mostrando usuarios del dominio...
 							</p>
 							<p class="mt-4">
-								<span class="text-cyan-400">nacho@windows</span>:<span class="text-yellow-400">C:\Users\Nacho</span>&gt; <span class="text-white">echo "Administrando redes con precisión 🪟"</span>
+								<span class="text-cyan-400">nacho@windows</span>:<span class="text-yellow-400">C:\Users\Nacho</span>&gt; <span class="text-white">echo "Administrando redes con precisión"</span>
 								<br>
-								Administrando redes con precisión 🪟
+								Administrando redes con precisión
 							</p>
 						</div>
 					</div>
@@ -292,8 +296,8 @@ import Layout from '../layouts/Layout.astro';
 						min-height: 0;
 						transition: min-height 0.3s;
 					}
-					#terminal-contenedor-externo.has-terminal {
-						min-height: 320px;
+					#terminal-contenedor-externo.has-terminal{
+						min-height: 160px;
 					}
 				</style>
 				<script>
@@ -327,9 +331,9 @@ import Layout from '../layouts/Layout.astro';
 							const terminalKey = card.getAttribute('data-terminal');
 							if (terminalContenedor) {
 								terminalContenedor.innerHTML = '';
-								if (terminalTemplates[terminalKey]) {
-									const clone = terminalTemplates[terminalKey].content.cloneNode(true);
-									terminalContenedor.appendChild(clone);
+							if (terminalTemplates[terminalKey]) {
+								const clone = terminalTemplates[terminalKey].content.cloneNode(true);
+								terminalContenedor.appendChild(clone);
 									terminalContenedor.classList.add('has-terminal');
 								} else {
 									terminalContenedor.classList.remove('has-terminal');
@@ -456,14 +460,14 @@ import Layout from '../layouts/Layout.astro';
 						}
 					});
 				</script>
+				<!-- Carousel Arrows -->
+				<button id="carousel-left" class="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-cyan-500/80 text-white rounded-full w-12 h-12 items-center justify-center shadow-xl transition-all duration-300 backdrop-blur-sm border border-white/10" aria-label="Anterior" type="button">
+					<i class="fa-solid fa-chevron-left text-xl"></i>
+				</button>
+				<button id="carousel-right" class="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-cyan-500/80 text-white rounded-full w-12 h-12 items-center justify-center shadow-xl transition-all duration-300 backdrop-blur-sm border border-white/10" aria-label="Siguiente" type="button">
+					<i class="fa-solid fa-chevron-right text-xl"></i>
+				</button>
 			</div>
-			<!-- Carousel Arrows -->
-			<button id="carousel-left" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg transition-all" aria-label="Anterior" type="button">
-				<i class="fa-solid fa-chevron-left"></i>
-			</button>
-			<button id="carousel-right" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 shadow-lg transition-all" aria-label="Siguiente" type="button">
-				<i class="fa-solid fa-chevron-right"></i>
-			</button>
 		</div>
 		<style>
 			/* Ocultar scrollbar para todos los navegadores */

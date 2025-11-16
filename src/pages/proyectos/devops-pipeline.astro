@@ -1,0 +1,498 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<style>
+	html {
+	  scroll-behavior: smooth;
+	}
+	
+	/* Animación de tecnologías desplazándose */
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.tech-scroll {
+		animation: scroll 30s linear infinite;
+	}
+	
+	.tech-scroll:hover {
+		animation-play-state: paused;
+	}
+	
+	.tech-container {
+		overflow: hidden;
+		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+	}
+</style>
+
+<Layout>
+	<main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+		<div class="max-w-4xl w-full text-center z-10">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-400/30 mb-6">
+				<span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+				<span class="text-emerald-300 font-semibold text-sm">En Producción</span>
+			</div>
+			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent mb-6 tracking-tight">
+				Pipeline DevOps CI/CD
+			</h1>
+			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+				Automatización de Despliegues y Builds en AWS
+			</p>
+			<p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+				Implementación de pipelines CI/CD para automatizar builds de Docker, despliegues en AWS, gestión de entornos de prueba y CodeDeploys automáticos.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="/proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-emerald-300 font-semibold shadow-lg transition-all duration-200 text-base border border-emerald-400/30">
+					<i class="fa-solid fa-arrow-left mr-2"></i>
+					Volver a Proyectos
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<section class="mt-10 mb-40 w-full flex flex-col items-center px-6">
+		<div class="w-full max-w-6xl mx-auto space-y-24">
+			
+			<!-- Casos de Uso -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center">
+					Casos de Uso
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<p class="text-lg text-gray-300 leading-relaxed mb-6 text-center">
+						Estos pipelines están diseñados para <strong class="text-emerald-300">automatizar completamente el ciclo de vida</strong> del desarrollo y despliegue de aplicaciones. Algunos casos de uso incluyen:
+					</p>
+					<div class="grid md:grid-cols-3 gap-6 mt-8">
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-brands fa-docker"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">Builds Automáticos</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Construcción automática de imágenes Docker desde Dockerfiles al hacer commits, optimizando el proceso de build y testing.</p>
+						</div>
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-brands fa-aws"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">Despliegues en AWS</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Despliegue automático de contenedores Docker en AWS tras builds exitosos, con actualización de servicios y tareas.</p>
+						</div>
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-solid fa-power-off"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">Gestión de Entornos</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Automatización del apagado y encendido de entornos de prueba según horarios o eventos, optimizando costos.</p>
+						</div>
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-solid fa-code-branch"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">CodeDeploy Automático</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Despliegues automáticos mediante AWS CodeDeploy al detectar commits en repositorios, sin intervención manual.</p>
+						</div>
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-solid fa-vial"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">Testing Continuo</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Ejecución automática de tests en cada build, garantizando calidad antes del despliegue a producción.</p>
+						</div>
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-emerald-400 text-3xl mb-3">
+								<i class="fa-solid fa-sync-alt"></i>
+							</div>
+							<h3 class="text-emerald-300 font-semibold text-lg mb-2">CI/CD Completo</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Integración y despliegue continuo con Bitbucket Pipelines, automatizando todo el flujo desde código hasta producción.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Arquitectura -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center">
+					Arquitectura del Pipeline
+				</h2>
+				<div class="max-w-5xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="bg-gradient-to-br from-emerald-900/20 to-slate-900/40 border border-emerald-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+									<i class="fa-brands fa-bitbucket text-2xl text-emerald-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-emerald-300">Bitbucket Pipelines</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-emerald-300">CI/CD Platform</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>Ejecución de pipelines en cada commit</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>Configuración mediante bitbucket-pipelines.yml</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>Integración con repositorios Git</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-blue-900/20 to-slate-900/40 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
+									<i class="fa-brands fa-docker text-2xl text-blue-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-blue-300">Docker</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-blue-300">Containerización</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Build automático de imágenes desde Dockerfile</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Push a registros de contenedores (ECR)</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Optimización de capas y cache</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-orange-900/20 to-slate-900/40 border border-orange-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center">
+									<i class="fa-brands fa-aws text-2xl text-orange-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-orange-300">AWS</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-orange-300">Container Service</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>Despliegue automático de contenedores</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>Actualización de servicios y tareas</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>Escalado automático y alta disponibilidad</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-purple-900/20 to-slate-900/40 border border-purple-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center">
+									<i class="fa-solid fa-code text-2xl text-purple-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-purple-300">AWS CodeDeploy</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-purple-300">Despliegue Automático</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>Despliegues automáticos desde repositorios</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>Estrategias de despliegue configurables</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>Rollback automático en caso de fallos</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Flujo de Automatización -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center">
+					Flujo de Automatización
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-emerald-400/20 rounded-xl p-8 backdrop-blur-sm">
+						<div class="space-y-8">
+							<div>
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+										<span class="text-emerald-400 font-bold">1</span>
+									</div>
+									<h3 class="text-xl font-bold text-emerald-300">Commit y Trigger</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Desarrollador hace commit y push al repositorio</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Bitbucket Pipelines detecta el cambio automáticamente</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Se inicia el pipeline configurado según la rama</span>
+									</p>
+								</div>
+							</div>
+							
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+										<span class="text-emerald-400 font-bold">2</span>
+									</div>
+									<h3 class="text-xl font-bold text-emerald-300">Build de Docker</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Construcción automática de imagen Docker desde Dockerfile</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Ejecución de tests y validaciones durante el build</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Push de la imagen a AWS ECR (Elastic Container Registry)</span>
+									</p>
+								</div>
+							</div>
+							
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+										<span class="text-emerald-400 font-bold">3</span>
+									</div>
+									<h3 class="text-xl font-bold text-emerald-300">Despliegue en AWS</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Actualización automática del servicio ECS con la nueva imagen</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Despliegue gradual con health checks</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Notificaciones de estado del despliegue</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+										<span class="text-emerald-400 font-bold">4</span>
+									</div>
+									<h3 class="text-xl font-bold text-emerald-300">Gestión de Entornos</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Apagado automático de entornos de prueba en horarios no laborables</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Encendido automático al detectar actividad o commits</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1">·</span>
+										<span>Optimización de costos mediante gestión inteligente de recursos</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tecnologías Empleadas -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center">
+					Tecnologías Empleadas
+				</h2>
+				<div class="tech-container">
+					<div class="flex tech-scroll gap-8">
+						<!-- Primera copia -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-bitbucket text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">Bitbucket</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-docker text-5xl text-blue-400 mb-2"></i>
+								<span class="text-xs text-blue-300 font-medium text-center">Docker</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-aws text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">AWS</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-server text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">ECS</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-purple-900/30 to-slate-900/50 border border-purple-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-code text-5xl text-purple-400 mb-2"></i>
+								<span class="text-xs text-purple-300 font-medium text-center">CodeDeploy</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-database text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">RDS</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-cogs text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">CI/CD</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-green-900/30 to-slate-900/50 border border-green-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-git-alt text-5xl text-green-400 mb-2"></i>
+								<span class="text-xs text-green-300 font-medium text-center">Git</span>
+							</div>
+						</div>
+						<!-- Segunda copia para loop infinito -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-bitbucket text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">Bitbucket</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-docker text-5xl text-blue-400 mb-2"></i>
+								<span class="text-xs text-blue-300 font-medium text-center">Docker</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-aws text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">AWS</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-server text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">ECS</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-purple-900/30 to-slate-900/50 border border-purple-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-code text-5xl text-purple-400 mb-2"></i>
+								<span class="text-xs text-purple-300 font-medium text-center">CodeDeploy</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-database text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">ECR</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-cogs text-5xl text-emerald-400 mb-2"></i>
+								<span class="text-xs text-emerald-300 font-medium text-center">CI/CD</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-green-900/30 to-slate-900/50 border border-green-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-git-alt text-5xl text-green-400 mb-2"></i>
+								<span class="text-xs text-green-300 font-medium text-center">Git</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Características Principales -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center">
+					Características Principales
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-emerald-400/20 rounded-xl p-8 backdrop-blur-sm">
+						<div class="grid md:grid-cols-2 gap-6">
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">Builds Automáticos de Docker</h4>
+										<p class="text-gray-300 text-sm">Construcción automática de imágenes Docker desde Dockerfiles al detectar commits, con optimización de capas y cache.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">Despliegue en AWS ECS</h4>
+										<p class="text-gray-300 text-sm">Despliegue automático de contenedores en ECS tras builds exitosos, con actualización de servicios y health checks.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">Gestión Inteligente de Entornos</h4>
+										<p class="text-gray-300 text-sm">Apagado y encendido de los servicios en entornos de prueba, de manera manual en función de la necesidad de los desarrolladores.</p>
+									</div>
+								</div>
+							</div>
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">CodeDeploy Automático</h4>
+										<p class="text-gray-300 text-sm">Despliegues automáticos mediante AWS CodeDeploy al detectar commits, con estrategias configurables y rollback automático.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">Testing Continuo</h4>
+										<p class="text-gray-300 text-sm">Ejecución automática de tests en cada build, garantizando calidad antes del despliegue a producción.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-emerald-400"></i>
+									</div>
+									<div>
+										<h4 class="text-emerald-300 font-semibold mb-1">Integración Completa</h4>
+										<p class="text-gray-300 text-sm">Pipeline completo desde código hasta producción, con notificaciones y monitoreo del estado de despliegues.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Botón Volver -->
+			<div class="text-center pt-8">
+				<a href="/proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<i class="fa-solid fa-arrow-left mr-2"></i>
+					Volver a Proyectos
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

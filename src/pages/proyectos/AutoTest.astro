@@ -1,0 +1,553 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<style>
+	html {
+	  scroll-behavior: smooth;
+	}
+	
+	/* Animación de tecnologías desplazándose */
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.tech-scroll {
+		animation: scroll 30s linear infinite;
+	}
+	
+	.tech-scroll:hover {
+		animation-play-state: paused;
+	}
+	
+	.tech-container {
+		overflow: hidden;
+		mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+	}
+</style>
+
+<Layout>
+	<main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+		<div class="max-w-4xl w-full text-center z-10">
+			<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-400/30 mb-6">
+				<span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+				<span class="text-amber-300 font-semibold text-sm">En Desarrollo</span>
+			</div>
+			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent mb-6 tracking-tight">
+				AutoTest.es
+			</h1>
+			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+				Plataforma Educativa de Tests de Autoescuela
+			</p>
+			<p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+				Plataforma web completa para realizar tests de autoescuela con generación automática de exámenes, gestión de preguntas DGT y sistema de autenticación.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a href="https://github.com/notpepejulian/AutoTest" target="_blank" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<i class="fa-brands fa-github mr-2"></i>
+					<span>Ver en GitHub</span>
+					<i class="fa-solid fa-arrow-up-right-from-square ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+				</a>
+				<a href="/proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-red-300 font-semibold shadow-lg transition-all duration-200 text-base border border-red-400/30">
+					<i class="fa-solid fa-arrow-left mr-2"></i>
+					Volver a Proyectos
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<section class="mt-10 mb-40 w-full flex flex-col items-center px-6">
+		<div class="w-full max-w-6xl mx-auto space-y-24">
+			
+			<!-- Vista del Proyecto -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Vista del Proyecto
+				</h2>
+				<div class="max-w-5xl mx-auto">
+					<div class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm overflow-hidden">
+						<div class="rounded-lg overflow-hidden shadow-2xl">
+							<img 
+								src="/AutoTestLandPage.png" 
+								alt="Vista de la plataforma AutoTest.es mostrando la interfaz principal con estadísticas y opciones de tests" 
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Casos de Uso -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Casos de Uso
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<p class="text-lg text-gray-300 leading-relaxed mb-6 text-center">
+						Esta plataforma está diseñada para <strong class="text-red-300">estudiantes de autoescuela</strong> que necesitan practicar y prepararse para el examen teórico. Algunos casos de uso incluyen:
+					</p>
+					<div class="grid md:grid-cols-3 gap-6 mt-8">
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-book-open"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Práctica de Exámenes</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Realiza tests ilimitados con preguntas oficiales de la DGT para prepararte para el examen teórico.</p>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-chart-line"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Seguimiento de Progreso</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Monitorea tu progreso y mejora tus resultados con estadísticas detalladas de tus exámenes.</p>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-graduation-cap"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Preparación Integral</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Accede a un banco completo de preguntas oficiales con explicaciones y respuestas correctas.</p>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-clock"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Exámenes Cronometrados</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Practica con exámenes que simulan las condiciones reales del examen oficial con tiempo limitado.</p>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-user-graduate"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Perfiles de Usuario</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Crea tu cuenta y guarda tu historial de exámenes, resultados y estadísticas personales.</p>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="text-red-400 text-3xl mb-3">
+								<i class="fa-solid fa-database"></i>
+							</div>
+							<h3 class="text-red-300 font-semibold text-lg mb-2">Base de Datos DGT</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">Preguntas oficiales actualizadas de la Dirección General de Tráfico para máxima precisión.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Arquitectura -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Arquitectura del Proyecto
+				</h2>
+				<div class="max-w-5xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-red-500/20 flex items-center justify-center">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-red-400">
+										<path d="M16.681 4.319c-.11-.11-.23-.19-.35-.27-.12-.08-.25-.15-.39-.2-.14-.05-.29-.09-.44-.11-.15-.02-.31-.03-.47-.01-.16.02-.32.05-.47.1-.15.05-.3.11-.44.18-.14.07-.27.15-.39.24l-8.48 8.48c-.18.18-.32.39-.42.62-.1.23-.16.48-.16.74 0 .26.06.51.16.74.1.23.24.44.42.62.18.18.39.32.62.42.23.1.48.16.74.16.26 0 .51-.06.74-.16.23-.1.44-.24.62-.42l8.48-8.48c.09-.12.17-.25.24-.39.07-.14.13-.29.18-.44.05-.15.08-.31.1-.47.02-.16.01-.32-.01-.47-.02-.15-.06-.3-.11-.44-.05-.14-.12-.27-.2-.39-.08-.12-.16-.24-.27-.35zm-1.41 1.41c.05.05.09.1.13.15.04.05.07.1.1.15.03.05.05.1.07.15.02.05.03.1.04.15.01.05.01.1.01.15 0 .05 0 .1-.01.15-.01.05-.02.1-.04.15-.02.05-.04.1-.07.15-.03.05-.06.1-.1.15-.04.05-.08.1-.13.15l-8.48 8.48c-.1.1-.21.18-.33.24-.12.06-.25.1-.38.12-.13.02-.26.02-.39 0-.13-.02-.26-.06-.38-.12-.12-.06-.23-.14-.33-.24-.1-.1-.18-.21-.24-.33-.06-.12-.1-.25-.12-.38-.02-.13-.02-.26 0-.39.02-.13.06-.26.12-.38.06-.12.14-.23.24-.33l8.48-8.48c.05-.05.1-.09.15-.13.05-.04.1-.07.15-.1.05-.03.1-.05.15-.07.05-.02.1-.03.15-.04.05-.01.1-.01.15-.01.05 0 .1 0 .15.01.05.01.1.02.15.04.05.02.1.04.15.07.05.03.1.06.15.1.05.04.1.08.15.13z" fill="currentColor"/>
+									</svg>
+								</div>
+								<h3 class="text-xl font-bold text-red-300">Frontend</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-red-300">Interfaz de Usuario</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span>Interfaz moderna y responsive</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span>Experiencia de usuario optimizada</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span>Visualización de resultados y estadísticas</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-orange-900/20 to-slate-900/40 border border-orange-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center">
+									<i class="fa-solid fa-server text-2xl text-orange-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-orange-300">Backend</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-orange-300">API y Lógica de Negocio</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>API REST para gestión de exámenes</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>Sistema de autenticación y usuarios</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>Generación automática de tests</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-cyan-900/20 to-slate-900/40 border border-cyan-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+									<i class="fa-solid fa-database text-2xl text-cyan-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-cyan-300">Base de Datos</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-cyan-300">Almacenamiento de Datos</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-400 mt-1">•</span>
+									<span>Preguntas oficiales DGT</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-400 mt-1">•</span>
+									<span>Historial de exámenes y resultados</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-400 mt-1">•</span>
+									<span>Gestión de usuarios y autenticación</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="bg-gradient-to-br from-blue-900/20 to-slate-900/40 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<div class="flex items-center gap-3 mb-4">
+								<div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
+									<i class="fa-brands fa-docker text-2xl text-blue-400"></i>
+								</div>
+								<h3 class="text-xl font-bold text-blue-300">Docker</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-blue-300">Contenedores</strong>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Orquestación con docker-compose</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Despliegue simplificado</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>Entorno de desarrollo consistente</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Flujo de Funcionamiento -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Flujo de Funcionamiento
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-red-400/20 rounded-xl p-8 backdrop-blur-sm">
+						<div class="space-y-8">
+							<div>
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+										<span class="text-red-400 font-bold">1</span>
+									</div>
+									<h3 class="text-xl font-bold text-red-300">Registro y Autenticación</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Usuario se registra o inicia sesión en la plataforma</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Sistema de autenticación seguro</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Acceso al panel de usuario personalizado</span>
+									</p>
+								</div>
+							</div>
+							
+							<div class="border-t border-red-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+										<span class="text-red-400 font-bold">2</span>
+									</div>
+									<h3 class="text-xl font-bold text-red-300">Generación de Examen</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>El sistema genera un examen aleatorio desde la base de datos DGT</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Preguntas oficiales seleccionadas automáticamente</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Examen cronometrado con tiempo limitado</span>
+									</p>
+								</div>
+							</div>
+							
+							<div class="border-t border-red-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+										<span class="text-red-400 font-bold">3</span>
+									</div>
+									<h3 class="text-xl font-bold text-red-300">Evaluación y Resultados</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-gray-300">
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Corrección automática del examen</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Visualización de resultados y estadísticas</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-red-400 mt-1">·</span>
+										<span>Historial guardado para seguimiento del progreso</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tecnologías Empleadas -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Tecnologías Empleadas
+				</h2>
+				<div class="tech-container">
+					<div class="flex tech-scroll gap-8">
+						<!-- Primera copia -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-python text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Python</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-js text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">JavaScript</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-database text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">PostgreSQL</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-docker text-5xl text-blue-400 mb-2"></i>
+								<span class="text-xs text-blue-300 font-medium text-center">Docker</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-code text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Backend</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-paint-brush text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">Frontend</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-key text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Auth</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-file-code text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">Scripts</span>
+							</div>
+						</div>
+						<!-- Segunda copia para loop infinito -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-python text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Python</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-js text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">JavaScript</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-database text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">PostgreSQL</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-brands fa-docker text-5xl text-blue-400 mb-2"></i>
+								<span class="text-xs text-blue-300 font-medium text-center">Docker</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-code text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Backend</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-orange-900/30 to-slate-900/50 border border-orange-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-paint-brush text-5xl text-orange-400 mb-2"></i>
+								<span class="text-xs text-orange-300 font-medium text-center">Frontend</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-red-900/30 to-slate-900/50 border border-red-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-key text-5xl text-red-400 mb-2"></i>
+								<span class="text-xs text-red-300 font-medium text-center">Auth</span>
+							</div>
+							<div class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-cyan-900/30 to-slate-900/50 border border-cyan-400/20 rounded-xl backdrop-blur-sm p-4">
+								<i class="fa-solid fa-file-code text-5xl text-cyan-400 mb-2"></i>
+								<span class="text-xs text-cyan-300 font-medium text-center">Scripts</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Características Principales -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Características Principales
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-red-400/20 rounded-xl p-8 backdrop-blur-sm">
+						<div class="grid md:grid-cols-2 gap-6">
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Preguntas Oficiales DGT</h4>
+										<p class="text-gray-300 text-sm">Base de datos completa con preguntas oficiales de la Dirección General de Tráfico.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Generación Automática</h4>
+										<p class="text-gray-300 text-sm">Scripts Python para generar exámenes y tests automáticamente desde la base de datos.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Sistema de Autenticación</h4>
+										<p class="text-gray-300 text-sm">Gestión completa de usuarios con registro, login y sesiones seguras.</p>
+									</div>
+								</div>
+							</div>
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Estadísticas y Progreso</h4>
+										<p class="text-gray-300 text-sm">Seguimiento detallado del progreso con gráficos y métricas de rendimiento.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Docker Compose</h4>
+										<p class="text-gray-300 text-sm">Despliegue simplificado con contenedores Docker para desarrollo y producción.</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+										<i class="fa-solid fa-check text-red-400"></i>
+									</div>
+									<div>
+										<h4 class="text-red-300 font-semibold mb-1">Scripts de Gestión</h4>
+										<p class="text-gray-300 text-sm">Herramientas Python para insertar preguntas, generar tests y gestionar la base de datos.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Requisitos e Instalación -->
+			<div>
+				<h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center">
+					Requisitos e Instalación
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<h3 class="text-xl font-bold text-red-300 mb-4 flex items-center gap-2">
+								Requisitos
+							</h3>
+							<ul class="text-gray-300 space-y-2">
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span><strong class="text-red-300">Python 3.x</strong> para scripts y backend</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span><strong class="text-red-300">Astro</strong> para el frontend</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span><strong class="text-red-300">Docker</strong> y Docker Compose</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-red-400 mt-1">•</span>
+									<span><strong class="text-red-300">MySQL</strong> como base de datos</span>
+								</li>
+							</ul>
+						</div>
+						<div class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm">
+							<h3 class="text-xl font-bold text-red-300 mb-4 flex items-center gap-2">
+								Cómo Ejecutar
+							</h3>
+							<div class="space-y-3 text-gray-300">
+								<div>
+									<p class="text-sm font-semibold text-red-300 mb-1">1. Clonar el repositorio:</p>
+									<code class="bg-red-900/50 px-3 py-2 rounded text-red-300 text-sm block">git clone https://github.com/notpepejulian/AutoTest.git</code>
+								</div>
+								<div>
+									<p class="text-sm font-semibold text-red-300 mb-1">2. Iniciar con Docker:</p>
+									<code class="bg-red-900/50 px-3 py-2 rounded text-red-300 text-sm block">docker-compose up</code>
+								</div>
+								<div>
+									<p class="text-sm font-semibold text-red-300 mb-1">3. Ejecutar scripts de inicialización:</p>
+									<p class="text-sm">Usa los scripts Python para poblar la base de datos con preguntas DGT</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Botón Volver -->
+			<div class="text-center pt-8">
+				<a href="/proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
+					<i class="fa-solid fa-arrow-left mr-2"></i>
+					Volver a Proyectos
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
