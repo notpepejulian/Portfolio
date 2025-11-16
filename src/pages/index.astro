@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 					<span>Conóceme</span>
 					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
 				</a>
-				<a href="./proyectos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+				<a href={`${import.meta.env.BASE_URL}proyectos/`} class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
 					Mis Proyectos
 				</a>
 			</div>
@@ -119,21 +119,21 @@ import Layout from '../layouts/Layout.astro';
 			</p>
 		</div>
 		<div class="flex flex-wrap justify-center gap-8">
-			<a href="./conocimientos" class="group">
+			<a href={`${import.meta.env.BASE_URL}conocimientos/`} class="group">
 				<div class="bg-gradient-to-br from-cyan-900/60 via-slate-800/60 to-cyan-700/40 border border-cyan-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-105">
 					<i class="fa-solid fa-brain text-3xl text-cyan-400 mb-4 group-hover:animate-bounce"></i>
 					<h3 class="text-xl font-semibold text-white text-center mb-2">Conocimientos</h3>
 					<p class="text-gray-300 text-center text-base">Explora mis habilidades técnicas y experiencia en tecnologías clave.</p>
 				</div>
 			</a>
-			<a href="./certificaciones" class="group">
+			<a href={`${import.meta.env.BASE_URL}certificaciones/`} class="group">
 				<div class="bg-gradient-to-br from-yellow-900/60 via-slate-800/60 to-yellow-700/40 border border-yellow-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 hover:scale-105">
 					<i class="fa-solid fa-certificate text-3xl text-yellow-400 mb-4 group-hover:animate-bounce"></i>
 					<h3 class="text-xl font-semibold text-white text-center mb-2">Certificaciones</h3>
 					<p class="text-gray-300 text-center text-base">Conoce las certificaciones que avalan mi formación y compromiso profesional.</p>
 				</div>
 			</a>
-			<a href="./proyectos" class="group">
+			<a href={`${import.meta.env.BASE_URL}proyectos/`} class="group">
 				<div class="bg-gradient-to-br from-pink-900/60 via-slate-800/60 to-pink-700/40 border border-pink-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105">
 					<i class="fa-solid fa-rocket text-3xl text-pink-400 mb-4 group-hover:animate-bounce"></i>
 					<h3 class="text-xl font-semibold text-white text-center mb-2">Proyectos</h3>
