@@ -27,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
 					<span>Ver proyectos</span>
 					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
 				</a>
-				<a href="./conocimientos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+				<a href={`${import.meta.env.BASE_URL}conocimientos/`} class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
 					Conocimientos
 				</a>
 			</div>
