@@ -10,9 +10,20 @@ npm create astro@latest -- --template basics
 
 >  Portfolio basado en comandos y terminales. He plasmado mis conocimientos, certificaciones y experiencia como administrador de sistemas y cloud.
 
-<img width="2396" height="1148" alt="image" src="public/MainPage.gif" />
-<img width="2396" height="1148" alt="image" src="public/Proyectos_Portfolio.gif" />
-<img width="2396" height="1148" alt="image" src="public/Conocimientos_Portfolio.gif" />
+### Página Principal
+Presentación profesional con diseño moderno, animaciones fluidas y navegación intuitiva. Incluye video de entrevista integrado y acceso directo a todas las secciones del portfolio.
+
+<img width="2396" height="1148" alt="Página principal del portfolio" src="public/MainPage.gif" />
+
+### Sección de Proyectos
+Showcase de proyectos técnicos con descripciones detalladas, stack tecnológico utilizado, capturas de pantalla y enlaces directos a los repositorios de GitHub.
+
+<img width="2396" height="1148" alt="Sección de proyectos" src="public/Proyectos_Portfolio.gif" />
+
+### Sección de Conocimientos
+Catálogo completo de tecnologías y herramientas organizadas por categorías: Cloud Platforms, DevOps, IaC, Contenedorización, Monitoring y Lenguajes de programación.
+
+<img width="2396" height="1148" alt="Sección de conocimientos" src="public/Conocimientos_Portfolio.gif" />
 
 
 ## Estructura del Proyecto
