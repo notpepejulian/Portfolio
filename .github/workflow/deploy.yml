@@ -1,0 +1,36 @@
+name: Deploy Portfolio [Astro] a GitHub Pages
+
+on:
+  push:
+    branches: [ main ]  # rama que dispara el deploy
+  workflow_dispatch:     # para poder ejecutar manualmente desde GitHub
+
+permissions:
+  contents: write       # necesario para subirlo a gh-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18-alpine
+
+    steps:
+      # 1 Clonar el repo (clona main en gh-pages )
+      - name: Checkout del repo
+        uses: actions/checkout@v3
+
+      # 2️ Instalar dependencias
+      - name: Instalar dependencias
+        run: npm ci && npm install --legacy-peer-deps
+
+      # 3️ Generar build de Astro
+      - name: Astro Build
+        run: npm run build
+
+      # 4️ Publicar en gh-pages
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages         # rama de destino
+          folder: dist             # carpeta a desplegar
+          token: ${{ secrets.GITHUB_TOKEN }}  # usar token interno para push
