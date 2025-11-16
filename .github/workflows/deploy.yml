@@ -11,9 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: node:18-alpine
-
     steps:
       # 1 Clonar el repo (clona main en gh-pages )
       - name: Checkout del repo
@@ -27,11 +24,7 @@ jobs:
       - name: Astro Build
         run: npm run build
 
-      # 4️ Instalar git
-      - name: Install Git
-        run: apk add --no-cache git
-      
-      # 5 Publicar en gh-pages
+      # 4 Publicar en gh-pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
