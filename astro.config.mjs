@@ -6,5 +6,5 @@ export default defineConfig({
   integrations: [tailwind()],
   output: "static",
   site: "https://nachodev-dev.github.io",
-  base: "/Portfolio"
+  base: "/Portfolio/"
 });
