@@ -15,9 +15,9 @@ import Layout from '../layouts/Layout.astro';
                 Proyectos
 			</h1>
 			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
-				  <i class="fa-brands fa-docker text-cyan-400 mr-1"></i> Kubernetes 
-				| <i class="fa-solid fa-brain text-purple-400 mx-1"></i> IA
-				| <i class="fa-solid fa-link text-yellow-300 mx-1"></i> Blockchain
+				 CI/CD 
+				| IA
+				| Blockchain
 			</p>
 			<p class="text-lg text-gray-300 mb-10">
 				Proyectos blockchain, automatización con IA, ideas de negocio, contenerización. Algunos ya en producción, otros en desarrollo o como ideas.
@@ -28,7 +28,6 @@ import Layout from '../layouts/Layout.astro';
 					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
 				</a>
 				<a href="./conocimientos" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
-					<i class="fa-solid fa-brain mr-2"></i>
 					Conocimientos
 				</a>
 			</div>
@@ -56,6 +55,10 @@ import Layout from '../layouts/Layout.astro';
     border-color: #34d399 !important;
     box-shadow: 0 8px 32px 0 rgba(52,211,153,0.25), 0 0 0 2px #34d399;
   }
+  .proyecto-card.border-red-400\/30:hover {
+    border-color: #d33434 !important;
+    box-shadow: 0 8px 32px 0 rgba(211, 52, 52, 0.25), 0 0 0 2px #d33434;
+  }
   .proyecto-card:hover {
     transform: scale(1.03);
   }
@@ -80,12 +83,11 @@ import Layout from '../layouts/Layout.astro';
 <section id="proyectos" class="mt-20 mb-40 w-full flex flex-col items-center">
   <div class="flex justify-center gap-4 mb-10">
     <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 tracking-tight drop-shadow-lg flex items-center gap-3 justify-center">
-      <i class="fa-solid fa-pencil text-cyan-400 animate-pulse text-4xl"></i>
       Posts de Proyectos
     </h2>
   </div>
   <p class="text-xl text-gray-300 max-w-3xl text-center mb-12 leading-relaxed mx-auto">
-    Aquí iré publicando novedades, avances y reflexiones sobre mis proyectos cloud, automatización y desarrollo web. Haz clic en cada proyecto para ver su evolución, cambios y detalles técnicos.
+    Aquí publico novedades, avances y reflexiones sobre mis proyectos cloud, automatización y desarrollo web. Haz clic en cada proyecto para ver su evolución, cambios y detalles técnicos.
   </p>
 
   <div class="w-full max-w-5xl mx-auto flex flex-col gap-10">
@@ -94,10 +96,10 @@ import Layout from '../layouts/Layout.astro';
       <!-- Columna 1: Info -->
       <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
         <h3 class="text-2xl font-bold text-fuchsia-300 mb-2">Integración de BBDD con Blockchain</h3>
-        <p class="text-fuchsia-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-emerald-300">En producción</span></p>
+        <p class="text-fuchsia-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-emerald-300"> En producción</span></p>
         <p class="text-fuchsia-100 text-sm mb-2">Desarrollé la integración de bases de datos relacionales tradicionales con tecnología blockchain, permitiendo registrar transacciones y auditorías de datos de forma inmutable y transparente.</p>
         <span class="text-xs text-fuchsia-200"><i class="fa-solid fa-link mr-1"></i>#Blockchain & BBDD</span>
-        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 10/06/2024</span>
+        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 15/01/2025</span>
       </div>
       <!-- Columna 2: Terminal (bloque) -->
       <div class="flex-1 flex items-center justify-center transition-all duration-300">
@@ -114,9 +116,8 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <div class="h-3"></div>
             <p>
-              <span class="text-fuchsia-300">Proyecto:</span> Integración de bases de datos relacionales con Blockchain
+              <span class="text-fuchsia-300">Proyecto:</span> Integración de bases de datos relacionales con Blockchain <a href="https://github.com/notpepejulian/MySQL-BigchainDB" target="_blank" class="hover:text-pink-300 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-gray-300/30 shadow-sm hover:bg-white/40 transition-colors duration-200 backdrop-blur-mdfont-semibold text-sm no-underline"><i class="fa-solid fa-circle-info"></i></a>
               <br>
-              <span class="text-fuchsia-300">Estado:</span> <span class="text-emerald-300">En producción</span>
             </p>
           </div>
         </div>
@@ -129,98 +130,34 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
     </div>
-
     <!-- Tarjeta Proyecto 2 -->
-    <div class="proyecto-card group border-cyan-400/30">
-      <!-- Columna 1: Info -->
-      <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
-        <h3 class="text-2xl font-bold text-cyan-300 mb-2">WebApp de Monitorización Cloud</h3>
-        <p class="text-cyan-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-emerald-300">En producción</span></p>
-        <p class="text-cyan-100 text-sm mb-2">Aplicación web para visualizar métricas y logs de sistemas cloud en tiempo real. Integración con Prometheus y Grafana.</p>
-        <span class="text-xs text-cyan-200"><i class="fa-solid fa-chart-line mr-1"></i>#Monitorización</span>
-        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 02/06/2024</span>
-      </div>
-      <!-- Columna 2: Terminal (bloque) -->
-      <div class="flex-1 flex items-center justify-center transition-all duration-300">
-        <div class="terminal-block">
-          <div class="terminal-header bg-gradient-to-r from-cyan-800/70 to-slate-800/70 border-b border-cyan-400/10">
-            <span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
-            <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
-            <span class="h-3 w-3 rounded-full bg-green-500"></span>
-            <span class="ml-4 text-cyan-300 font-mono text-sm">bash</span>
-          </div>
-          <div class="terminal-content text-cyan-100" style="background: linear-gradient(135deg, #1c3f4a 0%, #0f172a 100%); border-radius: 0 0 0.75rem 0.75rem;">
-            <p>
-              <span class="text-cyan-400">nacho@proyectos</span>:<span class="text-amber-300">~</span>$ <span class="text-white">cat webapp_monitor.txt</span>
-            </p>
-            <div class="h-3"></div>
-            <p>
-              <span class="text-cyan-300">Proyecto:</span> WebApp de Monitorización Cloud
-              <br>
-              <span class="text-cyan-300">Estado:</span> <span class="text-emerald-300">En producción</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Columna 3: Saber Más -->
-      <div class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300">
-        <a href="/proyectos/webapp-monitorizacion" class="flex flex-col items-center justify-center h-full w-full py-8 group  transition">
-          <span class="text-cyan-300 text-lg font-semibold mb-2">Saber Más</span>
-          <i class="fa-solid fa-arrow-right text-cyan-400 text-2xl transition-transform"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Tarjeta Proyecto 3 -->
-    <div class="proyecto-card group border-yellow-400/30">
-      <!-- Columna 1: Info -->
-      <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
-        <h3 class="text-2xl font-bold text-yellow-300 mb-2">Colección de Scripts Linux</h3>
-        <p class="text-yellow-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-pink-300">Idea</span></p>
-        <p class="text-yellow-100 text-sm mb-2">Repositorio de scripts útiles para automatizar tareas en sistemas Linux: backups, gestión de usuarios, monitorización y más.</p>
-        <span class="text-xs text-yellow-200"><i class="fa-brands fa-linux mr-1"></i>#Automatización</span>
-        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 28/05/2024</span>
-      </div>
-      <!-- Columna 2: Terminal (bloque) -->
-      <div class="flex-1 flex items-center justify-center transition-all duration-300">
-        <div class="terminal-block">
-          <div class="terminal-header bg-gradient-to-r from-yellow-700/70 to-slate-800/70 border-b border-yellow-400/10">
-            <span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
-            <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
-            <span class="h-3 w-3 rounded-full bg-green-500"></span>
-            <span class="ml-4 text-yellow-300 font-mono text-sm">bash</span>
-          </div>
-          <div class="terminal-content text-yellow-100" style="background: linear-gradient(135deg, #4a471c 0%, #0f172a 100%); border-radius: 0 0 0.75rem 0.75rem;">
-            <p>
-              <span class="text-yellow-400">nacho@proyectos</span>:<span class="text-amber-300">~</span>$ <span class="text-white">cat linux_scripts.txt</span>
-            </p>
-            <div class="h-3"></div>
-            <p>
-              <span class="text-yellow-300">Proyecto:</span> Colección de Scripts Linux
-              <br>
-              <span class="text-yellow-300">Estado:</span> <span class="text-pink-300">Idea</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Columna 3: Saber Más -->
-      <div class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300">
-        <a href="/proyectos/linux-scripts" class="flex flex-col items-center justify-center h-full w-full py-8 group  transition">
-          <span class="text-yellow-300 text-lg font-semibold mb-2">Saber Más</span>
-          <i class="fa-solid fa-arrow-right text-yellow-400 text-2xl  transition-transform"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Tarjeta Proyecto 4 -->
     <div class="proyecto-card group border-emerald-400/30">
       <!-- Columna 1: Info -->
       <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
         <h3 class="text-2xl font-bold text-emerald-300 mb-2">Pipeline DevOps CI/CD</h3>
-        <p class="text-emerald-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-amber-300">En desarrollo</span></p>
-        <p class="text-emerald-100 text-sm mb-2">Implementación de un pipeline CI/CD con GitHub Actions, Docker y despliegue automático en AWS ECS.</p>
+        <p class="text-emerald-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-emerald-300"> En producción</span></p>
+        <p class="text-emerald-100 text-sm mb-2">Implementación de pipelines CI/CD con Bitbucket Pipelines, Docker y despliegue automático en AWS.</p>
         <span class="text-xs text-emerald-200"><i class="fa-solid fa-gears mr-1"></i>#DevOps</span>
-        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 15/05/2024</span>
+        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: <span id="fecha-actual"></span><script is:inline>
+          (function() {
+            function mostrarFechaActual() {
+              const fecha = new Date();
+              const dia = String(fecha.getDate()).padStart(2, '0');
+              const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+              const año = fecha.getFullYear();
+              const fechaFormateada = `${dia}/${mes}/${año}`;
+              const elemento = document.getElementById('fecha-actual');
+              if (elemento) {
+                elemento.textContent = fechaFormateada;
+              }
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', mostrarFechaActual);
+            } else {
+              mostrarFechaActual();
+            }
+          })();
+        </script></span>
       </div>
       <!-- Columna 2: Terminal (bloque) -->
       <div class="flex-1 flex items-center justify-center transition-all duration-300">
@@ -239,7 +176,6 @@ import Layout from '../layouts/Layout.astro';
             <p>
               <span class="text-emerald-300">Proyecto:</span> Pipeline DevOps CI/CD
               <br>
-              <span class="text-emerald-300">Estado:</span> <span class="text-amber-300">En desarrollo</span>
             </p>
           </div>
         </div>
@@ -252,10 +188,127 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
     </div>
+    <!-- Tarjeta Proyecto 3 -->
+    <div class="proyecto-card group border-red-400/30">
+      <!-- Columna 1: Info -->
+      <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
+        <h3 class="text-2xl font-bold text-red-500 mb-2">Pagina Educativa Tests de Autoescuela</h3>
+        <p class="text-red-400 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-amber-300"> En desarrollo</span></p>
+        <p class="text-red-100 text-sm mb-2">Implementación de pipelines CI/CD con Bitbucket Pipelines, Docker y despliegue automático en AWS.</p>
+        <span class="text-xs text-red-200"><i class="fa-solid fa-code mr-1"></i>#Desarrollo Web</span>
+        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 15/11/2025</span>
+      </div>
+      <!-- Columna 2: Terminal (bloque) -->
+      <div class="flex-1 flex items-center justify-center transition-all duration-300">
+        <div class="terminal-block">
+          <div class="terminal-header bg-gradient-to-r from-red-800/70 to-slate-800/70 border-b border-red-400/10">
+            <span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+            <span class="h-3 w-3 rounded-full bg-green-500"></span>
+            <span class="ml-4 text-red-300 font-mono text-sm">bash</span>
+          </div>
+          <div class="terminal-content text-emeral-100" style="background: linear-gradient(135deg, #4a1c1c 0%, #0f172a 100%); border-radius: 0 0 0.75rem 0.75rem;">
+            <p>
+              <span class="text-red-500">nacho@proyectos</span>:<span class="text-amber-300">~</span>$ <span class="text-white">cat AutoTest.txt</span>
+            </p>
+            <div class="h-3"></div>
+            <p>
+              <span class="text-red-500">Proyecto: </span><a href="https://github.com/notpepejulian/AutoTest" target="_blank" class="hover:text-pink-300 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-gray-300/30 shadow-sm hover:bg-white/40 transition-colors duration-200 backdrop-blur-mdfont-semibold text-sm no-underline"><i class="fa-solid fa-circle-info mr-1"></i>AutoTest.es</a>
+              <br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Columna 3: Saber Más -->
+      <div class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300">
+        <a href="/proyectos/AutoTest" class="flex flex-col items-center justify-center h-full w-full py-8 group  transition">
+          <span class="text-red-500 text-lg font-semibold mb-2">Saber Más</span>
+          <i class="fa-solid fa-arrow-right text-red-500 text-2xl transition-transform"></i>
+        </a>
+      </div>
+    </div>
+        <!-- Tarjeta Proyecto 4 -->
+        <div class="proyecto-card group border-cyan-400/30">
+          <!-- Columna 1: Info -->
+          <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
+            <h3 class="text-2xl font-bold text-cyan-300 mb-2">WebApp de Monitorización Cloud</h3>
+            <p class="text-cyan-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-amber-300"> En desarrollo</span></p>
+            <p class="text-cyan-100 text-sm mb-2">Aplicación web para visualizar métricas y logs de sistemas cloud en tiempo real. Integración con N8N.</p>
+            <span class="text-xs text-cyan-200"><i class="fa-solid fa-chart-line mr-1"></i>#Monitorización</span>
+            <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 02/10/2025</span>
+          </div>
+          <!-- Columna 2: Terminal (bloque) -->
+          <div class="flex-1 flex items-center justify-center transition-all duration-300">
+            <div class="terminal-block">
+              <div class="terminal-header bg-gradient-to-r from-cyan-800/70 to-slate-800/70 border-b border-cyan-400/10">
+                <span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+                <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+                <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                <span class="ml-4 text-cyan-300 font-mono text-sm">bash</span>
+              </div>
+              <div class="terminal-content text-cyan-100" style="background: linear-gradient(135deg, #1c3f4a 0%, #0f172a 100%); border-radius: 0 0 0.75rem 0.75rem;">
+                <p>
+                  <span class="text-cyan-400">nacho@proyectos</span>:<span class="text-amber-300">~</span>$ <span class="text-white">cat webapp_monitor.txt</span>
+                </p>
+                <div class="h-3"></div>
+                <p>
+                  <span class="text-cyan-300">Proyecto:</span> WebApp de Monitorización Cloud
+                  <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Columna 3: Saber Más -->
+          <div class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300">
+            <a href="maintenance" class="flex flex-col items-center justify-center h-full w-full py-8 group  transition">
+              <span class="text-cyan-300 text-lg font-semibold mb-2">Saber Más</span>
+              <i class="fa-solid fa-arrow-right text-cyan-400 text-2xl transition-transform"></i>
+            </a>
+          </div>
+        </div>
+            <!-- Tarjeta Proyecto 5 -->
+    <div class="proyecto-card group border-yellow-400/30">
+      <!-- Columna 1: Info -->
+      <div class="flex-1 flex flex-col justify-center px-8 py-6 min-w-[220px]">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-2">Colección de Scripts Linux</h3>
+        <p class="text-yellow-200 text-base mb-1"><span class="font-semibold">Estado:</span> <span class="text-pink-300"> Idea</span></p>
+        <p class="text-yellow-100 text-sm mb-2">Repositorio de scripts útiles para automatizar tareas en sistemas Linux: backups, gestión de usuarios, monitorización y más.</p>
+        <span class="text-xs text-yellow-200"><i class="fa-brands fa-linux mr-1"></i>#Automatización</span>
+        <span class="text-xs text-pink-400 mt-2"><i class="fa-solid fa-code-branch mr-1"></i>Última actualización: 28/10/2025</span>
+      </div>
+      <!-- Columna 2: Terminal (bloque) -->
+      <div class="flex-1 flex items-center justify-center transition-all duration-300">
+        <div class="terminal-block">
+          <div class="terminal-header bg-gradient-to-r from-yellow-700/70 to-slate-800/70 border-b border-yellow-400/10">
+            <span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
+            <span class="h-3 w-3 rounded-full bg-green-500"></span>
+            <span class="ml-4 text-yellow-300 font-mono text-sm">bash</span>
+          </div>
+          <div class="terminal-content text-yellow-100" style="background: linear-gradient(135deg, #4a471c 0%, #0f172a 100%); border-radius: 0 0 0.75rem 0.75rem;">
+            <p>
+              <span class="text-yellow-400">nacho@proyectos</span>:<span class="text-amber-300">~</span>$ <span class="text-white">cat linux_scripts.txt</span>
+            </p>
+            <div class="h-3"></div>
+            <p>
+              <span class="text-yellow-300">Proyecto:</span> Colección de Scripts Linux
+              <br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Columna 3: Saber Más -->
+      <div class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300">
+        <a href="/maintenance" class="flex flex-col items-center justify-center h-full w-full py-8 group  transition">
+          <span class="text-yellow-300 text-lg font-semibold mb-2">Saber Más</span>
+          <i class="fa-solid fa-arrow-right text-yellow-400 text-2xl  transition-transform"></i>
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="mt-16 text-center">
-    <p class="text-gray-400 text-base italic">¿Quieres ver más proyectos o sugerir una idea? <a href="mailto:nacho@ejemplo.com" class="text-cyan-400 underline hover:text-cyan-300 transition">Contáctame</a></p>
+    <p class="text-gray-400 text-base italic">¿Quieres ver más proyectos o sugerir una idea? <a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" target="_blank" class="text-cyan-400 underline hover:text-cyan-300 transition">Contáctame</a></p>
   </div>
 </section>
 </Layout>
