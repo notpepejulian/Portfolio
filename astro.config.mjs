@@ -5,6 +5,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   output: "static",
-  site: "https://nachodev-dev.github.io",
+  site: "https://notpepejulian.github.io",
   base: "/Portfolio/"
 });
