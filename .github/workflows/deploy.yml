@@ -27,7 +27,11 @@ jobs:
       - name: Astro Build
         run: npm run build
 
-      # 4️ Publicar en gh-pages
+      # 4️ Instalar git
+      - name: Install Git
+        run: apk add --no-cache git
+      
+      # 5 Publicar en gh-pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
