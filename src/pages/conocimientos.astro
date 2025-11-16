@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 					<span>Ver stack</span>
 					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
 				</a>
-				<a href="./certificaciones" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
+				<a  href={`${import.meta.env.BASE_URL}certificaciones/`} class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
 					Certificaciones
 				</a>
 			</div>
@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
 					<!-- AWS -->
 					<div class="conocimiento-card bg-gradient-to-br from-yellow-900/60 via-slate-800/60 to-yellow-700/40 border border-yellow-400/30 rounded-2xl p-10 sm:p-12 w-80 sm:w-[28rem] flex-shrink-0 flex flex-col items-center justify-center shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 hover:scale-105 cursor-pointer snap-center" data-card="aws" data-terminal="aws">
 						<i class="fa-brands fa-aws text-4xl text-yellow-400 mb-4"></i>
-						<h3 class="text-2xl font-semibold text-white text-center mb-2">Amazon West Services</h3>
+						<h3 class="text-2xl font-semibold text-white text-center mb-2">Amazon Web Services</h3>
 						<p class="text-gray-300 text-center text-base mb-2">Servicios en la Nube</p>
 						<p class="text-white text-center text-sm">
 							Experiencia en la gestión y despliegue de servicios en AWS (EC2, S3, RDS, ECS, WAF, CloudFront...). Diseño de arquitecturas escalables y seguras. Uso de IaC (AWS CDK).
