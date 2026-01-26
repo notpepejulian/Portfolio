@@ -90,6 +90,105 @@ import Layout from "../layouts/Layout.astro";
     .proyecto-card:hover {
       transform: scale(1.03);
     }
+    /* Grid Styles */
+    .proyecto-grid-item {
+      @apply relative rounded-2xl overflow-hidden border border-white/10 aspect-square flex flex-col transition-all duration-500 bg-slate-900/40 backdrop-blur-md;
+    }
+    .proyecto-grid-item .bg-image {
+      @apply absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 scale-110 z-0;
+    }
+    .proyecto-grid-item:hover .bg-image {
+      @apply opacity-30 scale-100;
+    }
+    .proyecto-grid-item:hover {
+      border-color: var(--hover-color);
+      box-shadow: 0 0 25px -5px var(--hover-color);
+    }
+
+    .grid-terminal-header {
+      @apply flex items-center justify-between px-4 py-2 border-b border-white/10 z-10;
+    }
+    .grid-terminal-content {
+      @apply flex-1 flex flex-col justify-between p-6 text-center z-10 relative;
+    }
+
+    .terminal-body {
+      @apply flex-1 flex flex-col items-center justify-center w-full;
+    }
+
+    .grid-project-btn {
+      @apply mt-4 px-6 py-2.5 rounded-full bg-white/5 border border-white/20 text-white/80 text-sm font-mono uppercase tracking-wider transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:text-white hover:scale-105 z-10;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-light {
+      @apply w-2 h-2 rounded-full;
+      box-shadow: 0 0 8px currentColor;
+    }
+    .status-label {
+      @apply text-[10px] tracking-widest font-mono opacity-60 mr-2;
+    }
+    .status-prod {
+      @apply bg-green-500 text-green-500 animate-pulse;
+    }
+    .status-dev {
+      @apply bg-yellow-500 text-yellow-500 animate-pulse;
+    }
+    .status-idea {
+      @apply bg-purple-500 text-purple-500 animate-pulse;
+    }
+
+    /* Command Interaction Styles */
+    .terminal-prompt {
+      @apply flex flex-col items-start transition-all duration-500;
+    }
+    .terminal-output {
+      @apply absolute inset-0 flex items-center justify-center p-6 opacity-0 translate-y-4 transition-all duration-500 pointer-events-none;
+    }
+    .proyecto-grid-item:hover .terminal-prompt {
+      @apply opacity-0 -translate-y-4;
+    }
+    .proyecto-grid-item:hover .terminal-output {
+      @apply opacity-100 translate-y-0;
+    }
+
+    .prompt-user {
+      @apply text-green-400;
+    }
+    .prompt-host {
+      @apply text-blue-400;
+    }
+    .prompt-dir {
+      @apply text-cyan-400;
+    }
+    .prompt-cursor {
+      @apply inline-block w-2 h-4 bg-white/60 ml-1 animate-[blink_1s_infinite];
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .proyecto-grid-item h3 {
+      @apply font-mono font-bold text-lg text-center leading-tight;
+      color: var(--hover-color);
+      filter: brightness(1.2);
+    }
+
+    /* View Toggle UI */
+    .view-toggle-btn {
+      @apply px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/60 transition-all duration-200 flex items-center gap-2;
+    }
+    .view-toggle-btn.active {
+      @apply bg-cyan-500/20 border-cyan-400/50 text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.1)];
+    }
+
     /* Terminal block style */
     .terminal-block {
       @apply w-full max-w-xs rounded-xl overflow-hidden shadow-lg border border-white/10;
@@ -106,6 +205,10 @@ import Layout from "../layouts/Layout.astro";
       @apply px-6 py-4 font-mono text-base;
       background: transparent;
     }
+
+    .hidden {
+      display: none !important;
+    }
   </style>
   <section id="proyectos" class="mt-20 mb-40 w-full flex flex-col items-center">
     <div class="flex justify-center gap-4 mb-10">
@@ -116,14 +219,30 @@ import Layout from "../layouts/Layout.astro";
       </h2>
     </div>
     <p
-      class="text-xl text-gray-300 max-w-3xl text-center mb-12 leading-relaxed mx-auto"
+      class="text-xl text-gray-300 max-w-3xl text-center mb-10 leading-relaxed mx-auto"
     >
       Aquí publico novedades, avances y reflexiones sobre mis proyectos cloud,
       automatización y desarrollo web. Haz clic en cada proyecto para ver su
       evolución, cambios y detalles técnicos.
     </p>
 
-    <div class="w-full max-w-5xl mx-auto flex flex-col gap-10">
+    <div class="flex justify-center mb-12">
+      <div class="bg-white/5 p-1 rounded-xl border border-white/10 flex gap-1">
+        <button id="listViewBtn" class="view-toggle-btn active">
+          <i class="fa-solid fa-list"></i>
+          <span class="text-sm font-semibold">Lista</span>
+        </button>
+        <button id="gridViewBtn" class="view-toggle-btn">
+          <i class="fa-solid fa-table-cells-large"></i>
+          <span class="text-sm font-semibold">Matriz</span>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="projectsList"
+      class="w-full max-w-5xl mx-auto flex flex-col gap-10"
+    >
       <!-- Tarjeta Proyecto 1 -->
       <div class="proyecto-card group border-fuchsia-400/30">
         <!-- Columna 1: Info -->
@@ -309,7 +428,7 @@ import Layout from "../layouts/Layout.astro";
           </h3>
           <p class="text-blue-200 text-base mb-1">
             <span class="font-semibold">Estado:</span>
-            <span class="text-yellow-300"> En desarrollo</span>
+            <span class="text-yellow-300"> En Desarrollo</span>
           </p>
           <p class="text-blue-100 text-sm mb-2">
             Una página web que permite enviar mensajes anónimos entre usuarios.
@@ -357,7 +476,7 @@ import Layout from "../layouts/Layout.astro";
           class="flex flex-col items-center justify-center flex-1 min-w-[160px]transition-all duration-300"
         >
           <a
-            href={`${import.meta.env.BASE_URL}maintenance/`}
+            href={`${import.meta.env.BASE_URL}proyectos/ChatSender/`}
             class="flex flex-col items-center justify-center h-full w-full py-8 group transition"
           >
             <span class="text-blue-300 text-lg font-semibold mb-2"
@@ -593,6 +712,340 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
+
+    <!-- Matrix View (Matrix 3x3) -->
+    <div
+      id="projectsGrid"
+      class="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hidden"
+    >
+      <!-- Grid Item 1 -->
+      <a
+        href={`${import.meta.env.BASE_URL}proyectos/blockchain-integracion-bd/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #d946ef;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/blockchain_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-fuchsia-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-green-500/80">En Produccion</span>
+            <div class="status-light status-prod"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">
+                last login: Mon Jan 26 17:41
+              </div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ cat blockchain.txt</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-fuchsia-300/80 space-y-1">
+                <p>> Integración MySQL + BigchainDB</p>
+                <p>> Estado: En desarrollo activo</p>
+                <p>> Stack: Python, Docker, Blockchain</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">Integración BBDD & Blockchain</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Sistema de auditoría con blockchain y bases de datos
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Grid Item 2 -->
+      <a
+        href={`${import.meta.env.BASE_URL}proyectos/devops-pipeline/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #10b981;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/devops_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-emerald-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-green-500/80">En Producción</span>
+            <div class="status-light status-prod"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">status: stable</div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ run pipeline.sh</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-emerald-300/80 space-y-1">
+                <p>> Pipeline CI/CD automatizado</p>
+                <p>> Estado: Producción estable</p>
+                <p>> Stack: Docker, AWS, Bitbucket</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">Pipeline DevOps CI/CD</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Despliegue automático en la nube
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Grid Item 3 -->
+      <a
+        href={`${import.meta.env.BASE_URL}proyectos/ChatSender/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #3b82f6;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/chatsender_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-blue-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-yellow-500/80">En Desarrollo - Alpha Abierta</span>
+            <div class="status-light status-dev"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">ssh: connected</div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ curl chatsender.v1</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-blue-300/80 space-y-1">
+                <p>> Mensajería anónima segura</p>
+                <p>> Estado: Beta testing</p>
+                <p>> Stack: Matrix, Zero-Knowledge</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">Web Mensajeria Anónima</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Comunicación privada y cifrada
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Grid Item 4 -->
+      <a
+        href={`${import.meta.env.BASE_URL}proyectos/AutoTest/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #ef4444;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/autotest_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-red-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-yellow-500/80">En Desarrollo</span>
+            <div class="status-light status-dev"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">testing: active</div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ npm test autotest</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-red-300/80 space-y-1">
+                <p>> Plataforma educativa tests</p>
+                <p>> Estado: Desarrollo activo</p>
+                <p>> Stack: React, Node.js, MySQL</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">AutoTest Educativo</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Tests de autoescuela interactivos
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Grid Item 5 -->
+      <a
+        href={`${import.meta.env.BASE_URL}maintenance/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #06b6d4;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/monitorization_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-cyan-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-yellow-500/80">En Desarrollo</span>
+            <div class="status-light status-dev"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">monitoring: up</div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ tail -f cloud.log</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-cyan-300/80 space-y-1">
+                <p>> Sistema de monitorización</p>
+                <p>> Estado: En desarrollo</p>
+                <p>> Stack: N8N, Grafana, Cloud</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">WebApp Monitorización Cloud</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Métricas y logs en tiempo real
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- Grid Item 6 -->
+      <a
+        href={`${import.meta.env.BASE_URL}maintenance/`}
+        class="proyecto-grid-item group"
+        style="--hover-color: #f59e0b;"
+      >
+        <div
+          class="bg-image"
+          style={`background-image: url('${import.meta.env.BASE_URL}proyectos/linux_scripts_thumb.png')`}
+        >
+        </div>
+        <div class="grid-terminal-header bg-yellow-900/10">
+          <div class="flex gap-1.5">
+            <span class="h-2 w-2 rounded-full bg-red-500/40"></span>
+            <span class="h-2 w-2 rounded-full bg-orange-400/40"></span>
+            <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
+          </div>
+          <div class="flex items-center">
+            <span class="status-label text-purple-400/80">Idea</span>
+            <div class="status-light status-idea"></div>
+          </div>
+        </div>
+        <div class="grid-terminal-content font-mono text-sm relative">
+          <div class="terminal-body">
+            <div class="terminal-prompt text-left w-full pl-2">
+              <div class="mb-1 text-xs opacity-40">draft: pending</div>
+              <div class="mb-2">
+                <span class="prompt-user">nacho</span><span
+                  class="text-white/60">@</span
+                ><span class="prompt-host">projects</span><span
+                  class="text-white/60">:</span
+                ><span class="prompt-dir">~</span><span class="text-white/80"
+                  >$ ls -la scripts/</span
+                ><span class="prompt-cursor"></span>
+              </div>
+              <div class="text-xs text-yellow-300/80 space-y-1">
+                <p>> Colección de scripts útiles</p>
+                <p>> Estado: Fase de idea</p>
+                <p>> Stack: Bash, Python, Linux</p>
+              </div>
+            </div>
+            <div class="terminal-output">
+              <h3 class="mb-3">Colección Scripts Linux</h3>
+              <p class="text-xs text-white/60 mb-2">
+                Automatización de tareas del sistema
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <script is:inline>
+      (function () {
+        const listBtn = document.getElementById("listViewBtn");
+        const gridBtn = document.getElementById("gridViewBtn");
+        const listContainer = document.getElementById("projectsList");
+        const gridContainer = document.getElementById("projectsGrid");
+
+        if (listBtn && gridBtn && listContainer && gridContainer) {
+          listBtn.addEventListener("click", () => {
+            listBtn.classList.add("active");
+            gridBtn.classList.remove("active");
+            listContainer.classList.remove("hidden");
+            gridContainer.classList.add("hidden");
+          });
+
+          gridBtn.addEventListener("click", () => {
+            gridBtn.classList.add("active");
+            listBtn.classList.remove("active");
+            gridContainer.classList.remove("hidden");
+            listContainer.classList.add("hidden");
+          });
+        }
+      })();
+    </script>
 
     <div class="mt-16 text-center">
       <p class="text-gray-400 text-base italic">
