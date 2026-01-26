@@ -106,34 +106,8 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .grid-terminal-header {
-      @apply flex items-center justify-between px-5 py-3 border-b z-10 relative;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.08) 0%,
-        rgba(255, 255, 255, 0.02) 100%
-      );
-      border-color: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(16px) saturate(180%);
-      box-shadow:
-        0 4px 16px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+      @apply flex items-center justify-between px-4 py-2 border-b border-white/10 z-10;
     }
-    .grid-terminal-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2) 50%,
-        transparent
-      );
-    }
-
     .grid-terminal-content {
       @apply flex-1 flex flex-col justify-between p-6 text-center z-10 relative;
     }
@@ -454,7 +428,7 @@ import Layout from "../layouts/Layout.astro";
           </h3>
           <p class="text-blue-200 text-base mb-1">
             <span class="font-semibold">Estado:</span>
-            <span class="text-yellow-300"> En desarrollo</span>
+            <span class="text-yellow-300"> En Desarrollo</span>
           </p>
           <p class="text-blue-100 text-sm mb-2">
             Una página web que permite enviar mensajes anónimos entre usuarios.
@@ -790,7 +764,7 @@ import Layout from "../layouts/Layout.astro";
             <div class="terminal-output">
               <h3 class="mb-3">Integración BBDD & Blockchain</h3>
               <p class="text-xs text-white/60 mb-2">
-                Sistema de auditoría inmutable con blockchain
+                Sistema de auditoría con blockchain y bases de datos
               </p>
             </div>
           </div>
@@ -864,7 +838,7 @@ import Layout from "../layouts/Layout.astro";
             <span class="h-2 w-2 rounded-full bg-green-500/40"></span>
           </div>
           <div class="flex items-center">
-            <span class="status-label text-yellow-500/80">En Desarrollo</span>
+            <span class="status-label text-yellow-500/80">En Desarrollo - Alpha Abierta</span>
             <div class="status-light status-dev"></div>
           </div>
         </div>

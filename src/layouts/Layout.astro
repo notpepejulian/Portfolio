@@ -1,5 +1,5 @@
 ---
-import '../styles/base.css';
+import "../styles/base.css";
 ---
 
 <!doctype html>
@@ -7,20 +7,35 @@ import '../styles/base.css';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href={`${import.meta.env.BASE_URL}favicon.svg`}
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>Nacho Sánchez | Cloud Engineer</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
 		<style>
 			body {
 				background-color: #000;
-				background-image: 
-				radial-gradient(circle at 35% 50%, #08171f, transparent 50%),
-				radial-gradient(circle at 65% 50%, #1f0f08, transparent 50%), 
-				radial-gradient(circle at 50% 65%, #2c0e42, transparent 50%);
+				background-image:
+					radial-gradient(
+						circle at 35% 50%,
+						#08171f,
+						transparent 50%
+					),
+					radial-gradient(
+						circle at 65% 50%,
+						#1f0f08,
+						transparent 50%
+					),
+					radial-gradient(circle at 50% 65%, #2c0e42, transparent 50%);
 
 				background-attachment: fixed;
-				
+
 				scroll-behavior: smooth;
 			}
 			/*.icon-hover:hover {
@@ -30,58 +45,91 @@ import '../styles/base.css';
 		</style>
 	</head>
 	<body class="text-white font-mono scrollbar-custom">
-
 		<style>
 			.header-blur-hover {
-				transition: box-shadow 0.3s, background 0.3s;
+				transition:
+					box-shadow 0.3s,
+					background 0.3s;
 			}
 			.header-blur-hover:hover,
 			.header-blur-hover:focus-within {
-				box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.28), 0 0 40px 10px rgba(0,255,255,0.10);
+				box-shadow:
+					0 8px 32px 0 rgba(31, 38, 135, 0.28),
+					0 0 40px 10px rgba(0, 255, 255, 0.1);
 				background: rgba(30, 32, 40, 0.75);
 				backdrop-filter: blur(24px) saturate(1.7);
 			}
 			.link-blur-hover {
-				transition: box-shadow 0.3s, background 0.3s;
+				transition:
+					box-shadow 0.3s,
+					background 0.3s;
 			}
 			.link-blur-hover:hover,
 			.link-blur-hover:focus {
-				box-shadow: 0 0 24px 6px rgba(0,255,255,0.18), 0 0 0 4px rgba(255,255,255,0.10);
-				background: rgba(255,255,255,0.18) !important;
+				box-shadow:
+					0 0 24px 6px rgba(0, 255, 255, 0.18),
+					0 0 0 4px rgba(255, 255, 255, 0.1);
+				background: rgba(255, 255, 255, 0.18) !important;
 				backdrop-filter: blur(8px) saturate(1.2);
 			}
 		</style>
-		<header id="main-header" class="fixed top-0 left-1/2 transform -translate-x-1/2 h-20 flex justify-center items-center z-30 px-6 sm:px-10 transition-all duration-300 ease-in-out bg-white/10 shadow-md rounded-full max-w-4xl w-full mx-auto mt-5"
-			style="backdrop-filter: blur(18px) saturate(1.5); border: 1.5px solid rgba(255,255,255,0.08);">
+		<header
+			id="main-header"
+			class="fixed top-0 left-1/2 transform -translate-x-1/2 h-20 flex justify-center items-center z-30 px-6 sm:px-10 transition-all duration-300 ease-in-out bg-white/10 shadow-md rounded-full max-w-4xl w-full mx-auto mt-5"
+			style="backdrop-filter: blur(18px) saturate(1.5); border: 1.5px solid rgba(255,255,255,0.08);"
+		>
 			<!-- Contenedor flex para centrar los contenidos y mantener separación -->
 			<div class="flex w-full justify-between items-center">
 				<!-- Burbuja Home -->
-				<div id="header-home" class="flex items-center transition-all duration-300 ease-in-out">
+				<div
+					id="header-home"
+					class="flex items-center transition-all duration-300 ease-in-out"
+				>
 					<div class="relative group flex items-center">
-						<a href={import.meta.env.BASE_URL} class="link-blur-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-pink-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+						<a
+							href={import.meta.env.BASE_URL}
+							class="link-blur-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-pink-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+						>
 							<i class="fa-solid fa-house text-white text-xl"></i>
 						</a>
-						<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+						<span
+							class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+						>
 							Inicio
 						</span>
 					</div>
 				</div>
-				
+
 				<!-- Burbuja Socials -->
-				<div id="header-socials" class="flex items-center space-x-3 sm:space-x-5 transition-all duration-300 ease-in-out">
+				<div
+					id="header-socials"
+					class="flex items-center space-x-3 sm:space-x-5 transition-all duration-300 ease-in-out"
+				>
 					<div class="relative group flex items-center">
-						<a href="https://github.com/notpepejulian" target="_blank" class="link-blur-hover icon-hover flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-green-400 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+						<a
+							href="https://github.com/notpepejulian"
+							target="_blank"
+							class="link-blur-hover icon-hover flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-green-400 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+						>
 							<i class="fa-brands fa-github text-xl"></i>
 						</a>
-						<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+						<span
+							class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+						>
 							GitHub
 						</span>
 					</div>
 					<div class="relative group flex items-center">
-						<a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" target="_blank" class="link-blur-hover icon-hover flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-blue-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+						<a
+							href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/"
+							target="_blank"
+							class="link-blur-hover icon-hover flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-blue-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+						>
 							<i class="fa-brands fa-linkedin text-xl"></i>
 						</a>
-						<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+						<span
+							class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+						>
 							LinkedIn
 						</span>
 					</div>
@@ -100,86 +148,170 @@ import '../styles/base.css';
 		</header>
 
 		<!-- Burbujas flotantes (inicialmente ocultas) -->
-		<div id="bubble-home" class="fixed left-4 top-4 z-40 transition-all duration-300 ease-in-out opacity-0 pointer-events-none">
+		<div
+			id="bubble-home"
+			class="fixed left-4 top-4 z-40 transition-all duration-300 ease-in-out opacity-0 pointer-events-none"
+		>
 			<div class="relative group flex items-center">
-				<a href={import.meta.env.BASE_URL} class="link-blur-hover flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-pink-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+				<a
+					href={import.meta.env.BASE_URL}
+					class="link-blur-hover flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-pink-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+				>
 					<i class="fa-solid fa-house text-white text-xl"></i>
 				</a>
-				<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+				<span
+					class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+				>
 					Inicio
 				</span>
 			</div>
 		</div>
-		<div id="bubble-socials" class="fixed right-4 top-4 z-40 flex space-x-3 sm:space-x-5 transition-all duration-300 ease-in-out opacity-0 pointer-events-none">
+		<div
+			id="bubble-socials"
+			class="fixed right-4 top-4 z-40 flex space-x-3 sm:space-x-5 transition-all duration-300 ease-in-out opacity-0 pointer-events-none"
+		>
 			<div class="relative group flex items-center">
-				<a href="https://github.com/notpepejulian" target="_blank" class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-green-400 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+				<a
+					href="https://github.com/notpepejulian"
+					target="_blank"
+					class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-green-400 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+				>
 					<i class="fa-brands fa-github text-xl"></i>
 				</a>
-				<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+				<span
+					class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+				>
 					GitHub
 				</span>
 			</div>
 			<div class="relative group flex items-center">
-				<a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" target="_blank" class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-blue-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+				<a
+					href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/"
+					target="_blank"
+					class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-blue-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+				>
 					<i class="fa-brands fa-linkedin text-xl"></i>
 				</a>
-				<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+				<span
+					class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+				>
 					LinkedIn
 				</span>
 			</div>
 			<div class="relative group flex items-center">
-				<a href="mailto:nacho.sanchez@email.com" class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-purple-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10">
+				<a
+					href="mailto:nacho.sanchez@email.com"
+					class="link-blur-hover icon-hover flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-purple-500 hover:text-white transition-all duration-200 shadow-md hover:scale-110 border border-white/10"
+				>
 					<i class="fa-solid fa-envelope text-xl"></i>
 				</a>
-				<span class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg">
+				<span
+					class="absolute left-1/2 top-full mt-2 -translate-x-1/2 px-3 py-1 rounded-lg bg-slate-900/90 text-white text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-20 shadow-lg"
+				>
 					Correo
 				</span>
 			</div>
 		</div>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const header = document.getElementById('main-header');
-				const headerHome = document.getElementById('header-home');
-				const headerSocials = document.getElementById('header-socials');
-				const bubbleHome = document.getElementById('bubble-home');
-				const bubbleSocials = document.getElementById('bubble-socials');
+			document.addEventListener("DOMContentLoaded", () => {
+				const header = document.getElementById("main-header");
+				const headerHome = document.getElementById("header-home");
+				const headerSocials = document.getElementById("header-socials");
+				const bubbleHome = document.getElementById("bubble-home");
+				const bubbleSocials = document.getElementById("bubble-socials");
 
 				function handleScroll() {
 					if (window.scrollY > 50) {
-						header.classList.add('h-0', 'opacity-0', 'pointer-events-none');
-						header.classList.remove('h-20', 'opacity-100');
-						headerHome.classList.add('opacity-0', 'pointer-events-none');
-						headerSocials.classList.add('opacity-0', 'pointer-events-none');
-						bubbleHome.classList.remove('opacity-0', 'pointer-events-none');
-						bubbleHome.classList.add('opacity-100', 'pointer-events-auto');
-						bubbleSocials.classList.remove('opacity-0', 'pointer-events-none');
-						bubbleSocials.classList.add('opacity-100', 'pointer-events-auto');
+						header.classList.add(
+							"h-0",
+							"opacity-0",
+							"pointer-events-none",
+						);
+						header.classList.remove("h-20", "opacity-100");
+						headerHome.classList.add(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						headerSocials.classList.add(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleHome.classList.remove(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleHome.classList.add(
+							"opacity-100",
+							"pointer-events-auto",
+						);
+						bubbleSocials.classList.remove(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleSocials.classList.add(
+							"opacity-100",
+							"pointer-events-auto",
+						);
 					} else {
-						header.classList.remove('h-0', 'opacity-0', 'pointer-events-none');
-						header.classList.add('h-20', 'opacity-100');
-						headerHome.classList.remove('opacity-0', 'pointer-events-none');
-						headerSocials.classList.remove('opacity-0', 'pointer-events-none');
-						bubbleHome.classList.add('opacity-0', 'pointer-events-none');
-						bubbleHome.classList.remove('opacity-100', 'pointer-events-auto');
-						bubbleSocials.classList.add('opacity-0', 'pointer-events-none');
-						bubbleSocials.classList.remove('opacity-100', 'pointer-events-auto');
+						header.classList.remove(
+							"h-0",
+							"opacity-0",
+							"pointer-events-none",
+						);
+						header.classList.add("h-20", "opacity-100");
+						headerHome.classList.remove(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						headerSocials.classList.remove(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleHome.classList.add(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleHome.classList.remove(
+							"opacity-100",
+							"pointer-events-auto",
+						);
+						bubbleSocials.classList.add(
+							"opacity-0",
+							"pointer-events-none",
+						);
+						bubbleSocials.classList.remove(
+							"opacity-100",
+							"pointer-events-auto",
+						);
 					}
 				}
 
 				handleScroll();
-				window.addEventListener('scroll', handleScroll);
+				window.addEventListener("scroll", handleScroll);
 			});
 		</script>
 
 		<slot />
 
-		<footer class="w-full py-8 bg-gradient-to-t from-black/80 via-slate-900/60 to-transparent flex flex-col items-center gap-4 mt-24 border-t border-slate-800">
+		<footer
+			class="w-full py-8 bg-gradient-to-t from-black/80 via-slate-900/60 to-transparent flex flex-col items-center gap-4 mt-24 border-t border-slate-800"
+		>
 			<div class="flex items-center gap-3 mb-2">
-				<a href="https://github.com/notpepejulian" target="_blank" aria-label="GitHub" class="icon-hover transition-transform hover:scale-110 hover:text-green-400 text-2xl">
+				<a
+					href="https://github.com/notpepejulian"
+					target="_blank"
+					aria-label="GitHub"
+					class="icon-hover transition-transform hover:scale-110 hover:text-green-400 text-2xl"
+				>
 					<i class="fa-brands fa-github"></i>
 				</a>
-				<a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" target="_blank" aria-label="LinkedIn" class="icon-hover transition-transform hover:scale-110 hover:text-blue-400 text-2xl">
+				<a
+					href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/"
+					target="_blank"
+					aria-label="LinkedIn"
+					class="icon-hover transition-transform hover:scale-110 hover:text-blue-400 text-2xl"
+				>
 					<i class="fa-brands fa-linkedin"></i>
 				</a>
 			</div>
@@ -187,11 +319,11 @@ import '../styles/base.css';
 				Nacho Sánchez &mdash; <span id="footer-year"></span>
 			</p>
 		</footer>
-		
+
 		<script>
-			document.addEventListener('DOMContentLoaded', () => {
+			document.addEventListener("DOMContentLoaded", () => {
 				const year = new Date().getFullYear();
-				document.getElementById('footer-year').textContent = year;
+				document.getElementById("footer-year").textContent = year;
 			});
 		</script>
 	</body>
