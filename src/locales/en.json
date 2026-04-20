@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "index": "Home",
+    "projects": "Projects",
+    "knowledge": "Knowledge",
+    "ai": "AI",
+    "certifications": "Certifications"
+  },
+  "hero": {
+    "status": "System Status: Operational",
+    "title_start": "Automating the",
+    "title_end": "Cloud Ecosystem.",
+    "description": "I'm Nacho Sánchez — Cloud Engineer specialized in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",
+    "cta_projects": "Explore_Projects",
+    "cta_contact": "Contact"
+  },
+  "about": {
+    "label": "Core Competencies",
+    "title": "Modular Infrastructure",
+    "skills_label": "Technical Skills",
+    "metrics_label": "Performance Metrics"
+  }
+}

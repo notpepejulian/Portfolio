@@ -1,232 +1,201 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { useTranslations, defaultLang } from "../utils/i18n";
+
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') || defaultLang;
+const t = useTranslations(lang);
 ---
 
-<style>
-	html {
-	  scroll-behavior: smooth;
-	}
-  </style>
+<Layout title="Nacho Sánchez | Cloud Portfolio" lang={lang}>
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="max-w-screen-2xl mx-auto px-6 py-24 md:py-40 relative flex items-center min-h-[80vh]">
+			<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2"></div>
+			
+			<div class="relative z-10 w-full">
+                <!-- Status Tag -->
+				<div class="inline-flex items-center gap-3 px-4 py-2 bg-surface-container rounded-full border border-outline-variant/20 mb-8 animate-fade-in">
+					<span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                    </span>
+					<span class="text-[10px] font-mono font-bold tracking-widest text-on-surface-variant uppercase">{t('hero.status')}</span>
+				</div>
 
-<Layout>
-	<main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
-		<div class="max-w-2xl w-full text-center z-10">
-			<h1 class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 bg-clip-text text-transparent mb-6 tracking-tight">
-				Nacho Sánchez
-			</h1>
-			<p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
-				Cloud Engineer Jr.
-			</p>
-			<p class="text-lg text-gray-300 mb-10">
-				Diseño y gestiono infraestructuras cloud modernas, seguras y escalables, usando tecnologías modernas, ofreciendo alta disponibilidad y escalabilidad.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-				<a href="#entrevista" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group">
-					<span>Conóceme</span>
-					<i class="fa-solid fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
-				</a>
-				<a href={`${import.meta.env.BASE_URL}proyectos/`} class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-cyan-300 font-semibold shadow-lg transition-all duration-200 text-base border border-cyan-400/30">
-					Mis Proyectos
-				</a>
+				<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-10 max-w-4xl" id="hero-title">
+					{t('hero.title_start')} <span class="gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]">{t('hero.title_end')}</span>
+				</h1>
+
+				<p class="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed mb-12 font-light">
+					{t('hero.description')}
+				</p>
+
+				<div class="flex flex-wrap gap-6">
+					<a href={`${import.meta.env.BASE_URL}proyectos/`} class="group relative px-10 py-5 bg-primary text-on-primary font-headline font-black rounded-lg overflow-hidden hover:scale-105 hover:shadow-glow-md duration-300 transition-all uppercase tracking-[0.2em] text-xs">
+						<span class="relative z-10">{t('hero.cta_projects')}</span>
+					</a>
+					<a href="#SobreMi" class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-secondary hover:text-secondary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs" style="--glow-color: rgba(112, 0, 255, 0.4)">
+						{t('hero.cta_contact')}
+					</a>
+				</div>
 			</div>
-		</div>
+		</section>
+
+		<!-- Bento Grid Section -->
+		<section class="px-6 py-40 border-t border-outline-variant/10 bg-surface-container-low/30" id="SobreMi">
+			<div class="max-w-screen-2xl mx-auto">
+				<div class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+					<div>
+                        <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-4">{t('about.label')}</p>
+                        <h2 class="font-headline text-5xl md:text-6xl font-bold tracking-tighter">{t('about.title')}</h2>
+                    </div>
+                </div>
+
+				<!-- Grid Layout -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[280px]">
+					<!-- Main Bio Card -->
+					<div class="group col-span-1 md:col-span-2 lg:row-span-2 glass-panel p-10 rounded-3xl flex flex-col justify-between hover-glow-primary transition-all duration-500 overflow-hidden relative">
+						<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all"></div>
+						<div>
+                            <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 border border-primary/20">
+                                <span class="material-symbols-outlined text-2xl">dna</span>
+                            </div>
+                            <h3 class="font-headline text-3xl font-bold mb-6 tracking-tight leading-tight">Architecting for Scaling <br/>& Resilience.</h3>
+                            <p class="text-on-surface-variant leading-relaxed text-lg">My engineering focus revolves around creating decoupled, automated infrastructures that grow seamlessly with organizational demands.</p>
+                        </div>
+						<div class="flex items-center gap-6 mt-12">
+                            <a href={`${import.meta.env.BASE_URL}conocimientos/`} class="inline-flex items-center gap-3 text-xs font-headline font-bold text-primary uppercase tracking-widest group/btn">
+                                View_Tech_Stack 
+                                <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
+					</div>
+
+					<!-- Skill List Card -->
+					<div class="group lg:col-span-1 glass-panel p-8 rounded-3xl hover-glow-secondary transition-all">
+						<h4 class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-8">{t('about.skills_label')}</h4>
+						<ul class="space-y-4 font-mono text-xs">
+							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> TERRAFORM / IaC</li>
+							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> KUBERNETES / K8S</li>
+							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> AWS / ARCHITECTURE</li>
+						</ul>
+					</div>
+
+					<!-- Metric Card -->
+					<div class="group lg:col-span-1 glass-panel p-8 rounded-3xl hover-glow-tertiary transition-all">
+						<h4 class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-tertiary mb-8">{t('about.metrics_label')}</h4>
+						<div class="space-y-6">
+                            <div>
+                                <div class="text-3xl font-headline font-bold text-on-surface tabular-nums">99.9%</div>
+                                <div class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1">SLA_RELIABILITY</div>
+                            </div>
+                            <div class="h-px bg-outline-variant/10 w-full"></div>
+                             <div>
+                                <div class="text-3xl font-headline font-bold text-on-surface tabular-nums">1.2ms</div>
+                                <div class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1">LATENCY_P99</div>
+                            </div>
+                        </div>
+					</div>
+
+					<!-- Secondary Large Card -->
+					<div class="group col-span-1 md:col-span-2 glass-panel p-10 rounded-3xl hover-glow-primary transition-all flex flex-col justify-center relative overflow-hidden">
+                        <div class="flex gap-16 items-center flex-wrap md:flex-nowrap">
+                            <div class="flex-1">
+                                <h4 class="font-headline text-2xl font-bold mb-4 tracking-tight">CI/CD Pipeline Mastery</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Automating every stage from commit to production with high security and zero-downtime deployments.</p>
+                                <div class="flex gap-4">
+                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">Jenkins</div>
+                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">GitLab CI</div>
+                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">ArgoCD</div>
+                                </div>
+                            </div>
+                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-white/5 animate-slow-spin">
+                                <span class="material-symbols-outlined text-5xl text-primary animate-pulse">settings_ethernet</span>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Interview Video Section -->
+		<section class="max-w-screen-2xl mx-auto px-6 py-40">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+				<div>
+					<p class="font-label text-xs tracking-[0.4em] text-secondary uppercase mb-4">Deep Dive Session</p>
+					<h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">Engineering <br/> <span class="gradient-text">Thought Process.</span></h2>
+					<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+						Watch the full session where I discuss architectural trade-offs, security-first infrastructure design, and the future of cloud automation in enterprise environments.
+					</p>
+					<div class="space-y-6">
+						<div class="flex gap-6 items-center p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover-glow-secondary transition-all cursor-default">
+							<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
+								<span class="material-symbols-outlined">play_circle</span>
+							</div>
+							<div>
+								<h4 class="font-headline font-bold text-sm uppercase tracking-widest">Context & Strategy</h4>
+								<span class="text-[11px] text-on-surface-variant">Cloud Deployment Best Practices</span>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="relative group">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                    <div class="relative glass-panel p-2 rounded-[1.5rem] overflow-hidden">
+                        <video 
+                            id="interviewVideo" 
+                            class="w-full aspect-video rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline
+                        >
+                            <source src={`${import.meta.env.BASE_URL}public/interview.mp4`} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute bottom-6 left-6 flex items-center gap-4">
+                            <button id="unmuteBtn" class="bg-surface-container-high/80 backdrop-blur px-4 py-2 font-headline text-[10px] font-black tracking-widest uppercase rounded border border-outline-variant/20 hover:bg-white hover:text-black transition-all flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">volume_up</span>
+                                Unmute_Stream
+                            </button>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</section>
 	</main>
 
-	<!-- Sección de video profesional tipo dispositivo -->
-	<section class="flex flex-col items-center justify-center my-20" id="entrevista">
-		<h2 class="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 mb-8 tracking-tight">
-			Entrevista profesional
-		</h2>
-		<p class="text-gray-400 text-center mt-6 max-w-md mx-auto text-base mb-2">
-			Un breve extracto de mi entrevista profesional, donde comparto mi visión y experiencia en el mundo cloud. <span class="hidden sm:inline">Ideal para conocerme en un formato más cercano.</span>
-		</p>
-		<p class="text-cyan-400 text-center text-sm mb-10">
-			<em>11 de junio de 2025</em>
-		</p>
-		<div class="relative w-full flex flex-col sm:flex-row items-center justify-center gap-6">
-			<!-- Columna 1: Frase izquierda -->
-			<div class="flex-1 flex justify-end">
-				<span class="hidden sm:inline-block mr-4 text-gray-400 italic select-none text-base text-right max-w-xs ">
-					La comunicación continua y el trabajo colaborativo con otras personas son elementos clave en mi desarrollo profesional. Participar activamente en conversaciones diarias sobre proyectos, aplicaciones o problemas técnicos no solo fortalece el vínculo entre los miembros del equipo, sino que también crea un entorno propicio para el intercambio de conocimientos.Además, el hecho de colaborar estrechamente con perfiles diversos permite acceder a perspectivas distintas, descubrir buenas prácticas y mantenerse actualizado en cuanto a nuevas tecnologías.
+	<script is:inline>
+		const video = document.getElementById('interviewVideo');
+		const unmuteBtn = document.getElementById('unmuteBtn');
 
-				</span>
-			</div>
-			<!-- Columna 2: Video en el centro -->
-			<div class="flex-1 flex flex-col items-center relative">
-				<div class="rounded-3xl shadow-2xl border-4 border-slate-800 bg-black/80 p-2 sm:p-4 max-w-xs sm:max-w-md w-[320px] sm:w-[400px] aspect-[9/16] flex items-center justify-center">
-					<video 
-						id="video-entrevista"
-					src={`${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`}
-						autoplay 
-						loop 
-						muted 
-						playsinline 
-						class="rounded-2xl w-full h-full object-cover shadow-lg"
-						style="background: #111;"
-					></video>
-				</div>
-				<!-- Botón home del móvil (decorativo) -->
-				<div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-slate-700 rounded-full opacity-70"></div>
-			</div>
-			<!-- Columna 3: Frase derecha -->
-			<div class="flex-1 flex justify-start">
-				<span class="hidden sm:inline-block ml-4 text-gray-400 italic select-none text-base text-left max-w-xs">
-					La tecnología cloud nos permite escalar recursos de forma flexible y pagar solo por lo que se consume, eliminando inversiones iniciales en infraestructura. Además, ofrece alta disponibilidad, automatización mediante infraestructura como código y servicios gestionados que aceleran el desarrollo, muy en auge ahora con la IA. Con controles avanzados de seguridad, cifrado y cumplimiento, la nube se convierte en una plataforma eficiente, segura y adaptable para innovar y operar a gran escala.
-
-				</span>
-			</div>
-		</div>
-		<!-- Botón para activar/desactivar sonido -->
-		<button 
-			id="toggle-audio-btn"
-			type="button"
-			class="mt-6 flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold shadow-md transition-all duration-200 text-base focus:outline-none"
-			aria-pressed="false"
-		>
-			<i id="audio-icon" class="fa-solid fa-volume-xmark"></i>
-			<span id="audio-btn-text">Activar sonido</span>
-		</button>
-		<script>
-			const video = document.getElementById('video-entrevista');
-			const btn = document.getElementById('toggle-audio-btn');
-			const icon = document.getElementById('audio-icon');
-			const text = document.getElementById('audio-btn-text');
-			btn.addEventListener('click', () => {
-				video.muted = !video.muted;
-				if (!video.muted) {
-					icon.classList.remove('fa-volume-xmark');
-					icon.classList.add('fa-volume-high');
-					text.textContent = 'Desactivar sonido';
-					btn.setAttribute('aria-pressed', 'true');
-					video.play();
-				} else {
-					icon.classList.remove('fa-volume-high');
-					icon.classList.add('fa-volume-xmark');
-					text.textContent = 'Activar sonido';
-					btn.setAttribute('aria-pressed', 'false');
-				}
-			});
-		</script>
-	</section>
-
-	<section class="mt-10 mb-40" id="sobre-mi">
-		<div class="flex flex-col items-center">
-			<h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 mb-6 tracking-tight drop-shadow-lg flex items-center gap-3">
-				<span>Sobre mí</span>
-			</h2>
-			<p class="text-xl text-gray-300 max-w-2xl text-center mb-12 leading-relaxed">
-				Apasionado por la tecnología, la innovación y la nube. Me especializo en los sistemas Linux y DevOps, siempre buscando soluciones eficientes, seguras y escalables. Mi objetivo es impulsar proyectos que marquen la diferencia, combinando creatividad, rigor técnico y una mentalidad de crecimiento <b>moderno</b> y <b>constante</b>.<br>
-			</p>
-		</div>
-		<div class="flex flex-wrap justify-center gap-8">
-			<a href={`${import.meta.env.BASE_URL}conocimientos/`} class="group">
-				<div class="bg-gradient-to-br from-cyan-900/60 via-slate-800/60 to-cyan-700/40 border border-cyan-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-cyan-400/30 transition-all duration-300 hover:scale-105">
-					<i class="fa-solid fa-brain text-3xl text-cyan-400 mb-4 group-hover:animate-bounce"></i>
-					<h3 class="text-xl font-semibold text-white text-center mb-2">Conocimientos</h3>
-					<p class="text-gray-300 text-center text-base">Explora mis habilidades técnicas y experiencia en tecnologías clave.</p>
-				</div>
-			</a>
-			<a href={`${import.meta.env.BASE_URL}certificaciones/`} class="group">
-				<div class="bg-gradient-to-br from-yellow-900/60 via-slate-800/60 to-yellow-700/40 border border-yellow-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 hover:scale-105">
-					<i class="fa-solid fa-certificate text-3xl text-yellow-400 mb-4 group-hover:animate-bounce"></i>
-					<h3 class="text-xl font-semibold text-white text-center mb-2">Certificaciones</h3>
-					<p class="text-gray-300 text-center text-base">Conoce las certificaciones que avalan mi formación y compromiso profesional.</p>
-				</div>
-			</a>
-			<a href={`${import.meta.env.BASE_URL}proyectos/`} class="group">
-				<div class="bg-gradient-to-br from-pink-900/60 via-slate-800/60 to-pink-700/40 border border-pink-400/30 rounded-2xl p-10 sm:p-16 w-64 sm:w-80 flex flex-col items-center justify-center shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105">
-					<i class="fa-solid fa-rocket text-3xl text-pink-400 mb-4 group-hover:animate-bounce"></i>
-					<h3 class="text-xl font-semibold text-white text-center mb-2">Proyectos</h3>
-					<p class="text-gray-300 text-center text-base">Descubre algunos de los proyectos en los que he trabajado y mi enfoque innovador.</p>
-				</div>
-			</a>
-		</div>
-	</section>
-
-	<section class="mt-16 mb-40">
-		<div class="flex justify-center">
-			<h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-300 mb-16 tracking-tight drop-shadow-lg flex items-center gap-3">
-				<span>Experiencias</span>
-			</h2>
-		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-16 w-11/12 mx-auto">
-			<!-- Bloque Neoris -->
-			<div class="flex flex-col justify-between bg-gradient-to-br from-cyan-900/60 via-slate-900/60 to-cyan-700/40 border border-cyan-400/20 rounded-3xl shadow-2xl hover:shadow-cyan-400/20 transition-all duration-300 p-8 group relative overflow-hidden">
-				<div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-400/10 rounded-full blur-2xl z-0"></div>
-				<div class="relative z-10">
-					<div class="flex items-center gap-3 mb-2">
-						<i class="fa-solid fa-building text-cyan-400 text-2xl"></i>
-						<h3 class="text-3xl font-bold text-white">EPAM | Neoris</h3>
-					</div>
-					<h4 class="text-xl text-cyan-200 font-semibold mb-4">Cloud Engineer</h4>
-					<div class="rounded-xl overflow-hidden shadow-lg border border-cyan-400/20 bg-black/40 backdrop-blur-md mb-6">
-						<!-- Terminal Moderno -->
-						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-cyan-800/60 to-slate-800/60 border-b border-cyan-400/10">
-							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
-							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
-							<span class="h-3 w-3 rounded-full bg-green-500"></span>
-							<span class="ml-4 text-green-400 font-mono text-sm">bash</span>
-						</div>
-						<div class="px-6 py-6 font-mono text-green-200 text-base bg-gradient-to-br from-cyan-900/40 to-slate-900/40">
-							<p>
-								<span class="text-cyan-400">nacho@neoris</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Trabajando en Neoris como Cloud Engineer..."</span>
-								<br>
-								Trabajando en Neoris como Cloud Engineer...
-							</p>
-							<p class="mt-4">
-								<span class="text-cyan-400">nacho@neoris</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">cat agradecimientos.txt</span>
-								<br>
-								Agradezco profundamente a las personas con las que trabajo, con quienes comparto conversaciones sobre servicios cloud y de quienes he aprendido conocimientos de gran valor profesional.
-							</p>
-						</div>
-					</div>
-					<div class="flex justify-center">
-						<img src={`${import.meta.env.BASE_URL}neoris.jpeg`} alt="Neoris" class="rounded-xl shadow-lg mt-2 cursor-zoom-in transition-transform duration-300 hover:scale-105 border-2 border-cyan-400/30" onclick="this.classList.toggle('scale-150')">
-					</div>
-				</div>
-			</div>
-			<!-- Bloque ASIR -->
-			<div class="flex flex-col justify-between bg-gradient-to-br from-pink-900/60 via-slate-900/60 to-pink-700/40 border border-pink-400/20 rounded-3xl shadow-2xl hover:shadow-pink-400/20 transition-all duration-300 p-8 group relative overflow-hidden">
-				<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-400/10 rounded-full blur-2xl z-0"></div>
-				<div class="relative z-10">
-					<div class="flex items-center gap-3 mb-2 justify-end">
-						<h3 class="text-3xl font-bold text-white text-right">ASIR</h3>
-						<i class="fa-solid fa-graduation-cap text-pink-400 text-2xl"></i>
-					</div>
-					<h4 class="text-xl text-pink-200 font-semibold mb-4 text-right">Ciclo Formativo</h4>
-					<div class="rounded-xl overflow-hidden shadow-lg border border-pink-400/20 bg-black/40 backdrop-blur-md mb-6">
-						<!-- Terminal Moderno -->
-						<div class="flex items-center px-4 py-2 bg-gradient-to-r from-pink-800/60 to-slate-800/60 border-b border-pink-400/10">
-							<span class="h-3 w-3 rounded-full bg-red-500 mr-2"></span>
-							<span class="h-3 w-3 rounded-full bg-yellow-400 mr-2"></span>
-							<span class="h-3 w-3 rounded-full bg-green-500"></span>
-							<span class="ml-4 text-pink-300 font-mono text-sm">bash</span>
-						</div>
-						<div class="px-6 py-6 font-mono text-green-200 text-base bg-gradient-to-br from-pink-900/40 to-slate-900/40">
-							<p>
-								<span class="text-cyan-400">nacho@asir</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">echo "Ciclo Formativo de ASIR..."</span>
-								<br>
-								Ciclo Formativo de ASIR...
-							</p>
-							<p class="mt-4">
-								<span class="text-cyan-400">nacho@asir</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">cat experiencia.txt</span>
-								<br>
-								Durante el ciclo formativo de ASIR (Administración de Sistemas y Redes), adquirí una base sólida en administración de sistemas, lo que ha sido clave en mi desarrollo profesional. Estoy agradecido por las oportunidades de aprendizaje y el esfuerzo dedicado a mejorar y comprender nuevas tecnologías.
-							</p>
-							<p class="mt-4">
-								<span class="text-cyan-400">nacho@asir</span>:<span class="text-yellow-400">~</span>$ <span class="text-white">cat agradecimientos.txt</span>
-								<br>
-								Aprecio mucho a mis compañeros de clase, quienes siempre han sido un apoyo y una motivación constante. También quiero agradecer a profesores excepcionales como 
-								<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-gray-300/30 shadow-sm hover:bg-white/40 transition-colors duration-200 backdrop-blur-md text-gray-100 font-semibold text-sm">
-									<i class="fa-solid fa-user-graduate text-pink-400"></i>
-									<a href="https://www.linkedin.com/in/alvarogonzalezsotillo/" target="_blank" class="text-white underline hover:text-pink-300 transition-colors duration-200">Álvaro González Sotillo</a>
-								</span>, que han sido fundamentales en mi formación académica.
-							</p>
-						</div>
-					</div>
-					<!-- Puedes agregar una imagen o icono aquí si lo deseas -->
-				</div>
-			</div>
-		</div>
-	</section>
+		unmuteBtn?.addEventListener('click', () => {
+			if (video.muted) {
+				video.muted = false;
+				unmuteBtn.innerHTML = '<span class="material-symbols-outlined text-sm">volume_off</span> Mute_Stream';
+			} else {
+				video.muted = true;
+				unmuteBtn.innerHTML = '<span class="material-symbols-outlined text-sm">volume_up</span> Unmute_Stream';
+			}
+		});
+	</script>
 </Layout>
+
+<style>
+    @keyframes slow-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .animate-slow-spin {
+        animation: slow-spin 20s linear infinite;
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

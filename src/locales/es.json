@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "index": "Inicio",
+    "projects": "Proyectos",
+    "knowledge": "Conocimientos",
+    "ai": "IA",
+    "certifications": "Certificados"
+  },
+  "hero": {
+    "status": "Estado del Sistema: Operativo",
+    "title_start": "Automatizando el",
+    "title_end": "Ecosistema Cloud.",
+    "description": "Soy Nacho Sánchez — Ingeniero Cloud especializado en infraestructura de alta disponibilidad, orquestación CI/CD y escalado de Kubernetes. Cerrando la brecha entre la agilidad del desarrollo y la estabilidad operativa.",
+    "cta_projects": "Explorar_Proyectos",
+    "cta_contact": "Contactar"
+  },
+  "about": {
+    "label": "Competencias Principales",
+    "title": "Infraestructura Modular",
+    "skills_label": "Habilidades Técnicas",
+    "metrics_label": "Métricas de Rendimiento"
+  }
+}
