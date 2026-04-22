@@ -76,11 +76,11 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 							>
 						</a>
 						<a
-							href="#SobreMi"
+							href={getRelativeLocaleUrl(lang, 'knowledge/')}
 							class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-secondary hover:text-secondary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs"
 							style="--glow-color: rgba(112, 0, 255, 0.4)"
 						>
-							{t("hero.cta_contact")}
+							{t("hero.cta_knowledge")}
 						</a>
 					</div>
 				</div>

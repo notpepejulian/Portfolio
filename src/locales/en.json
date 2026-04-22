@@ -30,7 +30,7 @@
     "title_end": "Cloud Ecosystem.",
     "description": "I'm Nacho Sánchez — Cloud Engineer specializing in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",
     "cta_projects": "Explore_Projects",
-    "cta_contact": "Contact"
+    "cta_knowledge": "Knowledge"
   },
   "about": {
     "label": "Core Competencies",
@@ -83,7 +83,7 @@
     "description": "My technical expertise is centered around cloud-native architectures and automated operations. I build systems that are not just functional, but demonstrably resilient and scalable.",
     "strategy_label": "Infrastructure Strategy",
     "strategy_title": "Reliability by",
-    "strategy_span": "Infrastructure_Code.",
+    "strategy_span": "Infrastructure.",
     "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift.",
     "cat_cloud": "Cloud & Infrastructure",
     "cat_containers": "Containers & Orchestration",
@@ -92,7 +92,10 @@
     "cat_db": "Databases & Storage",
     "cat_dev": "Development & Web",
     "stat_iac": "IaC_Versioned",
-    "stat_drift": "Zero_Manual_Drift"
+    "stat_drift": "Zero_Manual_Drift",
+    "operational_label": "Operational Excellence",
+    "operational_title": "Operational",
+    "operational_span": "Excellence"
   },
   "certifications": {
     "label": "Regulatory Compliance & Validation",

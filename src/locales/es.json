@@ -30,7 +30,7 @@
     "title_end": "Ecosistema Cloud.",
     "description": "Soy Nacho Sánchez — Ingeniero Cloud especializado en infraestructura de alta disponibilidad, orquestación CI/CD y escalado de Kubernetes. Cerrando la brecha entre la agilidad del desarrollo y la estabilidad operativa.",
     "cta_projects": "Explorar_Proyectos",
-    "cta_contact": "Contactar"
+    "cta_knowledge": "Conocimientos"
   },
   "about": {
     "label": "Competencias Principales",
@@ -82,7 +82,7 @@
     "description": "Mi experiencia técnica se centra en arquitecturas nativas de la nube y operaciones automatizadas. Construyo sistemas que no solo son funcionales, sino demostrablemente resilientes y escalables.",
     "strategy_label": "Estrategia de Infraestructura",
     "strategy_title": "Fiabilidad mediante",
-    "strategy_span": "Infrastructure_Code.",
+    "strategy_span": "Infrastructure.",
     "strategy_desc": "Abogo por flujos de trabajo GitOps donde cada cambio es versionado, revisado por pares y validado automáticamente antes del despliegue. Esto reduce el trabajo manual y elimina la deriva de configuración.",
     "cat_cloud": "Cloud e Infraestructura",
     "cat_containers": "Contenedores y Orquestación",
@@ -91,7 +91,13 @@
     "cat_db": "Bases de Datos y Almacenamiento",
     "cat_dev": "Desarrollo y Web",
     "stat_iac": "IaC_Versionado",
-    "stat_drift": "Deriva_Manual_Cero"
+    "stat_drift": "Deriva_Manual_Cero",
+    "skill_cloud": "Cloud e Infraestructura",
+    "skill_containers": "Contenedores & Orquestación",
+    "skill_cicd": "Automatización & CI/CD",
+    "skill_linux": "Linux & Seguridad",
+    "skill_databases": "Bases de Datos",
+    "skill_languages": "Lenguajes de Programación"
   },
   "certifications": {
     "label": "Cumplimiento Normativo y Validación",
