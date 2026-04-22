@@ -51,6 +51,21 @@
     box-shadow: 0 0 20px -2px var(--glow-color);
     border-color: rgba(0, 255, 149, 0.4);
   }
+  .hover-glow-accent:hover {
+    --glow-color: rgba(255, 0, 229, 0.5);
+    box-shadow: 0 0 20px -2px var(--glow-color);
+    border-color: rgba(255, 0, 229, 0.4);
+  }
+  .hover-glow-error:hover {
+    --glow-color: rgba(255, 0, 60, 0.5);
+    box-shadow: 0 0 20px -2px var(--glow-color);
+    border-color: rgba(255, 0, 60, 0.4);
+  }
+  .hover-glow-warning:hover {
+    --glow-color: rgba(255, 183, 0, 0.5);
+    box-shadow: 0 0 20px -2px var(--glow-color);
+    border-color: rgba(255, 183, 0, 0.4);
+  }
 
   /* Animations */
   @keyframes spin-slow {

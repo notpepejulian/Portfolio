@@ -6,5 +6,12 @@ export default defineConfig({
   integrations: [tailwind()],
   output: "static",
   site: "https://notpepejulian.github.io",
-  base: "/Portfolio/"
+  base: "/Portfolio/",
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

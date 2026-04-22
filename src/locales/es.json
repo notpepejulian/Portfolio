@@ -1,10 +1,28 @@
 {
+  "ui": {
+    "diagnostic": "Escaneo_Diagnóstico_Activo",
+    "live": "EN_VIVO",
+    "unmute": "Activar_Audio",
+    "mute": "Silenciar_Audio",
+    "integration": "Integración_Exitosa"
+  },
+  "maintenance": {
+    "title": "¡Ups!",
+    "subtitle": "Estamos en mantenimiento",
+    "description": "o terminando de ajustar ciertos cambios...",
+    "note": "Estoy trabajando en esta página... Vuelve pronto y mientras tanto, puedes navegar en los demás proyectos o secciones del sitio.",
+    "cta_home": "Volver al Inicio",
+    "cta_projects": "Ver Proyectos",
+    "contact_label": "¿Necesitas contactarme?",
+    "contact_desc": "Puedes visitar otras secciones del portfolio mientras tanto"
+  },
   "nav": {
     "index": "Inicio",
     "projects": "Proyectos",
     "knowledge": "Conocimientos",
     "ai": "IA",
-    "certifications": "Certificados"
+    "certifications": "Certificaciones",
+    "cv": "Ver_CV"
   },
   "hero": {
     "status": "Estado del Sistema: Operativo",
@@ -18,30 +36,44 @@
     "label": "Competencias Principales",
     "title": "Infraestructura Modular",
     "skills_label": "Habilidades Técnicas",
-    "metrics_label": "Métricas de Rendimiento",
+    "metrics_label": "Proactividad & Evolución",
     "diagnostic": "Escaneo_Diagnóstico_Activo",
     "bio_title": "Arquitectando para Escalabilidad <br/>y Resiliencia.",
-    "bio_desc": "Mi enfoque de ingeniería gira en torno a la creación de infraestructuras desacopladas y automatizadas que crecen sin problemas con las demandas organizativas.",
+    "bio_desc": "Mi enfoque en ingeniería se centra en la creación de infraestructuras desacopladas y automatizadas que crecen sin problemas con las demandas organizativas.",
+    "skill_1": "CDK & TypeScript / IaC",
+    "skill_2": "KUBERNETES / DOCKER",
+    "skill_3": "AWS / ARCHITECTURE",
+    "learning_title": "Aprendizaje Continuo",
+    "learning_desc": "Búsqueda proactiva de nuevas tecnologías y metodologías actualizadas.",
+    "rnd_title": "I+D Constante",
+    "rnd_desc": "Experimentación activa con las últimas tendencias del ecosistema Cloud.",
     "cta_stack": "Ver_Stack_Técnico"
   },
   "deep_dive": {
     "label": "Sesión en Profundidad",
     "title": "Proceso de",
     "title_span": "Pensamiento.",
-    "description": "Vea la sesión completa donde discuto las compensaciones arquitectónicas, el diseño de infraestructura centrada en la seguridad y el futuro de la automatización de la nube en entornos empresariales.",
+    "description": "A lo largo de mi experiencia laboral, me he dado cuenta de que no me conformo solo con diseñar y mantener arquitecturas, busco una innovación adaptable y resiliente donde la automatización es el principal punto fuerte de una infraestructura sólida. Mi idea es diseñar pilares sólidos que den lugar a infraestructuras sólidas.",
     "context_label": "Contexto y Estrategia",
     "context_subtitle": "Mejores Prácticas de Despliegue en la Nube",
     "cta_unmute": "Activar_Audio",
-    "cta_mute": "Silenciar_Audio"
+    "cta_mute": "Silenciar_Audio",
+    "deployment_rate": "Tasa de Despliegue"
+  },
+  "footer": {
+    "docs": "Documentación",
+    "uptime": "Uptime_Estable",
+    "system_signature": "ARCH_PORTFOLIO_V4 // SYST_OK"
   },
   "projects": {
     "label": "Casos de Estudio y Laboratorio",
     "title": "Arquitecturas",
     "title_span": "Destacadas.",
     "description": "Una selección de proyectos de ingeniería centrados en la escalabilidad en la nube, la automatización de la seguridad y la experiencia del desarrollador. Cada proyecto representa un desafío técnico resuelto con las mejores herramientas de su clase.",
-    "cta_repo": "Ver_Repositorio",
     "placeholder_title": "Inicializando Nuevo Nodo...",
-    "placeholder_subtitle": "Transmitiendo Actualizaciones del Repositorio"
+    "placeholder_subtitle": "Transmitiendo Actualizaciones del Repositorio",
+    "back": "Volver a Proyectos",
+    "in_progress": "En Desarrollo"
   },
   "knowledge": {
     "label": "Knowledge Graph v5.0",
@@ -51,7 +83,38 @@
     "strategy_label": "Estrategia de Infraestructura",
     "strategy_title": "Fiabilidad mediante",
     "strategy_span": "Infrastructure_Code.",
-    "strategy_desc": "Abogo por flujos de trabajo GitOps donde cada cambio es versionado, revisado por pares y validado automáticamente antes del despliegue. Esto reduce el trabajo manual y elimina la deriva de configuración."
+    "strategy_desc": "Abogo por flujos de trabajo GitOps donde cada cambio es versionado, revisado por pares y validado automáticamente antes del despliegue. Esto reduce el trabajo manual y elimina la deriva de configuración.",
+    "cat_cloud": "Cloud e Infraestructura",
+    "cat_containers": "Contenedores y Orquestación",
+    "cat_automation": "Automatización y CI/CD",
+    "cat_security": "Linux y Seguridad",
+    "cat_db": "Bases de Datos y Almacenamiento",
+    "cat_dev": "Desarrollo y Web",
+    "stat_iac": "IaC_Versionado",
+    "stat_drift": "Deriva_Manual_Cero"
+  },
+  "certifications": {
+    "label": "Cumplimiento Normativo y Validación",
+    "title": "Credenciales",
+    "title_span": "Técnicas.",
+    "description": "Mis competencias profesionales están respaldadas por certificaciones estándar de la industria en arquitectura cloud, automatización DevOps y administración de sistemas seguros.",
+    "cta_verify": "Verificar_Protocolo_Hash",
+    "roadmap_title": "Enlace a",
+    "roadmap_span": "Expertise_v5.",
+    "status_progress": "EN PROGRESO",
+    "status_completed": "COMPLETADO",
+    "roadmap_1_title": "Maestro Cloud",
+    "roadmap_1_desc": "Enfoque en AWS Solutions Architect Professional para dominar la orquestación de infraestructura a gran escala.",
+    "roadmap_2_title": "Centinela de Seguridad",
+    "roadmap_2_desc": "Avanzando hacia la especialización en DevSecOps con enfoque en modelado de amenazas automatizado y gobernanza IAM.",
+    "stat_verified": "Nodos_Verificados",
+    "stat_ops": "Learning_Ops_v",
+    "cert_1_title": "AWS Solutions Architect Associate",
+    "cert_1_desc": "Diseño y despliegue de sistemas escalables, altamente disponibles y tolerantes a fallos en AWS.",
+    "cert_2_title": "GitHub Actions Automation",
+    "cert_2_desc": "Orquestación avanzada de CI/CD utilizando GitHub Actions para desarrollo de software y pipelines de infraestructura.",
+    "cert_3_title": "AWS Cloud Practitioner",
+    "cert_3_desc": "Comprensión fundamental de la plataforma AWS Cloud, incluyendo infraestructura básica y seguridad."
   },
   "ai": {
     "label": "Interfaz de Red Neuronal v2.1",
@@ -61,17 +124,12 @@
     "terminal_status": "CONEXIÓN_ACTIVA",
     "terminal_node": "Nodo_Sinthetix_v2",
     "handshake": "Handshake exitoso. Protocolos inicializados. Soy una inteligencia autónoma que mapea el dominio de ingeniería cloud de Nacho. ¿Cómo procedemos con su consulta?",
-    "cta_execute": "Ejecutar_Consulta"
-  },
-  "certifications": {
-    "label": "Cumplimiento Normativo y Validación",
-    "title": "Credenciales",
-    "title_span": "Técnicas.",
-    "description": "Mis competencias profesionales están respaldadas por certificaciones estándar de la industria en arquitectura cloud, automatización DevOps y administración de sistemas seguros.",
-    "cta_verify": "Verificar_Protocolo_Hash",
-    "roadmap_title": "Enlace a",
-    "roadmap_span": "Expertise_v5."
-  },
+    "cta_execute": "Ejecutar_Consulta",
+    "input_placeholder": "Escribe una instrucción o consulta...",
+    "thinking": "Sincronizando_Núcleos_Neurales...",
+    "error": "ERROR_CODE_404: Base de conocimientos inalcanzable. Verifique el estado del enlace.",
+    "failure": "FALLO_DETECTADO: Conexión rechazada por el host remoto."
+    },
   "project_data": {
     "blockchain-integracion-bd": {
       "title": "Integración BBDD con Blockchain",

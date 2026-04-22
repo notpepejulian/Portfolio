@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { useTranslations, defaultLang } from "../utils/i18n";
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations, defaultLang } from "../../utils/i18n";
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const lang = Astro.currentLocale || defaultLang;
@@ -59,7 +59,7 @@ const t = useTranslations(lang);
 	}
 </style>
 
-<Layout title="Nacho Sánchez | Mantenimiento">
+<Layout title="Nacho Sánchez | Maintenance">
 	<main
 		class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative overflow-hidden"
 	>

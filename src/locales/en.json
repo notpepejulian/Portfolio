@@ -1,16 +1,34 @@
 {
+  "ui": {
+    "diagnostic": "Diagnostic_Scan_Active",
+    "live": "LIVE",
+    "unmute": "Unmute_Audio",
+    "mute": "Mute_Audio",
+    "integration": "Integration_Successful"
+  },
+  "maintenance": {
+    "title": "Oops!",
+    "subtitle": "Under Maintenance",
+    "description": "or finishing some adjustments...",
+    "note": "I'm working on this page... Come back soon! In the meantime, you can browse other projects or sections of the site.",
+    "cta_home": "Back to Home",
+    "cta_projects": "View Projects",
+    "contact_label": "Need to contact me?",
+    "contact_desc": "You can visit other sections of the portfolio in the meantime"
+  },
   "nav": {
     "index": "Home",
     "projects": "Projects",
     "knowledge": "Knowledge",
     "ai": "AI",
-    "certifications": "Certifications"
+    "certifications": "Certificates",
+    "cv": "View_CV"
   },
   "hero": {
     "status": "System Status: Operational",
     "title_start": "Automating the",
     "title_end": "Cloud Ecosystem.",
-    "description": "I'm Nacho Sánchez — Cloud Engineer specialized in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",
+    "description": "I'm Nacho Sánchez — Cloud Engineer specializing in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",
     "cta_projects": "Explore_Projects",
     "cta_contact": "Contact"
   },
@@ -18,30 +36,45 @@
     "label": "Core Competencies",
     "title": "Modular Infrastructure",
     "skills_label": "Technical Skills",
-    "metrics_label": "Performance Metrics",
+    "metrics_label": "Proactivity & Evolution",
     "diagnostic": "Diagnostic_Scan_Active",
-    "bio_title": "Architecting for Scaling <br/>& Resilience.",
-    "bio_desc": "My engineering focus revolves around creating decoupled, automated infrastructures that grow seamlessly with organizational demands.",
-    "cta_stack": "View_Tech_Stack"
+    "bio_title": "Architecting for Scalability <br/>and Resilience.",
+    "bio_desc": "My engineering approach focuses on creating decoupled, automated infrastructures that grow seamlessly with organizational demands.",
+    "skill_1": "CDK & TypeScript / IaC",
+    "skill_2": "KUBERNETES / DOCKER",
+    "skill_3": "AWS / ARCHITECTURE",
+    "learning_title": "Continuous Learning",
+    "learning_desc": "Proactive pursuit of new technologies and updated methodologies.",
+    "rnd_title": "Constant R&D",
+    "rnd_desc": "Active experimentation with the latest trends in the Cloud ecosystem.",
+    "cta_stack": "View_Technical_Stack"
   },
   "deep_dive": {
     "label": "Deep Dive Session",
-    "title": "Engineering",
-    "title_span": "Thought Process.",
-    "description": "Watch the full session where I discuss architectural trade-offs, security-first infrastructure design, and the future of cloud automation in enterprise environments.",
+    "title": "Thought",
+    "title_span": "Process.",
+    "description": "Throughout my work experience, I have realized that I am not content with just designing and maintaining architectures; I seek adaptable and resilient innovation where automation is the main strength of a solid infrastructure. My idea is to design solid pillars that lead to solid infrastructures.",
     "context_label": "Context & Strategy",
     "context_subtitle": "Cloud Deployment Best Practices",
-    "cta_unmute": "Unmute_Stream",
-    "cta_mute": "Mute_Stream"
+    "cta_unmute": "Unmute_Audio",
+    "cta_mute": "Mute_Audio",
+    "deployment_rate": "Deployment Rate"
+  },
+  "footer": {
+    "docs": "Documentation",
+    "uptime": "Stable_Uptime",
+    "system_signature": "ARCH_PORTFOLIO_V4 // SYST_OK"
   },
   "projects": {
-    "label": "Case Studies & Laboratory",
+    "label": "Case Studies & Lab",
     "title": "Featured",
     "title_span": "Architectures.",
-    "description": "A selection of engineering projects focused on cloud scalability, security automation, and developer experience. Each project represents a technical challenge solved with best-in-class tooling.",
+    "description": "A selection of engineering projects focused on cloud scalability, security automation, and developer experience. Each project represents a technical challenge solved with best-in-class tools.",
     "cta_repo": "View_Repository",
-    "placeholder_title": "New Node Initializing...",
-    "placeholder_subtitle": "Streaming Repository Updates"
+    "placeholder_title": "Initializing New Node...",
+    "placeholder_subtitle": "Streaming Repository Updates",
+    "back": "Back to Projects",
+    "in_progress": "In Development"
   },
   "knowledge": {
     "label": "Knowledge Graph v5.0",
@@ -51,7 +84,38 @@
     "strategy_label": "Infrastructure Strategy",
     "strategy_title": "Reliability by",
     "strategy_span": "Infrastructure_Code.",
-    "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift."
+    "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift.",
+    "cat_cloud": "Cloud & Infrastructure",
+    "cat_containers": "Containers & Orchestration",
+    "cat_automation": "Automation & CI/CD",
+    "cat_security": "Linux & Security",
+    "cat_db": "Databases & Storage",
+    "cat_dev": "Development & Web",
+    "stat_iac": "IaC_Versioned",
+    "stat_drift": "Zero_Manual_Drift"
+  },
+  "certifications": {
+    "label": "Regulatory Compliance & Validation",
+    "title": "Technical",
+    "title_span": "Credentials.",
+    "description": "My professional competencies are backed by industry-standard certifications in cloud architecture, DevOps automation, and secure system administration.",
+    "cta_verify": "Verify_Hash_Protocol",
+    "roadmap_title": "Uplink to",
+    "roadmap_span": "Expertise_v5.",
+    "status_progress": "IN PROGRESS",
+    "status_completed": "COMPLETED",
+    "roadmap_1_title": "Cloud Master",
+    "roadmap_1_desc": "Focus on AWS Solutions Architect Professional to master large-scale infrastructure orchestration.",
+    "roadmap_2_title": "Security Sentinel",
+    "roadmap_2_desc": "Moving towards DevSecOps specialization with a focus on automated threat modeling and IAM governance.",
+    "stat_verified": "Nodes_Verified",
+    "stat_ops": "Learning_Ops_v",
+    "cert_1_title": "AWS Solutions Architect Associate",
+    "cert_1_desc": "Design and deployment of scalable, highly available, and fault-tolerant systems on AWS.",
+    "cert_2_title": "GitHub Actions Automation",
+    "cert_2_desc": "Advanced CI/CD orchestration using GitHub Actions for software development and infrastructure pipelines.",
+    "cert_3_title": "AWS Cloud Practitioner",
+    "cert_3_desc": "Fundamental understanding of the AWS Cloud platform, including basic infrastructure and security."
   },
   "ai": {
     "label": "Neural Network Interface v2.1",
@@ -61,28 +125,23 @@
     "terminal_status": "LIVE_UPLINK",
     "terminal_node": "Node_Synthetix_v2",
     "handshake": "Handshake successful. Protocols initialized. I am an autonomous intelligence mapping Nacho's cloud engineering domain. How shall we proceed with your inquiry?",
-    "cta_execute": "Execute_Query"
-  },
-  "certifications": {
-    "label": "Regulatory Compliance & Validation",
-    "title": "Technical",
-    "title_span": "Credentials.",
-    "description": "My professional competencies are backed by industry-standard certifications in cloud architecture, DevOps automation, and secure system administration.",
-    "cta_verify": "Verify_Hash_Protocol",
-    "roadmap_title": "Uplink to",
-    "roadmap_span": "Expertise_v5."
+    "cta_execute": "Execute_Query",
+    "input_placeholder": "Type instruction or query...",
+    "thinking": "Synchronizing_Neural_Cores...",
+    "error": "ERROR_CODE_404: Knowledge base unreachable. Check link status.",
+    "failure": "FAILURE_DETECTED: Connection refused by remote host."
   },
   "project_data": {
     "blockchain-integracion-bd": {
-      "title": "Blockchain DB Integration",
-      "description": "Developed the integration of traditional relational databases with blockchain technology, enabling transaction logging and immutability.",
-      "status": "In Production",
+      "title": "Database Integration with Blockchain",
+      "description": "I developed the integration of traditional relational databases with blockchain technology, allowing transaction logging and immutability.",
+      "status": "In production",
       "tag": "#Blockchain & DB"
     },
     "devops-pipeline": {
       "title": "DevOps CI/CD Pipeline",
-      "description": "Implementation of CI/CD pipelines using Bitbucket Pipelines, Docker, and automated deployment on AWS for microservices.",
-      "status": "In Production",
+      "description": "Implementation of CI/CD pipelines with Bitbucket Pipelines, Docker, and automatic deployment on AWS for microservices.",
+      "status": "In production",
       "tag": "#DevOps"
     },
     "ChatSender": {
@@ -93,19 +152,19 @@
     },
     "AutoTest": {
       "title": "Educational AutoTest",
-      "description": "Educational platform for driving school tests with automatic generation of DGT exams and analytics.",
-      "status": "In Development",
+      "description": "Educational platform for taking driving school tests with automatic generation of DGT exams.",
+      "status": "In development",
       "tag": "#Web Development"
     },
     "webapp-monitorizacion": {
       "title": "Cloud Monitoring",
-      "description": "Advanced dashboard for visualizing metrics and logs of distributed infrastructure with intelligent alerting.",
-      "status": "In Development",
+      "description": "Advanced dashboard for visualizing metrics and logs of distributed infrastructure with intelligent alerts.",
+      "status": "In development",
       "tag": "#Monitoring"
     },
     "linux-scripts": {
       "title": "Linux Automation Scripts",
-      "description": "Repository of useful scripts to automate tasks in Linux systems: backups, hardening, and system management.",
+      "description": "Repository of useful scripts to automate tasks on Linux systems: backups, hardening, and system management.",
       "status": "Alpha",
       "tag": "#Automation"
     }

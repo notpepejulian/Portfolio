@@ -1,9 +1,18 @@
 ---
 import "../styles/base.css";
 import { useTranslations, defaultLang } from "../utils/i18n";
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
-const { title = "Nacho Sánchez | Portfolio", lang = defaultLang } = Astro.props;
+const lang = Astro.currentLocale || defaultLang;
+const { title = "Nacho Sánchez | Portfolio" } = Astro.props;
 const t = useTranslations(lang);
+
+// Helper to check current path and swap language
+const currentPath = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const cleanPath = currentPath.replace(/^(en\/|es\/)/, "");
+
+const esUrl = getRelativeLocaleUrl('es', cleanPath);
+const enUrl = getRelativeLocaleUrl('en', cleanPath);
 ---
 
 <!doctype html>
@@ -35,28 +44,28 @@ const t = useTranslations(lang);
 		<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
 			<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
 				<div class="text-xl font-black tracking-tighter text-primary font-headline uppercase group flex items-center gap-2">
-					<a href={`${import.meta.env.BASE_URL}`} class="group-hover:text-glow-primary transition-all">Nacho Sánchez</a>
+					<a href={getRelativeLocaleUrl(lang, "/")} class="group-hover:text-glow-primary transition-all">Nacho Sánchez</a>
 				</div>
 				
 				<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase">
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={`${import.meta.env.BASE_URL}`}>{t('nav.index')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={`${import.meta.env.BASE_URL}conocimientos/`}>{t('nav.knowledge')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={`${import.meta.env.BASE_URL}proyectos/`}>{t('nav.projects')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={`${import.meta.env.BASE_URL}certificaciones/`}>{t('nav.certifications')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "/")}>{t('nav.index')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "conocimientos/")}>{t('nav.knowledge')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "proyectos/")}>{t('nav.projects')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "certificaciones/")}>{t('nav.certifications')}</a>
 				</div>
 
 				<div class="flex items-center gap-6">
-                    <!-- Improved Language Selector -->
+                    <!-- Native Language Selector -->
                     <div class="relative group/lang flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-full border border-outline-variant/30 hover:border-primary/40 transition-all duration-300">
                         <span class="material-symbols-outlined text-[16px] text-primary opacity-70 group-hover/lang:animate-spin-slow">language</span>
                         <div class="flex gap-1">
-                            <button id="lang-es" class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'es' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>ES</button>
-                            <button id="lang-en" class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'en' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>EN</button>
+                            <a href={esUrl} class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'es' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>ES</a>
+                            <a href={enUrl} class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'en' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>EN</a>
                         </div>
                     </div>
 
 					<a href="https://github.com/notpepejulian" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5">terminal</a>
-					<button class="bg-primary text-on-primary px-5 py-2.5 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded-lg hover:scale-105 hover:shadow-glow-md duration-300 transition-all">Ver_CV</button>
+					<button class="bg-primary text-on-primary px-5 py-2.5 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded-lg hover:scale-105 hover:shadow-glow-md duration-300 transition-all">{t('nav.cv')}</button>
 				</div>
 			</div>
 		</nav>
@@ -69,51 +78,19 @@ const t = useTranslations(lang);
 			<div class="flex flex-col md:flex-row justify-between items-center px-10 gap-8 max-w-screen-2xl mx-auto">
 				<div class="flex flex-col">
 					<span class="gradient-text font-black font-headline text-lg tracking-tighter uppercase mb-2">NACHO_SÁNCHEZ</span>
-					<span class="font-mono text-[9px] tracking-[0.2em] uppercase text-on-surface-variant/40">© {new Date().getFullYear()} ARCH_PORTFOLIO_V4 // SYST_OK</span>
+					<span class="font-mono text-[9px] tracking-[0.2em] uppercase text-on-surface-variant/40">© {new Date().getFullYear()} {t('footer.system_signature')}</span>
 				</div>
 				<div class="flex flex-wrap justify-center gap-8 font-mono text-[9px] tracking-[0.3em] uppercase">
 					<a class="text-on-surface-variant hover:text-primary transition-all" href="https://github.com/notpepejulian">GitHub</a>
 					<a class="text-on-surface-variant hover:text-secondary transition-all" href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/">LinkedIn</a>
 					<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">StackOverflow</a>
-					<a class="text-on-surface-variant hover:text-accent transition-all" href="#">Documentación</a>
+					<a class="text-on-surface-variant hover:text-accent transition-all" href="#">{t('footer.docs')}</a>
 				</div>
 				<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/10">
 					<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shadow-glow-sm" style="--glow-color: rgba(0, 255, 149, 0.5)"></div>
-					<span class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase">Uptime_Estable</span>
+					<span class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase">{t('footer.uptime')}</span>
 				</div>
 			</div>
 		</footer>
-
-        <script is:inline>
-            // Language Toggle
-            document.getElementById('lang-es')?.addEventListener('click', () => {
-                const url = new URL(window.location);
-                url.searchParams.set('lang', 'es');
-                window.location.href = url.pathname + url.search;
-            });
-            document.getElementById('lang-en')?.addEventListener('click', () => {
-                const url = new URL(window.location);
-                url.searchParams.set('lang', 'en');
-                window.location.href = url.pathname + url.search;
-            });
-
-            // Persist language in all internal links
-            document.addEventListener('DOMContentLoaded', () => {
-                const urlParams = new URLSearchParams(window.location.search);
-                const currentLang = urlParams.get('lang');
-                if (currentLang) {
-                    document.querySelectorAll('a').forEach(a => {
-                        const href = a.getAttribute('href');
-                        if (href && (href.startsWith('/') || href.startsWith('.'))) {
-                            try {
-                                const linkUrl = new URL(href, window.location.origin);
-                                linkUrl.searchParams.set('lang', currentLang);
-                                a.setAttribute('href', linkUrl.pathname + linkUrl.search);
-                            } catch (e) {}
-                        }
-                    });
-                }
-            });
-        </script>
 	</body>
 </html>

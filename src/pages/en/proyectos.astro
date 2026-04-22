@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { useTranslations, defaultLang } from "../utils/i18n";
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations, defaultLang } from "../../utils/i18n";
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const lang = Astro.currentLocale || defaultLang;
@@ -66,7 +66,7 @@ const getTagColor = (tag: string, defaultColor: string) => {
         <div class="max-w-3xl">
             <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-80">{t('projects.label')}</p>
             <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-                {t('projects.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('projects.title_span')}</span>
+                {t('projects.title')} <br><span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('projects.title_span')}</span>
             </h1>
             <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
                 {t('projects.description')}
