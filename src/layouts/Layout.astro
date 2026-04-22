@@ -9,10 +9,26 @@ const t = useTranslations(lang);
 
 // Helper to check current path and swap language
 const currentPath = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
-const cleanPath = currentPath.replace(/^(en\/|es\/)/, "");
+const cleanPath = currentPath
+  .replace(/^en\//, '')
+  // swap english slugs back to spanish when computing esUrl
+  .replace(/^projects\//, 'proyectos/')
+  .replace(/^knowledge\//, 'conocimientos/')
+  .replace(/^certifications\//, 'certificaciones/');
 
 const esUrl = getRelativeLocaleUrl('es', cleanPath);
-const enUrl = getRelativeLocaleUrl('en', cleanPath);
+// For EN, swap Spanish slugs to English
+const enCleanPath = currentPath
+  .replace(/^en\//, '')
+  .replace(/^proyectos\//, 'projects/')
+  .replace(/^conocimientos\//, 'knowledge/')
+  .replace(/^certificaciones\//, 'certifications/');
+const enUrl = getRelativeLocaleUrl('en', enCleanPath);
+
+// Locale-aware nav paths
+const navPaths = lang === 'en'
+  ? { knowledge: 'knowledge/', projects: 'projects/', certifications: 'certifications/' }
+  : { knowledge: 'conocimientos/', projects: 'proyectos/', certifications: 'certificaciones/' };
 ---
 
 <!doctype html>
@@ -49,9 +65,9 @@ const enUrl = getRelativeLocaleUrl('en', cleanPath);
 				
 				<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase">
 					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "/")}>{t('nav.index')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "conocimientos/")}>{t('nav.knowledge')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "proyectos/")}>{t('nav.projects')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "certificaciones/")}>{t('nav.certifications')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.knowledge)}>{t('nav.knowledge')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.projects)}>{t('nav.projects')}</a>
+					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.certifications)}>{t('nav.certifications')}</a>
 				</div>
 
 				<div class="flex items-center gap-6">
