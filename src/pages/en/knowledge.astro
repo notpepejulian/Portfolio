@@ -6,66 +6,82 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const lang = Astro.currentLocale || defaultLang;
 const t = useTranslations(lang);
 
+
 const skills = [
-  { category: t('knowledge.cat_cloud'), icon: "cloud", items: ["AWS", "Terraform", "Azure", "GCP"], color: "primary" },
-  { category: t('knowledge.cat_containers'), icon: "package", items: ["Docker", "Kubernetes", "HELM", "Rancher"], color: "secondary" },
-  { category: t('knowledge.cat_automation'), icon: "terminal", items: ["Jenkins", "GitHub Actions", "Ansible", "ArgoCD"], color: "tertiary" },
-  { category: t('knowledge.cat_security'), icon: "shield", items: ["RHEL", "Bash", "Hardening", "Wazuh"], color: "accent" },
-  { category: t('knowledge.cat_db'), icon: "database", items: ["PostgreSQL", "MongoDB", "Redis", "S3"], color: "primary" },
-  { category: t('knowledge.cat_dev'), icon: "code", items: ["Node.js", "Python", "Astro", "Tailwind"], color: "secondary" }
+  { id: "cloud",        tag: "#Cloud & AWS",        image: "cloud_thumb.png",          color: "primary"   },
+  { id: "containers",   tag: "#Docker & K8s",       image: "containers_thumb.png",     color: "secondary" },
+  { id: "cicd",         tag: "#CI/CD & GitOps",     image: "cicd_thumb.png",           color: "tertiary"  },
+  { id: "linux",        tag: "#Linux & Seguridad",  image: "linux_security_thumb.png", color: "accent"    },
+  { id: "databases",    tag: "#Bases de Datos",     image: "databases_thumb.png",      color: "primary"   },
+  { id: "languages",    tag: "#Lenguajes",          image: "languages_thumb.png",      color: "secondary" },
 ];
+
+const tagColorMap: Record<string, string> = {
+  primary:   "#00f2ff",
+  secondary: "#7000ff",
+  tertiary:  "#00ff95",
+  accent:    "#ff00e5",
+};
 ---
 
 <Layout title="Nacho Sánchez | Knowledge Graph">
-  <main class="pt-24 min-h-screen">
-    <!-- Hero Section -->
+    <main class="pt-24 min-h-screen">
+    <!-- Header -->
     <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-[600px] h-px bg-gradient-to-r from-primary/40 to-transparent"></div>
       <div class="max-w-3xl">
-        <p class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 opacity-80">{t('knowledge.label')}</p>
+        <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-80">{t('knowledge.label')}</p>
         <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
           {t('knowledge.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('knowledge.title_span')}</span>
         </h1>
-        <p class="text-on-surface-variant text-lg leading-relaxed mb-10 max-w-2xl font-light">
+        <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
           {t('knowledge.description')}
         </p>
       </div>
     </section>
 
-    <!-- Tech Stack Bento Grid -->
-    <section class="px-6 py-20 bg-surface-container-low/30 border-y border-outline-variant/10">
-      <div class="max-w-screen-2xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill) => (
-            <div class={`group bg-surface-container p-8 rounded-3xl border border-outline-variant/10 hover-glow-${skill.color} transition-all duration-500 overflow-hidden relative`}>
-              <div class="flex items-center gap-4 mb-8">
-                <div class={`w-12 h-12 rounded-2xl bg-${skill.color}/10 flex items-center justify-center text-${skill.color} border border-${skill.color}/20 group-hover:bg-${skill.color} group-hover:text-on-primary transition-all duration-500`}>
-                  <span class="material-symbols-outlined text-xl">{skill.icon}</span>
-                </div>
-                <h3 class="font-headline text-xl font-bold tracking-tight">{skill.category}</h3>
+    <!-- Skills Bento Grid -->
+    <section class="px-6 pb-40">
+      <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {skills.map((skill, index) => {
+          const tagColor = tagColorMap[skill.color] || "#00f2ff";
+          return (
+            <div class={`group bg-surface-container rounded-3xl border border-outline-variant/10 hover-glow-${skill.color} transition-all duration-500 flex flex-col min-h-[380px] relative overflow-hidden`}>
+              <!-- Thumbnail -->
+              <div class="h-48 relative overflow-hidden rounded-t-3xl">
+                <img
+                  src={`${import.meta.env.BASE_URL}conocimientos/${skill.image}`}
+                  alt={skill.id}
+                  class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
               </div>
-              <div class="flex flex-wrap gap-2">
-                {skill.items.map(item => (
-                  <span class="px-3 py-1.5 bg-surface-container-high/50 text-[10px] font-mono font-bold text-on-surface-variant uppercase rounded border border-outline-variant/10 group-hover:border-primary/20 transition-colors">
-                    {item}
+
+              <!-- Content -->
+              <div class="p-8 pt-4 flex-1 flex flex-col justify-between relative z-10">
+                <div class="flex items-center justify-between mb-6">
+                  <span
+                    class="text-[9px] font-mono font-black tracking-widest px-3 py-1 rounded border"
+                    style={`color: ${tagColor}; background-color: ${tagColor}1a; border-color: ${tagColor}66;`}
+                  >
+                    {skill.tag}
                   </span>
-                ))}
-              </div>
-              <!-- Decorative background icon -->
-              <div class="absolute -bottom-4 -right-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700">
-                <span class="material-symbols-outlined text-9xl">{skill.icon}</span>
+                  <span class="text-on-surface-variant/20 font-headline text-2xl font-bold italic">0{index + 1}</span>
+                </div>
+                <h3 class="font-headline text-xl font-bold tracking-tight group-hover:text-glow-primary transition-colors">
+                  {t(`knowledge.skill_${skill.id}`)}
+                </h3>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    </section>
 
-    <!-- Operational Methodology -->
-    <section class="max-w-screen-2xl mx-auto px-6 py-40">
+      <section class="max-w-screen-2xl mx-auto px-6 py-40">
       <div class="max-w-3xl">
-        <p class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 opacity-80">{t('knowledge.label')}</p>
-        <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-          {t('knowledge.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('knowledge.title_span')}</span>
+        <p class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 opacity-80">{t('knowledge.operational_label')}</p>
+        <h1 class=" font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
+          {t('knowledge.strategy_title')} <span class="gradient-text-alt">{t('knowledge.strategy_span')}</span>
         </h1>
       </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -114,7 +130,7 @@ const skills = [
             </div>
             <div class="order-1 lg:order-2">
                 <p class="font-label text-xs tracking-[0.4em] text-tertiary uppercase mb-4">{t('knowledge.strategy_label')}</p>
-                <h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">{t('knowledge.strategy_title')} <br/> <span class="gradient-text-alt">{t('knowledge.strategy_span')}</span></h2>
+                <h2 class="font-headline text-3xl font-bold tracking-tighter mb-8 leading-tight">{t('knowledge.ops')} <span class="gradient-text-alt">{t('knowledge.ops_span')}</span> & <span class="gradient-text-alt">{t('knowledge.ops_vcs_span')}</span></h2>
                 <p class="text-on-surface-variant text-lg leading-relaxed mb-10 font-light">
                     {t('knowledge.strategy_desc')}
                 </p>
@@ -125,7 +141,7 @@ const skills = [
                     </div>
                     <div class="w-px h-10 bg-outline-variant/20 hidden sm:block"></div>
                     <div class="group">
-                        <div class="text-3xl font-headline font-bold text-on-surface mb-1 group-hover:text-secondary transition-colors">Zero</div>
+                        <div class="text-3xl font-headline font-bold text-on-surface mb-1 group-hover:text-secondary transition-colors">Team Work</div>
                         <div class="text-[9px] font-mono text-outline uppercase tracking-[0.3em]">{t('knowledge.stat_drift')}</div>
                     </div>
                 </div>

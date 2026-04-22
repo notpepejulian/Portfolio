@@ -7,7 +7,7 @@ const lang = Astro.currentLocale || defaultLang;
 const t = useTranslations(lang);
 
 const skills = [
-  { id: "cloud",        tag: "#Cloud & AWS",       image: "cloud_thumb.png",          color: "primary"   },
+  { id: "cloud",        tag: "#Cloud & AWS",        image: "cloud_thumb.png",          color: "primary"   },
   { id: "containers",   tag: "#Docker & K8s",       image: "containers_thumb.png",     color: "secondary" },
   { id: "cicd",         tag: "#CI/CD & GitOps",     image: "cicd_thumb.png",           color: "tertiary"  },
   { id: "linux",        tag: "#Linux & Seguridad",  image: "linux_security_thumb.png", color: "accent"    },
@@ -129,7 +129,7 @@ const tagColorMap: Record<string, string> = {
             </div>
             <div class="order-1 lg:order-2">
                 <p class="font-label text-xs tracking-[0.4em] text-tertiary uppercase mb-4">{t('knowledge.strategy_label')}</p>
-                <h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">{t('knowledge.strategy_title')} <br/> <span class="gradient-text-alt">{t('knowledge.strategy_span')}</span></h2>
+                <h2 class="font-headline text-3xl font-bold tracking-tighter mb-8 leading-tight">{t('knowledge.ops')} <span class="gradient-text-alt">{t('knowledge.ops_span')}</span> & <span class="gradient-text-alt">{t('knowledge.ops_vcs_span')}</span></h2>
                 <p class="text-on-surface-variant text-lg leading-relaxed mb-10 font-light">
                     {t('knowledge.strategy_desc')}
                 </p>
@@ -140,7 +140,7 @@ const tagColorMap: Record<string, string> = {
                     </div>
                     <div class="w-px h-10 bg-outline-variant/20 hidden sm:block"></div>
                     <div class="group">
-                        <div class="text-3xl font-headline font-bold text-on-surface mb-1 group-hover:text-secondary transition-colors">Zero</div>
+                        <div class="text-3xl font-headline font-bold text-on-surface mb-1 group-hover:text-secondary transition-colors">Team Work</div>
                         <div class="text-[9px] font-mono text-outline uppercase tracking-[0.3em]">{t('knowledge.stat_drift')}</div>
                     </div>
                 </div>

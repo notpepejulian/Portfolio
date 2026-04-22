@@ -41,6 +41,7 @@ const certifications = [
     <!-- Header -->
     <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden text-center md:text-left">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 blur-[120px] -z-10 animate-pulse"></div>
+      <div class="absolute top-0 left-0 w-[600px] h-px bg-gradient-to-r from-primary/40 to-transparent"></div>
       <div class="max-w-3xl">
         <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-70">{t('certifications.label')}</p>
         <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
@@ -87,41 +88,6 @@ const certifications = [
           </div>
         ))}
       </div>
-    </section>
-
-    <!-- Roadmap -->
-    <section class="max-w-screen-2xl mx-auto px-6 py-32 border-t border-outline-variant/10 bg-surface-container-low/20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="font-headline text-4xl font-bold mb-10 tracking-tight leading-tight">{t('certifications.roadmap_title')} <br/> <span class="gradient-text">{t('certifications.roadmap_span')}</span></h2>
-                <div class="space-y-8">
-                    <div class="flex gap-8 items-start group">
-                        <div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary font-mono text-sm flex-shrink-0 border border-primary/20 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">01</div>
-                        <div>
-                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">{t('certifications.roadmap_1_title')}</h4>
-                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">{t('certifications.roadmap_1_desc')}</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8 items-start group">
-                        <div class="w-10 h-10 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary font-mono text-sm flex-shrink-0 border border-secondary/20 group-hover:bg-secondary group-hover:text-on-secondary transition-all duration-300">02</div>
-                        <div>
-                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">{t('certifications.roadmap_2_title')}</h4>
-                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">{t('certifications.roadmap_2_desc')}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-6">
-                 <div class="glass-panel p-10 rounded-3xl border border-outline-variant/5 text-center group hover-glow-primary transition-all">
-                    <div class="text-5xl font-headline font-black text-primary mb-2 group-hover:text-glow-primary transition-all">3+</div>
-                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">{t('certifications.stat_verified')}</div>
-                </div>
-                <div class="glass-panel p-10 rounded-3xl border border-outline-variant/5 text-center group hover-glow-secondary transition-all">
-                    <div class="text-5xl font-headline font-black text-secondary mb-2 group-hover:text-glow-secondary transition-all">10k+</div>
-                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">{t('certifications.stat_ops')}</div>
-                </div>
-            </div>
-        </div>
     </section>
   </main>
 </Layout>

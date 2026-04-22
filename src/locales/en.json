@@ -1,7 +1,7 @@
 {
   "ui": {
     "diagnostic": "Diagnostic_Scan_Active",
-    "live": "LIVE",
+    "live": "REC",
     "unmute": "Unmute_Audio",
     "mute": "Mute_Audio",
     "integration": "Integration_Successful"
@@ -63,7 +63,7 @@
   "footer": {
     "docs": "Documentation",
     "uptime": "Stable_Uptime",
-    "system_signature": "ARCH_PORTFOLIO_V4 // SYST_OK"
+    "system_signature": "PORTFOLIO // SYST_OK"
   },
   "projects": {
     "label": "Case Studies & Lab",
@@ -77,13 +77,13 @@
     "in_progress": "In Development"
   },
   "knowledge": {
-    "label": "Knowledge Graph v5.0",
+    "label": "Knowledge Graph v1.0",
     "title": "Technical",
     "title_span": "Core.",
     "description": "My technical expertise is centered around cloud-native architectures and automated operations. I build systems that are not just functional, but demonstrably resilient and scalable.",
     "strategy_label": "Infrastructure Strategy",
-    "strategy_title": "Reliability by",
-    "strategy_span": "Infrastructure.",
+    "strategy_title": "Reliability through",
+    "strategy_span": "Code.",
     "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift.",
     "cat_cloud": "Cloud & Infrastructure",
     "cat_containers": "Containers & Orchestration",
@@ -95,7 +95,16 @@
     "stat_drift": "Zero_Manual_Drift",
     "operational_label": "Operational Excellence",
     "operational_title": "Operational",
-    "operational_span": "Excellence"
+    "operational_span": "Excellence",
+    "skill_cloud": "Cloud & Infrastructure",
+    "skill_containers": "Containers & Orchestration",
+    "skill_cicd": "Automation & CI/CD",
+    "skill_linux": "Linux & Security",
+    "skill_databases": "Databases",
+    "skill_languages": "Programming Languages",
+    "ops": "Control of",
+    "ops_vcs_span": "Versions",
+    "ops_span": "Processes"
   },
   "certifications": {
     "label": "Regulatory Compliance & Validation",

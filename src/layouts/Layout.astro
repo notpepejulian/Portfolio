@@ -39,7 +39,7 @@ const navPaths = lang === 'en'
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href={`${import.meta.env.BASE_URL}favicon.svg`}
+			href={`${import.meta.env.BASE_URL}logo.svg`}
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -59,8 +59,8 @@ const navPaths = lang === 'en'
 		<!-- TopNavBar -->
 		<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
 			<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
-				<div class="text-xl font-black tracking-tighter text-primary font-headline uppercase group flex items-center gap-2">
-					<a href={getRelativeLocaleUrl(lang, "/")} class="group-hover:text-glow-primary transition-all">Nacho Sánchez</a>
+				<div class="text-xl font-black tracking-tighter gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)] font-headline uppercase group flex items-center gap-2">
+					<a href={getRelativeLocaleUrl(lang, "/")} class="transition-all">Nacho Sánchez</a>
 				</div>
 				
 				<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase">
