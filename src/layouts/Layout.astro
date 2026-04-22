@@ -45,15 +45,18 @@ const t = useTranslations(lang);
 					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={`${import.meta.env.BASE_URL}certificaciones/`}>{t('nav.certifications')}</a>
 				</div>
 
-				<div class="flex items-center gap-4">
-                    <!-- Language Switcher -->
-                    <div class="flex bg-surface-container-high rounded-full p-1 border border-outline-variant/50">
-                        <button id="lang-es" class={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${lang === 'es' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>ES</button>
-                        <button id="lang-en" class={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${lang === 'en' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>EN</button>
+				<div class="flex items-center gap-6">
+                    <!-- Improved Language Selector -->
+                    <div class="relative group/lang flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-full border border-outline-variant/30 hover:border-primary/40 transition-all duration-300">
+                        <span class="material-symbols-outlined text-[16px] text-primary opacity-70 group-hover/lang:animate-spin-slow">language</span>
+                        <div class="flex gap-1">
+                            <button id="lang-es" class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'es' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>ES</button>
+                            <button id="lang-en" class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'en' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>EN</button>
+                        </div>
                     </div>
 
 					<a href="https://github.com/notpepejulian" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5">terminal</a>
-					<button class="bg-primary-container text-on-primary-container px-4 py-2 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded border border-primary/20 hover:scale-105 hover:shadow-glow-md duration-300 transition-all">Get_Resume_v4</button>
+					<button class="bg-primary text-on-primary px-5 py-2.5 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded-lg hover:scale-105 hover:shadow-glow-md duration-300 transition-all">Ver_CV</button>
 				</div>
 			</div>
 		</nav>
@@ -72,11 +75,11 @@ const t = useTranslations(lang);
 					<a class="text-on-surface-variant hover:text-primary transition-all" href="https://github.com/notpepejulian">GitHub</a>
 					<a class="text-on-surface-variant hover:text-secondary transition-all" href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/">LinkedIn</a>
 					<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">StackOverflow</a>
-					<a class="text-on-surface-variant hover:text-accent transition-all" href="#">Documentation</a>
+					<a class="text-on-surface-variant hover:text-accent transition-all" href="#">Documentación</a>
 				</div>
 				<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/10">
 					<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shadow-glow-sm" style="--glow-color: rgba(0, 255, 149, 0.5)"></div>
-					<span class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase">Uptime_Stable</span>
+					<span class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase">Uptime_Estable</span>
 				</div>
 			</div>
 		</footer>

@@ -51,4 +51,13 @@
     box-shadow: 0 0 20px -2px var(--glow-color);
     border-color: rgba(0, 255, 149, 0.4);
   }
+
+  /* Animations */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
 }

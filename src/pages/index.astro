@@ -3,118 +3,317 @@ import Layout from "../layouts/Layout.astro";
 import { useTranslations, defaultLang } from "../utils/i18n";
 
 const url = new URL(Astro.request.url);
-const lang = url.searchParams.get('lang') || defaultLang;
+const lang = url.searchParams.get("lang") || defaultLang;
 const t = useTranslations(lang);
+
+const heroImageUrl =
+	"https://lh3.googleusercontent.com/aida-public/AB6AXuAVm9xFv-oAXkQDFdaKCLP1dhSLJf0LfwquHv4hvJiATUrkyYr-rnEV5UV5ntxH-hEqpTLX72hMxry7T1K3vvTCNtXju7r-NzpNxHAeuAIvbiVaO4GiCBkzhWGtoUP7K2ztNsdHtceyZ0Fo-9AIF0u_5UPAnOanKVbUooB9PWtAyj9Zz2iNpUusrZXhvA2Qz6klLBWPlc7C8BImbklUSQT9pj0ypW3RH4ys5XVRuF-vCuWtV-eIJiBr4IIt69rNTnLKDKIuf_A95BE";
+const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 ---
 
 <Layout title="Nacho Sánchez | Cloud Portfolio" lang={lang}>
 	<main class="pt-24">
 		<!-- Hero Section -->
-		<section class="max-w-screen-2xl mx-auto px-6 py-24 md:py-40 relative flex items-center min-h-[80vh]">
-			<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2"></div>
-			
-			<div class="relative z-10 w-full">
-                <!-- Status Tag -->
-				<div class="inline-flex items-center gap-3 px-4 py-2 bg-surface-container rounded-full border border-outline-variant/20 mb-8 animate-fade-in">
-					<span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-                    </span>
-					<span class="text-[10px] font-mono font-bold tracking-widest text-on-surface-variant uppercase">{t('hero.status')}</span>
+		<section
+			class="max-w-screen-2xl mx-auto px-6 py-24 md:py-40 relative min-h-[80vh] flex items-center"
+		>
+			<div
+				class="absolute top-0 right-0 w-auto h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 animate-pulse"
+			>
+			</div>
+			<div
+				class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2"
+			>
+			</div>
+
+			<div
+				class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full relative z-10"
+			>
+				<!-- Left Side: Content -->
+				<div class="animate-fade-in">
+					<!-- Status Tag -->
+					<div
+						class="inline-flex items-center gap-3 px-4 py-2 bg-surface-container rounded-full border border-outline-variant/20 mb-8"
+					>
+						<span class="relative flex h-2 w-2">
+							<span
+								class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"
+							></span>
+							<span
+								class="relative inline-flex rounded-full h-2 w-2 bg-secondary"
+							></span>
+						</span>
+						<span
+							class="text-[10px] font-mono font-bold tracking-widest text-on-surface-variant uppercase"
+							>{t("hero.status")}</span
+						>
+					</div>
+
+					<h1
+						class="font-headline text-5xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-[0.9] mb-10"
+						id="hero-title"
+					>
+						{t("hero.title_start")}
+						<span
+							class="gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]"
+							>{t("hero.title_end")}</span
+						>
+					</h1>
+
+					<p
+						class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed mb-12 font-light"
+					>
+						{t("hero.description")}
+					</p>
+
+					<div class="flex flex-wrap gap-6">
+						<a
+							href={`${import.meta.env.BASE_URL}proyectos/`}
+							class="group relative px-10 py-5 bg-primary text-on-primary font-headline font-black rounded-lg overflow-hidden hover:scale-105 hover:shadow-glow-md duration-300 transition-all uppercase tracking-[0.2em] text-xs"
+						>
+							<span class="relative z-10"
+								>{t("hero.cta_projects")}</span
+							>
+						</a>
+						<a
+							href="#SobreMi"
+							class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-secondary hover:text-secondary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs"
+							style="--glow-color: rgba(112, 0, 255, 0.4)"
+						>
+							{t("hero.cta_contact")}
+						</a>
+					</div>
 				</div>
 
-				<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-10 max-w-4xl" id="hero-title">
-					{t('hero.title_start')} <span class="gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)]">{t('hero.title_end')}</span>
-				</h1>
+				<!-- Right Side: Video (Portrait Mobile Format) -->
+				<div
+					class="relative group lg:block hidden mx-auto max-w-[340px]"
+				>
+					<div
+						class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"
+					>
+					</div>
+					<div
+						class="relative glass-panel p-3 rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl"
+					>
+						<video
+							id="heroVideo"
+							class="w-full aspect-[9/16] rounded-[1.8rem] object-cover filter grayscale-[0.3] brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 shadow-inner"
+							autoplay
+							loop
+							muted
+							playsinline
+						>
+							<source src={heroVideoUrl} type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
 
-				<p class="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed mb-12 font-light">
-					{t('hero.description')}
-				</p>
+						<!-- Video Controls Overlay -->
+						<div
+							class="absolute bottom-8 left-8 flex items-center gap-4"
+						>
+							<button
+								id="heroUnmuteBtn"
+								class="bg-surface-container-lowest/60 backdrop-blur-md px-5 py-2.5 font-headline text-[9px] font-black tracking-widest uppercase rounded-lg border border-white/10 hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center gap-2 group/btn shadow-lg"
+							>
+								<span class="material-symbols-outlined text-xs"
+									>volume_up</span
+								>
+								<span class="btn-text">Unmute_Audio</span>
+							</button>
+						</div>
 
-				<div class="flex flex-wrap gap-6">
-					<a href={`${import.meta.env.BASE_URL}proyectos/`} class="group relative px-10 py-5 bg-primary text-on-primary font-headline font-black rounded-lg overflow-hidden hover:scale-105 hover:shadow-glow-md duration-300 transition-all uppercase tracking-[0.2em] text-xs">
-						<span class="relative z-10">{t('hero.cta_projects')}</span>
-					</a>
-					<a href="#SobreMi" class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-secondary hover:text-secondary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs" style="--glow-color: rgba(112, 0, 255, 0.4)">
-						{t('hero.cta_contact')}
-					</a>
+						<!-- Technical HUD Elements -->
+						<div class="absolute top-8 right-8 pointer-events-none">
+							<div class="flex flex-col items-end gap-2">
+								<div
+									class="px-2 py-1 bg-secondary/20 border border-secondary/40 rounded text-[8px] font-mono font-bold text-secondary tracking-widest uppercase animate-pulse"
+								>
+									STREAM_LIVE
+								</div>
+								<div
+									class="text-[9px] font-mono text-outline opacity-40 uppercase tracking-widest"
+								>
+									Node: 0x4F92A
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Bento Grid Section -->
-		<section class="px-6 py-40 border-t border-outline-variant/10 bg-surface-container-low/30" id="SobreMi">
+		<!-- Bento Grid Section with Integrated Hero Image -->
+		<section
+			class="px-6 py-40 border-t border-outline-variant/10 bg-surface-container-low/30"
+			id="SobreMi"
+		>
 			<div class="max-w-screen-2xl mx-auto">
-				<div class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
-					<div>
-                        <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-4">{t('about.label')}</p>
-                        <h2 class="font-headline text-5xl md:text-6xl font-bold tracking-tighter">{t('about.title')}</h2>
-                    </div>
-                </div>
+				<div class="mb-20">
+					<p
+						class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-4"
+					>
+						{t("about.label")}
+					</p>
+					<h2
+						class="font-headline text-5xl md:text-6xl font-bold tracking-tighter"
+					>
+						{t("about.title")}
+					</h2>
+				</div>
 
-				<!-- Grid Layout -->
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[280px]">
-					<!-- Main Bio Card -->
-					<div class="group col-span-1 md:col-span-2 lg:row-span-2 glass-panel p-10 rounded-3xl flex flex-col justify-between hover-glow-primary transition-all duration-500 overflow-hidden relative">
-						<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all"></div>
-						<div>
-                            <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 border border-primary/20">
-                                <span class="material-symbols-outlined text-2xl">dna</span>
-                            </div>
-                            <h3 class="font-headline text-3xl font-bold mb-6 tracking-tight leading-tight">Architecting for Scaling <br/>& Resilience.</h3>
-                            <p class="text-on-surface-variant leading-relaxed text-lg">My engineering focus revolves around creating decoupled, automated infrastructures that grow seamlessly with organizational demands.</p>
-                        </div>
-						<div class="flex items-center gap-6 mt-12">
-                            <a href={`${import.meta.env.BASE_URL}conocimientos/`} class="inline-flex items-center gap-3 text-xs font-headline font-bold text-primary uppercase tracking-widest group/btn">
-                                View_Tech_Stack 
-                                <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
-                            </a>
-                        </div>
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+					<!-- Left Side: Technical Hero Image -->
+					<div class="lg:col-span-4 h-full">
+						<div
+							class="relative group rounded-3xl overflow-hidden glass-panel p-2 h-full min-h-[400px] lg:min-h-full"
+						>
+							<img
+								src={heroImageUrl}
+								alt="Technical Infrastructure"
+								class="w-full h-full object-cover rounded-2xl filter grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
+							/>
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent pointer-events-none"
+							>
+							</div>
+							<div class="absolute bottom-8 left-8">
+								<div
+									class="text-[10px] font-mono text-primary font-black tracking-[0.3em] uppercase mb-2"
+								>
+									Diagnostic_Scan_Active
+								</div>
+								<div class="w-24 h-0.5 bg-primary/30">
+									<div
+										class="h-full bg-primary w-2/3 animate-pulse"
+									>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<!-- Skill List Card -->
-					<div class="group lg:col-span-1 glass-panel p-8 rounded-3xl hover-glow-secondary transition-all">
-						<h4 class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-8">{t('about.skills_label')}</h4>
-						<ul class="space-y-4 font-mono text-xs">
-							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> TERRAFORM / IaC</li>
-							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> KUBERNETES / K8S</li>
-							<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> AWS / ARCHITECTURE</li>
-						</ul>
-					</div>
+					<!-- Right Side: Bento Grid -->
+					<div
+						class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[280px]"
+					>
+						<!-- Main Bio Card -->
+						<div
+							class="group col-span-1 md:col-span-2 glass-panel p-10 rounded-3xl flex flex-col justify-between hover-glow-primary transition-all duration-500 overflow-hidden relative"
+						>
+							<div
+								class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all"
+							>
+							</div>
+							<div>
+								<div
+									class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 border border-primary/20"
+								>
+									<span
+										class="material-symbols-outlined text-2xl"
+										>dna</span
+									>
+								</div>
+								<h3
+									class="font-headline text-3xl font-bold mb-6 tracking-tight leading-tight"
+								>
+									Architecting for Scaling <br />& Resilience.
+								</h3>
+								<p
+									class="text-on-surface-variant leading-relaxed text-sm"
+								>
+									My engineering focus revolves around
+									creating decoupled, automated
+									infrastructures that grow seamlessly with
+									organizational demands.
+								</p>
+							</div>
+							<div class="flex items-center gap-6 mt-12">
+								<a
+									href={`${import.meta.env.BASE_URL}conocimientos/`}
+									class="inline-flex items-center gap-3 text-xs font-headline font-bold text-primary uppercase tracking-widest group/btn"
+								>
+									View_Tech_Stack
+									<span
+										class="material-symbols-outlined text-sm group-hover/btn:translate-x-2 transition-transform"
+										>arrow_forward</span
+									>
+								</a>
+							</div>
+						</div>
 
-					<!-- Metric Card -->
-					<div class="group lg:col-span-1 glass-panel p-8 rounded-3xl hover-glow-tertiary transition-all">
-						<h4 class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-tertiary mb-8">{t('about.metrics_label')}</h4>
-						<div class="space-y-6">
-                            <div>
-                                <div class="text-3xl font-headline font-bold text-on-surface tabular-nums">99.9%</div>
-                                <div class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1">SLA_RELIABILITY</div>
-                            </div>
-                            <div class="h-px bg-outline-variant/10 w-full"></div>
-                             <div>
-                                <div class="text-3xl font-headline font-bold text-on-surface tabular-nums">1.2ms</div>
-                                <div class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1">LATENCY_P99</div>
-                            </div>
-                        </div>
-					</div>
+						<!-- Skill List Card -->
+						<div
+							class="group glass-panel p-8 rounded-3xl hover-glow-secondary transition-all"
+						>
+							<h4
+								class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-secondary mb-8"
+							>
+								{t("about.skills_label")}
+							</h4>
+							<ul class="space-y-4 font-mono text-xs">
+								<li
+									class="flex items-center gap-3 text-on-surface-variant"
+								>
+									<span
+										class="w-1.5 h-1.5 rounded-full bg-secondary"
+									></span> TERRAFORM / IaC
+								</li>
+								<li
+									class="flex items-center gap-3 text-on-surface-variant"
+								>
+									<span
+										class="w-1.5 h-1.5 rounded-full bg-secondary"
+									></span> KUBERNETES / K8S
+								</li>
+								<li
+									class="flex items-center gap-3 text-on-surface-variant"
+								>
+									<span
+										class="w-1.5 h-1.5 rounded-full bg-secondary"
+									></span> AWS / ARCHITECTURE
+								</li>
+							</ul>
+						</div>
 
-					<!-- Secondary Large Card -->
-					<div class="group col-span-1 md:col-span-2 glass-panel p-10 rounded-3xl hover-glow-primary transition-all flex flex-col justify-center relative overflow-hidden">
-                        <div class="flex gap-16 items-center flex-wrap md:flex-nowrap">
-                            <div class="flex-1">
-                                <h4 class="font-headline text-2xl font-bold mb-4 tracking-tight">CI/CD Pipeline Mastery</h4>
-                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Automating every stage from commit to production with high security and zero-downtime deployments.</p>
-                                <div class="flex gap-4">
-                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">Jenkins</div>
-                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">GitLab CI</div>
-                                     <div class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-mono rounded border border-primary/20">ArgoCD</div>
-                                </div>
-                            </div>
-                            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-white/5 animate-slow-spin">
-                                <span class="material-symbols-outlined text-5xl text-primary animate-pulse">settings_ethernet</span>
-                            </div>
-                        </div>
+						<!-- Metric Card -->
+						<div
+							class="group glass-panel p-8 rounded-3xl hover-glow-tertiary transition-all"
+						>
+							<h4
+								class="font-headline text-sm font-bold uppercase tracking-[0.3em] text-tertiary mb-8"
+							>
+								{t("about.metrics_label")}
+							</h4>
+							<div class="space-y-6">
+								<div>
+									<div
+										class="text-3xl font-headline font-bold text-on-surface tabular-nums"
+									>
+										99.9%
+									</div>
+									<div
+										class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1"
+									>
+										SLA_RELIABILITY
+									</div>
+								</div>
+								<div class="h-px bg-outline-variant/10 w-full">
+								</div>
+								<div>
+									<div
+										class="text-3xl font-headline font-bold text-on-surface tabular-nums"
+									>
+										1.2ms
+									</div>
+									<div
+										class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest mt-1"
+									>
+										LATENCY_P99
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -124,78 +323,159 @@ const t = useTranslations(lang);
 		<section class="max-w-screen-2xl mx-auto px-6 py-40">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 				<div>
-					<p class="font-label text-xs tracking-[0.4em] text-secondary uppercase mb-4">Deep Dive Session</p>
-					<h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">Engineering <br/> <span class="gradient-text">Thought Process.</span></h2>
-					<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
-						Watch the full session where I discuss architectural trade-offs, security-first infrastructure design, and the future of cloud automation in enterprise environments.
+					<p
+						class="font-label text-xs tracking-[0.4em] text-secondary uppercase mb-4"
+					>
+						Deep Dive Session
+					</p>
+					<h2
+						class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight"
+					>
+						Engineering <br />
+						<span class="gradient-text">Thought Process.</span>
+					</h2>
+					<p
+						class="text-on-surface-variant text-lg leading-relaxed mb-10 font-light"
+					>
+						Watch the full session where I discuss architectural
+						trade-offs, security-first infrastructure design, and
+						the future of cloud automation in enterprise
+						environments.
 					</p>
 					<div class="space-y-6">
-						<div class="flex gap-6 items-center p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover-glow-secondary transition-all cursor-default">
-							<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
-								<span class="material-symbols-outlined">play_circle</span>
+						<div
+							class="flex gap-6 items-center p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover-glow-secondary transition-all cursor-default"
+						>
+							<div
+								class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20"
+							>
+								<span class="material-symbols-outlined"
+									>play_circle</span
+								>
 							</div>
 							<div>
-								<h4 class="font-headline font-bold text-sm uppercase tracking-widest">Context & Strategy</h4>
-								<span class="text-[11px] text-on-surface-variant">Cloud Deployment Best Practices</span>
+								<h4
+									class="font-headline font-bold text-sm uppercase tracking-widest"
+								>
+									Context & Strategy
+								</h4>
+								<span
+									class="text-[11px] text-on-surface-variant"
+									>Cloud Deployment Best Practices</span
+								>
 							</div>
 						</div>
 					</div>
 				</div>
-                <div class="relative group">
-                    <div class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                    <div class="relative glass-panel p-2 rounded-[1.5rem] overflow-hidden">
-                        <video 
-                            id="interviewVideo" 
-                            class="w-full aspect-video rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700" 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline
-                        >
-                            <source src={`${import.meta.env.BASE_URL}public/interview.mp4`} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="absolute bottom-6 left-6 flex items-center gap-4">
-                            <button id="unmuteBtn" class="bg-surface-container-high/80 backdrop-blur px-4 py-2 font-headline text-[10px] font-black tracking-widest uppercase rounded border border-outline-variant/20 hover:bg-white hover:text-black transition-all flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">volume_up</span>
-                                Unmute_Stream
-                            </button>
-                        </div>
-                    </div>
-                </div>
+				<div class="relative group">
+					<div
+						class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"
+					>
+					</div>
+					<div
+						class="relative glass-panel p-2 rounded-[1.5rem] overflow-hidden"
+					>
+						<video
+							id="interviewVideo"
+							class="w-full aspect-video rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700"
+							autoplay
+							loop
+							muted
+							playsinline
+						>
+							<source src={heroVideoUrl} type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+						<div
+							class="absolute bottom-6 left-6 flex items-center gap-4"
+						>
+							<button
+								id="unmuteBtn"
+								class="bg-surface-container-high/80 backdrop-blur px-4 py-2 font-headline text-[10px] font-black tracking-widest uppercase rounded border border-outline-variant/20 hover:bg-white hover:text-black transition-all flex items-center gap-2"
+							>
+								<span class="material-symbols-outlined text-sm"
+									>volume_up</span
+								>
+								Mute_Stream
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
 
 	<script is:inline>
-		const video = document.getElementById('interviewVideo');
-		const unmuteBtn = document.getElementById('unmuteBtn');
+		// Handle bottom video
+		const video = document.getElementById("interviewVideo");
+		const unmuteBtn = document.getElementById("unmuteBtn");
 
-		unmuteBtn?.addEventListener('click', () => {
+		unmuteBtn?.addEventListener("click", () => {
 			if (video.muted) {
 				video.muted = false;
-				unmuteBtn.innerHTML = '<span class="material-symbols-outlined text-sm">volume_off</span> Mute_Stream';
+				unmuteBtn.innerHTML =
+					'<span class="material-symbols-outlined text-sm">volume_off</span> Mute_Stream';
 			} else {
 				video.muted = true;
-				unmuteBtn.innerHTML = '<span class="material-symbols-outlined text-sm">volume_up</span> Unmute_Stream';
+				unmuteBtn.innerHTML =
+					'<span class="material-symbols-outlined text-sm">volume_up</span> Unmute_Stream';
+			}
+		});
+
+		// Handle hero video
+		const heroVideo = document.getElementById("heroVideo");
+		const heroUnmuteBtn = document.getElementById("heroUnmuteBtn");
+
+		heroUnmuteBtn?.addEventListener("click", () => {
+			if (heroVideo.muted) {
+				heroVideo.muted = false;
+				heroUnmuteBtn.innerHTML =
+					'<span class="material-symbols-outlined text-xs">volume_off</span> <span class="btn-text">Mute_Audio</span>';
+				heroUnmuteBtn.classList.replace(
+					"bg-surface-container-lowest/60",
+					"bg-primary",
+				);
+				heroUnmuteBtn.classList.replace(
+					"text-on-surface",
+					"text-on-primary",
+				);
+			} else {
+				heroVideo.muted = true;
+				heroUnmuteBtn.innerHTML =
+					'<span class="material-symbols-outlined text-xs">volume_up</span> <span class="btn-text">Unmute_Audio</span>';
+				heroUnmuteBtn.classList.replace(
+					"bg-primary",
+					"bg-surface-container-lowest/60",
+				);
+				// Note: classList toggle might be easier but I'll stick to explicit replaces for now
 			}
 		});
 	</script>
 </Layout>
 
 <style>
-    @keyframes slow-spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    .animate-slow-spin {
-        animation: slow-spin 20s linear infinite;
-    }
-    .animate-fade-in {
-        animation: fadeIn 1s ease-out;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+	.animate-spin-slow {
+		animation: spin-slow 20s linear infinite;
+	}
+	@keyframes spin-slow {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	.animate-fade-in {
+		animation: fadeIn 1s ease-out;
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 </style>

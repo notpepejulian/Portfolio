@@ -8,32 +8,34 @@ const t = useTranslations(lang);
 
 const projects = [
   {
-    title: "AWS Landing Zone v2",
-    tag: "INFRASTRUCTURE",
-    desc: "Enterprise-grade multi-account setup with Terraform Control Tower customization.",
-    link: "https://github.com/notpepejulian",
-    color: "primary"
+    id: "blockchain-integracion-bd",
+    color: "primary",
+    image: "blockchain_thumb.png"
   },
   {
-    title: "K8s Hardening Suite",
-    tag: "SECURITY",
-    desc: "Automated CIS benchmark compliance for EKS clusters using Kyverno and Falco.",
-    link: "https://github.com/notpepejulian",
-    color: "secondary"
+    id: "devops-pipeline",
+    color: "secondary",
+    image: "devops_thumb.png"
   },
   {
-    title: "GitOps Engine",
-    tag: "DEVOPS",
-    desc: "ArgoCD based deployment factory with multi-cluster management and canary support.",
-    link: "https://github.com/notpepejulian",
-    color: "tertiary"
+    id: "ChatSender",
+    color: "tertiary",
+    image: "chatsender_thumb.png"
   },
   {
-    title: "Cloud Cost Shield",
-    tag: "FINOPS",
-    desc: "Custom dashboard for real-time AWS cost visibility and automated resource cleanup.",
-    link: "https://github.com/notpepejulian",
-    color: "accent"
+    id: "AutoTest",
+    color: "accent",
+    image: "autotest_thumb.png"
+  },
+  {
+    id: "webapp-monitorizacion",
+    color: "primary",
+    image: "monitorization_thumb.png"
+  },
+  {
+    id: "linux-scripts",
+    color: "secondary",
+    image: "linux_scripts_thumb.png"
   }
 ];
 ---
@@ -44,12 +46,12 @@ const projects = [
     <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-[600px] h-px bg-gradient-to-r from-primary/40 to-transparent"></div>
         <div class="max-w-3xl">
-            <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-80">Case Studies & Laboratory</p>
+            <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-80">{t('projects.label')}</p>
             <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-                Featured <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">Architectures.</span>
+                {t('projects.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('projects.title_span')}</span>
             </h1>
-            <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
-                A selection of engineering projects focused on cloud scalability, security automation, and developer experience. Each project represents a technical challenge solved with best-in-class tooling.
+            <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
+                {t('projects.description')}
             </p>
         </div>
     </section>
@@ -58,39 +60,55 @@ const projects = [
     <section class="px-6 pb-40">
         <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-                <div class={`group bg-surface-container rounded-3xl p-10 border border-outline-variant/10 hover-glow-${project.color} transition-all duration-500 flex flex-col justify-between min-h-[400px] relative overflow-hidden`}>
-                    <!-- Background Decorative -->
-                    <div class={`absolute -bottom-12 -right-12 w-48 h-48 bg-${project.color}/5 rounded-full blur-[60px] group-hover:bg-${project.color}/10 transition-all`}></div>
-                    
-                    <div>
-                        <div class="flex items-center justify-between mb-10">
-                            <span class={`text-[10px] font-mono font-black tracking-widest text-${project.color} bg-${project.color}/10 px-3 py-1 rounded border border-${project.color}/20`}>
-                                {project.tag}
-                            </span>
-                            <span class="text-on-surface-variant/20 font-headline text-4xl font-bold italic">0{index + 1}</span>
-                        </div>
-                        <h3 class="font-headline text-3xl font-bold mb-6 tracking-tight group-hover:text-glow-primary transition-colors">{project.title}</h3>
-                        <p class="text-on-surface-variant leading-relaxed text-base opacity-80">
-                            {project.desc}
-                        </p>
+                <div class={`group bg-surface-container rounded-3xl border border-outline-variant/10 hover-glow-${project.color} transition-all duration-500 flex flex-col min-h-[480px] relative overflow-hidden`}>
+                    <!-- Thumbnail Area -->
+                    <div class="h-48 relative overflow-hidden">
+                        <img 
+                            src={`${import.meta.env.BASE_URL}proyectos/${project.image}`} 
+                            alt={t(`project_data.${project.id}.title`)}
+                            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
                     </div>
+                    
+                    <!-- Content -->
+                    <div class="p-10 pt-4 flex-1 flex flex-col justify-between relative z-10">
+                        <div>
+                            <div class="flex items-center justify-between mb-8">
+                                <span class={`text-[9px] font-mono font-black tracking-widest text-${project.color} bg-${project.color}/10 px-3 py-1 rounded border border-${project.color}/20`}>
+                                    {t(`project_data.${project.id}.tag`)}
+                                </span>
+                                <span class="text-on-surface-variant/20 font-headline text-2xl font-bold italic">0{index + 1}</span>
+                            </div>
+                            <h3 class="font-headline text-2xl font-bold mb-4 tracking-tight group-hover:text-glow-primary transition-colors line-clamp-2">
+                                {t(`project_data.${project.id}.title`)}
+                            </h3>
+                            <p class="text-on-surface-variant leading-relaxed text-xs opacity-80 font-light line-clamp-3">
+                                {t(`project_data.${project.id}.description`)}
+                            </p>
+                        </div>
 
-                    <div class="mt-12 flex items-center gap-6">
-                        <a href={project.link} target="_blank" class={`inline-flex items-center gap-3 text-xs font-headline font-bold text-${project.color} uppercase tracking-[0.2em] group/link`}>
-                            View_Repository 
-                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-2 transition-transform">arrow_outward</span>
-                        </a>
+                        <div class="mt-8 flex flex-col gap-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-glow-sm shadow-secondary/50"></span>
+                                <span class="text-[9px] font-mono text-outline uppercase tracking-wider">{t(`project_data.${project.id}.status`)}</span>
+                            </div>
+                            <a href={`${import.meta.env.BASE_URL}proyectos/${project.id}/`} class={`inline-flex items-center gap-3 text-[10px] font-headline font-black text-${project.color} uppercase tracking-[0.2em] group/link border-t border-outline-variant/10 pt-6`}>
+                                {t('nav.projects')} 
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-3 transition-transform">arrow_forward</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             ))}
             
             <!-- Future Projects Placeholder -->
-            <div class="group bg-surface-container-low/20 rounded-3xl p-10 border border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center min-h-[400px]">
+            <div class="group bg-surface-container-low/20 rounded-3xl p-10 border border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center min-h-[480px]">
                 <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-6 border border-outline-variant/10 group-hover:border-primary/40 group-hover:text-primary transition-all duration-500 shadow-inner">
                     <span class="material-symbols-outlined text-3xl">add</span>
                 </div>
-                <h4 class="font-headline text-xl font-bold text-on-surface-variant/60">New Node Initializing...</h4>
-                <p class="text-[11px] font-mono text-outline uppercase tracking-widest mt-4">Streaming Repository Updates</p>
+                <h4 class="font-headline text-xl font-bold text-on-surface-variant/60">{t('projects.placeholder_title')}</h4>
+                <p class="text-[11px] font-mono text-outline uppercase tracking-widest mt-4">{t('projects.placeholder_subtitle')}</p>
             </div>
         </div>
     </section>

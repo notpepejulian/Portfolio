@@ -7,12 +7,12 @@ const lang = url.searchParams.get('lang') || defaultLang;
 const t = useTranslations(lang);
 
 const skills = [
-  { category: "Cloud & Infrastructure", icon: "cloud", items: ["AWS", "Terraform", "Azure", "GCP"], color: "primary" },
-  { category: "Containers & Orchestration", icon: "package", items: ["Docker", "Kubernetes", "HELM", "Rancher"], color: "secondary" },
-  { category: "Automation & CI/CD", icon: "terminal", items: ["Jenkins", "GitHub Actions", "Ansible", "ArgoCD"], color: "tertiary" },
-  { category: "Linux & Security", icon: "shield", items: ["RHEL", "Bash", "Hardening", "Wazuh"], color: "accent" },
-  { category: "Databases & Storage", icon: "database", items: ["PostgreSQL", "MongoDB", "Redis", "S3"], color: "primary" },
-  { category: "Development", icon: "code", items: ["Node.js", "Python", "Astro", "Tailwind"], color: "secondary" }
+  { category: "Cloud e Infraestructura", icon: "cloud", items: ["AWS", "Terraform", "Azure", "GCP"], color: "primary" },
+  { category: "Contenedores y Orquestación", icon: "package", items: ["Docker", "Kubernetes", "HELM", "Rancher"], color: "secondary" },
+  { category: "Automatización y CI/CD", icon: "terminal", items: ["Jenkins", "GitHub Actions", "Ansible", "ArgoCD"], color: "tertiary" },
+  { category: "Linux y Seguridad", icon: "shield", items: ["RHEL", "Bash", "Hardening", "Wazuh"], color: "accent" },
+  { category: "Bases de Datos y Almacenamiento", icon: "database", items: ["PostgreSQL", "MongoDB", "Redis", "S3"], color: "primary" },
+  { category: "Desarrollo y Web", icon: "code", items: ["Node.js", "Python", "Astro", "Tailwind"], color: "secondary" }
 ];
 ---
 
@@ -21,12 +21,12 @@ const skills = [
     <!-- Hero Section -->
     <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden">
       <div class="max-w-3xl">
-        <p class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 opacity-80">Knowledge Graph v5.0</p>
+        <p class="font-label text-xs tracking-[0.3em] text-primary uppercase mb-6 opacity-80">{t('knowledge.label')}</p>
         <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-          Technical <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">Core.</span>
+          {t('knowledge.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('knowledge.title_span')}</span>
         </h1>
         <p class="text-on-surface-variant text-lg leading-relaxed mb-10 max-w-2xl font-light">
-          My technical expertise is centered around cloud-native architectures and automated operations. I build systems that are not just functional, but demonstrably resilient and scalable.
+          {t('knowledge.description')}
         </p>
       </div>
     </section>
@@ -107,10 +107,10 @@ const skills = [
                 </div>
             </div>
             <div class="order-1 lg:order-2">
-                <p class="font-label text-xs tracking-[0.4em] text-tertiary uppercase mb-4">Infrastructure Strategy</p>
-                <h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">Reliability by <br/> <span class="gradient-text-alt">Infrastructure_Code.</span></h2>
+                <p class="font-label text-xs tracking-[0.4em] text-tertiary uppercase mb-4">{t('knowledge.strategy_label')}</p>
+                <h2 class="font-headline text-5xl font-bold tracking-tighter mb-8 leading-tight">{t('knowledge.strategy_title')} <br/> <span class="gradient-text-alt">{t('knowledge.strategy_span')}</span></h2>
                 <p class="text-on-surface-variant text-lg leading-relaxed mb-10 font-light">
-                    I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift.
+                    {t('knowledge.strategy_desc')}
                 </p>
                 <div class="flex flex-wrap gap-8">
                     <div class="group">

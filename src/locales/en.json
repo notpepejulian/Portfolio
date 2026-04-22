@@ -18,6 +18,96 @@
     "label": "Core Competencies",
     "title": "Modular Infrastructure",
     "skills_label": "Technical Skills",
-    "metrics_label": "Performance Metrics"
+    "metrics_label": "Performance Metrics",
+    "diagnostic": "Diagnostic_Scan_Active",
+    "bio_title": "Architecting for Scaling <br/>& Resilience.",
+    "bio_desc": "My engineering focus revolves around creating decoupled, automated infrastructures that grow seamlessly with organizational demands.",
+    "cta_stack": "View_Tech_Stack"
+  },
+  "deep_dive": {
+    "label": "Deep Dive Session",
+    "title": "Engineering",
+    "title_span": "Thought Process.",
+    "description": "Watch the full session where I discuss architectural trade-offs, security-first infrastructure design, and the future of cloud automation in enterprise environments.",
+    "context_label": "Context & Strategy",
+    "context_subtitle": "Cloud Deployment Best Practices",
+    "cta_unmute": "Unmute_Stream",
+    "cta_mute": "Mute_Stream"
+  },
+  "projects": {
+    "label": "Case Studies & Laboratory",
+    "title": "Featured",
+    "title_span": "Architectures.",
+    "description": "A selection of engineering projects focused on cloud scalability, security automation, and developer experience. Each project represents a technical challenge solved with best-in-class tooling.",
+    "cta_repo": "View_Repository",
+    "placeholder_title": "New Node Initializing...",
+    "placeholder_subtitle": "Streaming Repository Updates"
+  },
+  "knowledge": {
+    "label": "Knowledge Graph v5.0",
+    "title": "Technical",
+    "title_span": "Core.",
+    "description": "My technical expertise is centered around cloud-native architectures and automated operations. I build systems that are not just functional, but demonstrably resilient and scalable.",
+    "strategy_label": "Infrastructure Strategy",
+    "strategy_title": "Reliability by",
+    "strategy_span": "Infrastructure_Code.",
+    "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift."
+  },
+  "ai": {
+    "label": "Neural Network Interface v2.1",
+    "title": "Synthetic",
+    "title_span": "Intelligence.",
+    "description": "Query the specialized LLM agent trained on my professional trajectory, architectural methodologies, and technical stack.",
+    "terminal_status": "LIVE_UPLINK",
+    "terminal_node": "Node_Synthetix_v2",
+    "handshake": "Handshake successful. Protocols initialized. I am an autonomous intelligence mapping Nacho's cloud engineering domain. How shall we proceed with your inquiry?",
+    "cta_execute": "Execute_Query"
+  },
+  "certifications": {
+    "label": "Regulatory Compliance & Validation",
+    "title": "Technical",
+    "title_span": "Credentials.",
+    "description": "My professional competencies are backed by industry-standard certifications in cloud architecture, DevOps automation, and secure system administration.",
+    "cta_verify": "Verify_Hash_Protocol",
+    "roadmap_title": "Uplink to",
+    "roadmap_span": "Expertise_v5."
+  },
+  "project_data": {
+    "blockchain-integracion-bd": {
+      "title": "Blockchain DB Integration",
+      "description": "Developed the integration of traditional relational databases with blockchain technology, enabling transaction logging and immutability.",
+      "status": "In Production",
+      "tag": "#Blockchain & DB"
+    },
+    "devops-pipeline": {
+      "title": "DevOps CI/CD Pipeline",
+      "description": "Implementation of CI/CD pipelines using Bitbucket Pipelines, Docker, and automated deployment on AWS for microservices.",
+      "status": "In Production",
+      "tag": "#DevOps"
+    },
+    "ChatSender": {
+      "title": "Anonymous Messaging",
+      "description": "Secure messaging system with end-to-end encryption based on the Matrix protocol for private communications.",
+      "status": "In Development",
+      "tag": "#Security"
+    },
+    "AutoTest": {
+      "title": "Educational AutoTest",
+      "description": "Educational platform for driving school tests with automatic generation of DGT exams and analytics.",
+      "status": "In Development",
+      "tag": "#Web Development"
+    },
+    "webapp-monitorizacion": {
+      "title": "Cloud Monitoring",
+      "description": "Advanced dashboard for visualizing metrics and logs of distributed infrastructure with intelligent alerting.",
+      "status": "In Development",
+      "tag": "#Monitoring"
+    },
+    "linux-scripts": {
+      "title": "Linux Automation Scripts",
+      "description": "Repository of useful scripts to automate tasks in Linux systems: backups, hardening, and system management.",
+      "status": "Alpha",
+      "tag": "#Automation"
+    }
   }
 }

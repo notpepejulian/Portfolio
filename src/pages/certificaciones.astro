@@ -10,8 +10,8 @@ const certifications = [
   {
     title: "AWS Solutions Architect Associate",
     issuer: "Amazon Web Services",
-    status: "IN_PROGRESS",
-    description: "Designing and deploying scalable, highly available, and fault-tolerant systems on AWS.",
+    status: "EN_PROGRESO",
+    description: "Diseño y despliegue de sistemas escalables, altamente disponibles y tolerantes a fallos en AWS.",
     badge: "aws_saa.png",
     link: "https://aws.amazon.com/es/certification/certified-solutions-architect-associate/",
     color: "primary"
@@ -19,8 +19,8 @@ const certifications = [
   {
     title: "GitHub Actions Automation",
     issuer: "GitHub",
-    status: "COMPLETED",
-    description: "Advanced CI/CD orchestration using GitHub Actions for software development and infrastructure pipelines.",
+    status: "COMPLETADO",
+    description: "Orquestación avanzada de CI/CD utilizando GitHub Actions para desarrollo de software y pipelines de infraestructura.",
     badge: "github_actions.png",
     link: "https://docs.github.com/es/actions",
     color: "secondary"
@@ -28,26 +28,26 @@ const certifications = [
   {
     title: "AWS Cloud Practitioner",
     issuer: "Amazon Web Services",
-    status: "COMPLETED",
-    description: "Foundational understanding of the AWS Cloud platform, including basic infrastructure and security.",
+    status: "COMPLETADO",
+    description: "Comprensión fundamental de la plataforma AWS Cloud, incluyendo infraestructura básica y seguridad.",
     link: "https://aws.amazon.com/es/certification/certified-cloud-practitioner/",
     color: "tertiary"
   }
 ];
 ---
 
-<Layout title="Nacho Sánchez | Professional Milestones" lang={lang}>
+<Layout title="Nacho Sánchez | Hitos Profesionales" lang={lang}>
   <main class="pt-24 min-h-screen">
     <!-- Header -->
     <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden text-center md:text-left">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 blur-[120px] -z-10 animate-pulse"></div>
       <div class="max-w-3xl">
-        <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-70">Regulatory Compliance & Validation</p>
+        <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-70">{t('certifications.label')}</p>
         <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-            Technical <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">Credentials.</span>
+            {t('certifications.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('certifications.title_span')}</span>
         </h1>
         <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
-            My professional competencies are backed by industry-standard certifications in cloud architecture, DevOps automation, and secure system administration.
+            {t('certifications.description')}
         </p>
       </div>
     </section>
@@ -71,7 +71,7 @@ const certifications = [
                 </p>
               </div>
               <a href={cert.link} target="_blank" class={`inline-flex items-center gap-3 text-[10px] font-headline font-black text-on-surface hover:text-${cert.color} uppercase tracking-[0.3em] transition-all group/link`}>
-                Verify_Hash_Protocol
+                {t('certifications.cta_verify')}
                 <span class="material-symbols-outlined text-sm group-hover/link:translate-x-3 transition-transform">fingerprint</span>
               </a>
             </div>
@@ -93,20 +93,20 @@ const certifications = [
     <section class="max-w-screen-2xl mx-auto px-6 py-32 border-t border-outline-variant/10 bg-surface-container-low/20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-                <h2 class="font-headline text-4xl font-bold mb-10 tracking-tight leading-tight">Uplink to <br/> <span class="gradient-text">Expertise_v5.</span></h2>
+                <h2 class="font-headline text-4xl font-bold mb-10 tracking-tight leading-tight">{t('certifications.roadmap_title')} <br/> <span class="gradient-text">{t('certifications.roadmap_span')}</span></h2>
                 <div class="space-y-8">
                     <div class="flex gap-8 items-start group">
                         <div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary font-mono text-sm flex-shrink-0 border border-primary/20 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">01</div>
                         <div>
-                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">Cloud Maestro</h4>
-                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Focusing on AWS Solutions Architect Professional to master fleet-scale infrastructure orchestration.</p>
+                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">Maestro Cloud</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Enfoque en AWS Solutions Architect Professional para dominar la orquestación de infraestructura a gran escala.</p>
                         </div>
                     </div>
                     <div class="flex gap-8 items-start group">
                         <div class="w-10 h-10 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary font-mono text-sm flex-shrink-0 border border-secondary/20 group-hover:bg-secondary group-hover:text-on-secondary transition-all duration-300">02</div>
                         <div>
-                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">Security Sentinel</h4>
-                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Advancing into DevSecOps specialization with a focus on automated threat modeling and IAM governance.</p>
+                            <h4 class="font-headline font-bold text-base uppercase tracking-wider mb-2">Centinela de Seguridad</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Avanzando hacia la especialización en DevSecOps con enfoque en modelado de amenazas automatizado y gobernanza IAM.</p>
                         </div>
                     </div>
                 </div>
@@ -114,11 +114,11 @@ const certifications = [
             <div class="grid grid-cols-2 gap-6">
                 <div class="glass-panel p-10 rounded-3xl border border-outline-variant/5 text-center group hover-glow-primary transition-all">
                     <div class="text-5xl font-headline font-black text-primary mb-2 group-hover:text-glow-primary transition-all">3+</div>
-                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">Verified_Nodes</div>
+                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">Nodos_Verificados</div>
                 </div>
                 <div class="glass-panel p-10 rounded-3xl border border-outline-variant/5 text-center group hover-glow-secondary transition-all">
                     <div class="text-5xl font-headline font-black text-secondary mb-2 group-hover:text-glow-secondary transition-all">10k+</div>
-                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">Ops_Learning_v</div>
+                    <div class="text-[9px] font-label text-outline uppercase tracking-[0.3em] opacity-60">Learning_Ops_v</div>
                 </div>
             </div>
         </div>

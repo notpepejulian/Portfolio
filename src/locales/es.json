@@ -18,6 +18,96 @@
     "label": "Competencias Principales",
     "title": "Infraestructura Modular",
     "skills_label": "Habilidades Técnicas",
-    "metrics_label": "Métricas de Rendimiento"
+    "metrics_label": "Métricas de Rendimiento",
+    "diagnostic": "Escaneo_Diagnóstico_Activo",
+    "bio_title": "Arquitectando para Escalabilidad <br/>y Resiliencia.",
+    "bio_desc": "Mi enfoque de ingeniería gira en torno a la creación de infraestructuras desacopladas y automatizadas que crecen sin problemas con las demandas organizativas.",
+    "cta_stack": "Ver_Stack_Técnico"
+  },
+  "deep_dive": {
+    "label": "Sesión en Profundidad",
+    "title": "Proceso de",
+    "title_span": "Pensamiento.",
+    "description": "Vea la sesión completa donde discuto las compensaciones arquitectónicas, el diseño de infraestructura centrada en la seguridad y el futuro de la automatización de la nube en entornos empresariales.",
+    "context_label": "Contexto y Estrategia",
+    "context_subtitle": "Mejores Prácticas de Despliegue en la Nube",
+    "cta_unmute": "Activar_Audio",
+    "cta_mute": "Silenciar_Audio"
+  },
+  "projects": {
+    "label": "Casos de Estudio y Laboratorio",
+    "title": "Arquitecturas",
+    "title_span": "Destacadas.",
+    "description": "Una selección de proyectos de ingeniería centrados en la escalabilidad en la nube, la automatización de la seguridad y la experiencia del desarrollador. Cada proyecto representa un desafío técnico resuelto con las mejores herramientas de su clase.",
+    "cta_repo": "Ver_Repositorio",
+    "placeholder_title": "Inicializando Nuevo Nodo...",
+    "placeholder_subtitle": "Transmitiendo Actualizaciones del Repositorio"
+  },
+  "knowledge": {
+    "label": "Knowledge Graph v5.0",
+    "title": "Núcleo",
+    "title_span": "Técnico.",
+    "description": "Mi experiencia técnica se centra en arquitecturas nativas de la nube y operaciones automatizadas. Construyo sistemas que no solo son funcionales, sino demostrablemente resilientes y escalables.",
+    "strategy_label": "Estrategia de Infraestructura",
+    "strategy_title": "Fiabilidad mediante",
+    "strategy_span": "Infrastructure_Code.",
+    "strategy_desc": "Abogo por flujos de trabajo GitOps donde cada cambio es versionado, revisado por pares y validado automáticamente antes del despliegue. Esto reduce el trabajo manual y elimina la deriva de configuración."
+  },
+  "ai": {
+    "label": "Interfaz de Red Neuronal v2.1",
+    "title": "Inteligencia",
+    "title_span": "Sintética.",
+    "description": "Consulta al agente LLM especializado entrenado en mi trayectoria profesional, metodologías arquitectónicas y stack técnico.",
+    "terminal_status": "CONEXIÓN_ACTIVA",
+    "terminal_node": "Nodo_Sinthetix_v2",
+    "handshake": "Handshake exitoso. Protocolos inicializados. Soy una inteligencia autónoma que mapea el dominio de ingeniería cloud de Nacho. ¿Cómo procedemos con su consulta?",
+    "cta_execute": "Ejecutar_Consulta"
+  },
+  "certifications": {
+    "label": "Cumplimiento Normativo y Validación",
+    "title": "Credenciales",
+    "title_span": "Técnicas.",
+    "description": "Mis competencias profesionales están respaldadas por certificaciones estándar de la industria en arquitectura cloud, automatización DevOps y administración de sistemas seguros.",
+    "cta_verify": "Verificar_Protocolo_Hash",
+    "roadmap_title": "Enlace a",
+    "roadmap_span": "Expertise_v5."
+  },
+  "project_data": {
+    "blockchain-integracion-bd": {
+      "title": "Integración BBDD con Blockchain",
+      "description": "Desarrollé la integración de bases de datos relacionales tradicionales con tecnología blockchain, permitiendo registrar transacciones e inmutabilidad.",
+      "status": "En producción",
+      "tag": "#Blockchain & BBDD"
+    },
+    "devops-pipeline": {
+      "title": "Pipeline DevOps CI/CD",
+      "description": "Implementación de pipelines CI/CD con Bitbucket Pipelines, Docker y despliegue automático en AWS para microservicios.",
+      "status": "En producción",
+      "tag": "#DevOps"
+    },
+    "ChatSender": {
+      "title": "Mensajería Anónima",
+      "description": "Sistema de mensajería segura con cifrado extremo a extremo basado en protocolo Matrix para comunicaciones privadas.",
+      "status": "En Desarrollo",
+      "tag": "#Seguridad"
+    },
+    "AutoTest": {
+      "title": "AutoTest Educativo",
+      "description": "Plataforma educativa para la realización de tests de autoescuela con generación automática de exámenes DGT.",
+      "status": "En desarrollo",
+      "tag": "#Desarrollo Web"
+    },
+    "webapp-monitorizacion": {
+      "title": "Monitorización Cloud",
+      "description": "Dashboard avanzado para la visualización de métricas y logs de infraestructura distribuida con alertas inteligentes.",
+      "status": "En desarrollo",
+      "tag": "#Monitorización"
+    },
+    "linux-scripts": {
+      "title": "Scripts Automatización Linux",
+      "description": "Repositorio de scripts útiles para automatizar tareas en sistemas Linux: backups, hardening y gestión de sistemas.",
+      "status": "Alpha",
+      "tag": "#Automatización"
+    }
   }
 }
