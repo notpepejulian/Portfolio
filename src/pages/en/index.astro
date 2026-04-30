@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { useTranslations, defaultLang } from "../../utils/i18n";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = Astro.currentLocale || defaultLang;
 const t = useTranslations(lang);
@@ -68,7 +68,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 
 					<div class="flex flex-wrap gap-6">
 						<a
-							href={getRelativeLocaleUrl(lang, 'proyectos/')}
+							href={getRelativeLocaleUrl(lang, "projects/")}
 							class="group relative px-10 py-5 bg-primary text-on-primary font-headline font-black rounded-lg overflow-hidden hover:scale-105 hover:shadow-glow-md duration-300 transition-all uppercase tracking-[0.2em] text-xs"
 						>
 							<span class="relative z-10"
@@ -76,7 +76,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 							>
 						</a>
 						<a
-							href={getRelativeLocaleUrl(lang, 'knowledge/')}
+							href={getRelativeLocaleUrl(lang, "knowledge/")}
 							class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-secondary hover:text-secondary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs"
 							style="--glow-color: rgba(112, 0, 255, 0.4)"
 						>
@@ -114,14 +114,14 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 						>
 							<button
 								id="heroUnmuteBtn"
-								data-unmute={t('ui.unmute')}
-								data-mute={t('ui.mute')}
+								data-unmute={t("ui.unmute")}
+								data-mute={t("ui.mute")}
 								class="bg-surface-container-lowest/60 backdrop-blur-md px-5 py-2.5 font-headline text-[9px] font-black tracking-widest uppercase rounded-lg border border-white/10 hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center gap-2 group/btn shadow-lg"
 							>
 								<span class="material-symbols-outlined text-xs"
 									>volume_up</span
 								>
-								<span class="btn-text">{t('ui.unmute')}</span>
+								<span class="btn-text">{t("ui.unmute")}</span>
 							</button>
 						</div>
 
@@ -131,7 +131,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 								<div
 									class="px-2 py-1 bg-primary/20 border border-tertiary/40 rounded text-[8px] font-mono font-bold text-tertiary tracking-widest uppercase animate-pulse"
 								>
-									{t('ui.live')}
+									{t("ui.live")}
 								</div>
 							</div>
 						</div>
@@ -178,7 +178,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 								<div
 									class="text-[10px] font-mono text-primary font-black tracking-[0.3em] uppercase mb-2"
 								>
-									{t('ui.diagnostic')}
+									{t("ui.diagnostic")}
 								</div>
 								<div class="w-24 h-0.5 bg-primary/30">
 									<div
@@ -224,7 +224,10 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 							</div>
 							<div class="flex items-center gap-6 mt-12">
 								<a
-									href={getRelativeLocaleUrl(lang, 'conocimientos/')}
+									href={getRelativeLocaleUrl(
+										lang,
+										"conocimientos/",
+									)}
 									class="inline-flex items-center gap-3 text-xs font-headline font-bold text-primary uppercase tracking-widest group/btn"
 								>
 									View_Tech_Stack
@@ -251,21 +254,24 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 								>
 									<span
 										class="w-1.5 h-1.5 rounded-full bg-secondary"
-									></span> {t("about.skill_1")}
+									></span>
+									{t("about.skill_1")}
 								</li>
 								<li
 									class="flex items-center gap-3 text-on-surface-variant"
 								>
 									<span
 										class="w-1.5 h-1.5 rounded-full bg-secondary"
-									></span> {t("about.skill_2")}
+									></span>
+									{t("about.skill_2")}
 								</li>
 								<li
 									class="flex items-center gap-3 text-on-surface-variant"
 								>
 									<span
 										class="w-1.5 h-1.5 rounded-full bg-secondary"
-									></span> {t("about.skill_3")}
+									></span>
+									{t("about.skill_3")}
 								</li>
 							</ul>
 						</div>
@@ -281,30 +287,49 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 							</h4>
 							<div class="space-y-6">
 								<div class="flex items-start gap-4">
-									<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0 border border-tertiary/20">
-										<span class="material-symbols-outlined text-tertiary text-xl">auto_stories</span>
+									<div
+										class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0 border border-tertiary/20"
+									>
+										<span
+											class="material-symbols-outlined text-tertiary text-xl"
+											>auto_stories</span
+										>
 									</div>
 									<div>
-										<div class="text-sm font-headline font-bold text-on-surface">
+										<div
+											class="text-sm font-headline font-bold text-on-surface"
+										>
 											{t("about.learning_title")}
 										</div>
-										<p class="text-[10px] text-on-surface-variant leading-relaxed mt-1 opacity-80">
+										<p
+											class="text-[10px] text-on-surface-variant leading-relaxed mt-1 opacity-80"
+										>
 											{t("about.learning_desc")}
 										</p>
 									</div>
 								</div>
-								
-								<div class="h-px bg-outline-variant/10 w-full"></div>
-								
+
+								<div class="h-px bg-outline-variant/10 w-full">
+								</div>
+
 								<div class="flex items-start gap-4">
-									<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0 border border-tertiary/20">
-										<span class="material-symbols-outlined text-tertiary text-xl">terminal</span>
+									<div
+										class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0 border border-tertiary/20"
+									>
+										<span
+											class="material-symbols-outlined text-tertiary text-xl"
+											>terminal</span
+										>
 									</div>
 									<div>
-										<div class="text-sm font-headline font-bold text-on-surface">
+										<div
+											class="text-sm font-headline font-bold text-on-surface"
+										>
 											{t("about.rnd_title")}
 										</div>
-										<p class="text-[10px] text-on-surface-variant leading-relaxed mt-1 opacity-80">
+										<p
+											class="text-[10px] text-on-surface-variant leading-relaxed mt-1 opacity-80"
+										>
 											{t("about.rnd_desc")}
 										</p>
 									</div>
@@ -328,7 +353,11 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 					<h2
 						class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8"
 					>
-						{t("deep_dive.title")} <span class="text-secondary bg-clip-text bg-gradient-to-r from-primary to-primary-container">{t("deep_dive.title_span")}</span>
+						{t("deep_dive.title")}
+						<span
+							class="text-secondary bg-clip-text bg-gradient-to-r from-primary to-primary-container"
+							>{t("deep_dive.title_span")}</span
+						>
 					</h2>
 					<p
 						class="text-on-surface-variant text-lg leading-relaxed mb-10 font-light"
@@ -362,25 +391,41 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 				</div>
 				<div class="relative group lg:ml-12">
 					<!-- Glow Background -->
-					<div class="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-[2rem] blur-3xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-					
+					<div
+						class="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-[2rem] blur-3xl opacity-20 group-hover:opacity-40 transition duration-1000"
+					>
+					</div>
+
 					<!-- Terminal Container -->
-					<div class="relative aspect-[1.2/1] bg-surface-container rounded-2xl overflow-hidden border border-outline-variant/15 rotate-3 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
-						<img 
-							alt="DevOps Terminal Interface" 
-							class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-110 group-hover:scale-100" 
+					<div
+						class="relative aspect-[1.2/1] bg-surface-container rounded-2xl overflow-hidden border border-outline-variant/15 rotate-3 group-hover:rotate-0 transition-all duration-700 shadow-2xl"
+					>
+						<img
+							alt="DevOps Terminal Interface"
+							class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 scale-110 group-hover:scale-100"
 							src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvMdA9szOL0JjuqCih22RQzaXBPbtYrPUtG2oolhf8QL5Ap1540FIJQi5biUb-8jVR6NmnO5kbXrWOuT_g7ZdX4O0T-SGIp1paER5yR9WHjAp7A9-KSKStMKrJ02AbUcKaFb5Niu8gw2T6dwbYWZP8pZmkn6q57jIMe2wNYuvjR6SGn8XOjCrXyI9kyn-AtidsmP_O1tkH8g0MN0jcnDQOryRNMKXQeToCmBZc3PckXiw51j36J_frNL3qiziwe89nzcUi01-A2CQ"
 						/>
-						<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"></div>
-						<div class="absolute bottom-6 left-6 font-mono text-[9px] text-primary/80 tracking-widest uppercase">
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-60"
+						>
+						</div>
+						<div
+							class="absolute bottom-6 left-6 font-mono text-[9px] text-primary/80 tracking-widest uppercase"
+						>
 						</div>
 					</div>
 
 					<!-- Asymmetric Floating Element -->
-					<div class="absolute -bottom-8 -left-12 bg-surface-container-high/90 backdrop-blur-md p-6 rounded-xl border border-tertiary/20 shadow-glow-sm -rotate-3 hidden md:block group-hover:rotate-0 transition-all duration-700 z-20">
+					<div
+						class="absolute -bottom-8 -left-12 bg-surface-container-high/90 backdrop-blur-md p-6 rounded-xl border border-tertiary/20 shadow-glow-sm -rotate-3 hidden md:block group-hover:rotate-0 transition-all duration-700 z-20"
+					>
 						<div class="flex items-center gap-4">
 							<div>
-								<div class="text-lg font-headline font-black text-tertiary leading-none">{t('ui.integration')}</div>
+								<div
+									class="text-lg font-headline font-black text-tertiary leading-none"
+								>
+									{t("ui.integration")}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -390,7 +435,6 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 	</main>
 
 	<script is:inline>
-
 		// Handle hero video
 		const heroVideo = document.getElementById("heroVideo");
 		const heroUnmuteBtn = document.getElementById("heroUnmuteBtn");
@@ -400,8 +444,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 		heroUnmuteBtn?.addEventListener("click", () => {
 			if (heroVideo.muted) {
 				heroVideo.muted = false;
-				heroUnmuteBtn.innerHTML =
-					`<span class="material-symbols-outlined text-xs">volume_off</span> <span class="btn-text">${heroMuteLabel}</span>`;
+				heroUnmuteBtn.innerHTML = `<span class="material-symbols-outlined text-xs">volume_off</span> <span class="btn-text">${heroMuteLabel}</span>`;
 				heroUnmuteBtn.classList.replace(
 					"bg-surface-container-lowest/60",
 					"bg-primary",
@@ -409,8 +452,7 @@ const heroVideoUrl = `${import.meta.env.BASE_URL}Nacho_Sánchez_InterviewG.mp4`;
 				heroUnmuteBtn.classList.add("text-on-primary");
 			} else {
 				heroVideo.muted = true;
-				heroUnmuteBtn.innerHTML =
-					`<span class="material-symbols-outlined text-xs">volume_up</span> <span class="btn-text">${heroUnmuteLabel}</span>`;
+				heroUnmuteBtn.innerHTML = `<span class="material-symbols-outlined text-xs">volume_up</span> <span class="btn-text">${heroUnmuteLabel}</span>`;
 				heroUnmuteBtn.classList.replace(
 					"bg-primary",
 					"bg-surface-container-lowest/60",
