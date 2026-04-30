@@ -126,7 +126,9 @@
     "cert_2_title": "GitHub Actions Automation",
     "cert_2_desc": "Orquestación avanzada de CI/CD utilizando GitHub Actions para desarrollo de software y pipelines de infraestructura.",
     "cert_3_title": "AWS Cloud Practitioner",
-    "cert_3_desc": "Comprensión fundamental de la plataforma AWS Cloud, incluyendo infraestructura básica y seguridad."
+    "cert_3_desc": "Comprensión fundamental de la plataforma AWS Cloud, incluyendo infraestructura básica y seguridad.",
+    "cert_4_title": "AWS CloudOps Engineer",
+    "cert_4_desc": "Especialización en orquestación, automatización y mantenimiento continuo de infraestructuras escalables en AWS."
   },
   "ai": {
     "label": "Interfaz de Red Neuronal v2.1",

@@ -7,15 +7,15 @@ const lang = Astro.currentLocale || defaultLang;
 const t = useTranslations(lang);
 
 const certifications = [
-  {
-    title: t('certifications.cert_1_title'),
-    issuer: "Amazon Web Services",
-    status: t('certifications.status_progress'),
-    description: t('certifications.cert_1_desc'),
-    badge: "aws_saa.png",
-    link: "https://aws.amazon.com/es/certification/certified-solutions-architect-associate/",
-    color: "primary"
-  },
+  // {
+  //   title: t('certifications.cert_1_title'),
+  //   issuer: "Amazon Web Services",
+  //   status: t('certifications.status_progress'),
+  //   description: t('certifications.cert_1_desc'),
+  //   badge: "aws_saa.png",
+  //   link: "https://aws.amazon.com/es/certification/certified-solutions-architect-associate/",
+  //   color: "primary"
+  // },
   {
     title: t('certifications.cert_2_title'),
     issuer: "GitHub",
@@ -26,6 +26,16 @@ const certifications = [
     color: "tertiary"
   },
   {
+    title: t('certifications.cert_4_title'),
+    issuer: "Amazon Web Services",
+    status: t('certifications.status_progress'),
+    badge: "cloudops.png",
+    description: t('certifications.cert_4_desc'),
+    link: "https://aws.amazon.com/certification/certified-cloudops-engineer-associate/",
+    color: "primary"
+  }
+  /*
+  {
     title: t('certifications.cert_3_title'),
     issuer: "Amazon Web Services",
     status: t('certifications.status_completed'),
@@ -33,6 +43,7 @@ const certifications = [
     link: "https://aws.amazon.com/es/certification/certified-cloud-practitioner/",
     color: "tertiary"
   }
+  */
 ];
 ---
 
