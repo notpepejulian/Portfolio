@@ -1,0 +1,262 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from "../utils/i18n";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const bullets = t('cv.experience_bullets');
+const experienceBullets = Array.isArray(bullets) ? bullets : [];
+
+const featuredProjectIds = [
+  "blockchain-integracion-bd",
+  "devops-pipeline",
+  "ChatSender",
+  "linux-scripts"
+];
+
+const detailPath = lang === 'es' ? 'proyectos/' : 'projects/';
+---
+
+<Layout title={t('cv.tab_title')}>
+  <main class="flex-1 flex flex-col items-center py-16 px-6 pt-32 min-h-screen">
+    
+    <!-- Print / Download bar -->
+    <div class="w-full max-w-[210mm] mx-auto mb-6 flex items-center justify-between">
+      <div class="flex items-center gap-3 text-[10px] font-mono text-on-surface-variant tracking-widest uppercase">
+        <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+        CURRICULUM_VITAE // REV_04
+      </div>
+      <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 text-primary text-[10px] font-mono font-bold uppercase tracking-widest rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+        <span class="material-symbols-outlined text-sm">print</span>
+        {t('cv.print_cta')}
+      </button>
+    </div>
+
+    <!-- Document Container -->
+    <div class="a4-container font-body">
+      <div class="doc-border"></div>
+
+      <!-- Header / Nombre -->
+      <header class="mb-14">
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div>
+            <h1 class="font-headline text-4xl font-black tracking-tight text-primary mb-1 uppercase">Nacho Sánchez García</h1>
+            <div class="font-mono text-[0.7rem] text-secondary tracking-[0.3em] uppercase mb-4">{t('cv.role')}</div>
+            <div class="flex flex-wrap gap-x-6 gap-y-1 text-[0.65rem] text-on-surface-variant font-medium tracking-wider uppercase">
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[11px]">location_on</span> {t('cv.location')}</span>
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[11px]">link</span> <a href="https://github.com/notpepejulian" class="hover:text-primary transition-colors">github.com/notpepejulian</a></span>
+              <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[11px]">person</span> <a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" class="hover:text-primary transition-colors">LinkedIn</a></span>
+            </div>
+          </div>
+          <div class="px-4 py-2 border border-primary/20 bg-primary/5 rounded-lg text-[9px] font-mono text-primary uppercase tracking-widest text-right">
+            <div class="text-on-surface-variant mb-1">{t('cv.english_level')}</div>
+            <div class="font-black text-sm">B2</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Resumen Ejecutivo -->
+      <section class="mb-12">
+        <div class="section-header">
+          <h2 class="font-headline text-base font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">description</span>
+            {t('cv.profile_title')}
+          </h2>
+        </div>
+        <p class="text-sm leading-relaxed text-on-surface/90">
+          {t('cv.profile_desc')}
+        </p>
+      </section>
+
+      <!-- Stack Técnico -->
+      <section class="mb-12">
+        <div class="section-header">
+          <h2 class="font-headline text-base font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">terminal</span>
+            {t('cv.stack_title')}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_cloud')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["AWS", "CDK & TypeScript", "CloudFormation"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_containers')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["Docker", "Kubernetes", "AWS - EC2, ECS, EKS"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_automation')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["GitHub Actions", "Bitbucket Pipelines", "GitOps"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_security')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["Bash", "IAM", "Prometheus", "Grafana", "Linux", "Hardening"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_languages')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["TypeScript", "Python", "Bash", "Node.js"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[0.65rem] font-bold text-secondary tracking-widest uppercase mb-3">{t('cv.stack_databases')}</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {["PostgreSQL", "MongoDB", "Redis", "S3", "AWS - RDS, DynamoDB, ElastiCache"].map(t => (
+                <span class="px-2 py-1 bg-surface-container border border-outline-variant/30 text-[10px] font-mono text-primary">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experiencia -->
+      <section class="mb-12">
+        <div class="section-header">
+          <h2 class="font-headline text-base font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">history</span>
+            {t('cv.experience_title')}
+          </h2>
+        </div>
+        <div class="space-y-8">
+          <div class="relative pl-6 border-l border-primary/30">
+            <div class="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-primary rounded-full"></div>
+            <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+              <div>
+                <h3 class="font-headline font-bold text-sm text-on-surface">{t('cv.experience_role')}</h3>
+                <div class="text-secondary font-medium text-[10px] uppercase tracking-wider">{t('cv.experience_company')}</div>
+              </div>
+              <div class="font-mono text-[10px] text-on-surface-variant uppercase bg-surface-container px-2 py-1 mt-2 sm:mt-0">{t('cv.experience_date')}</div>
+            </div>
+            <ul class="text-[12px] leading-relaxed text-on-surface/80 space-y-1.5 list-disc ml-4">
+              {experienceBullets.map(bullet => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyectos Destacados -->
+      <section class="mb-12">
+        <div class="section-header">
+          <h2 class="font-headline text-base font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">code</span>
+            {t('cv.projects_title')}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {featuredProjectIds.map((id) => (
+            <a href={getRelativeLocaleUrl(lang, `${detailPath}${id}/`)} class="group p-5 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary/30 hover:bg-surface-container-high transition-all block">
+              <div class="text-[9px] font-mono text-secondary mb-2 tracking-widest">{t(`project_data.${id}.tag`)}</div>
+              <div class="font-headline font-bold text-sm text-on-surface mb-1 group-hover:text-primary transition-colors">{t(`project_data.${id}.title`)}</div>
+              <p class="text-[11px] text-on-surface-variant leading-relaxed">{t(`project_data.${id}.description`)}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Certificaciones -->
+      <section class="mb-12">
+        <div class="section-header">
+          <h2 class="font-headline text-base font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">school</span>
+            {t('cv.certifications_title')}
+          </h2>
+        </div>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center p-4 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary/20 transition-all">
+            <div>
+              <div class="text-sm font-bold text-on-surface uppercase">{t('cv.cert_saa_title')}</div>
+              <div class="text-[10px] text-on-surface-variant tracking-wider">{t('cv.cert_saa_subtitle')}</div>
+            </div>
+            <span class="px-2 py-1 bg-primary/10 text-primary font-mono text-[9px] tracking-widest border border-primary/20 rounded">{t('cv.cert_saa_badge')}</span>
+          </div>
+          <div class="flex justify-between items-center p-4 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-tertiary/20 transition-all">
+            <div>
+              <div class="text-sm font-bold text-on-surface uppercase">{t('cv.cert_asir_title')}</div>
+              <div class="text-[10px] text-on-surface-variant tracking-wider">{t('cv.cert_asir_subtitle')}</div>
+            </div>
+            <span class="material-symbols-outlined text-secondary">verified</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer del documento -->
+      <div class="mt-16 pt-8 border-t border-outline-variant/10 flex justify-between items-end">
+        <div class="font-mono text-[8px] text-on-surface-variant uppercase tracking-[0.2em]">
+          SHA-256: 8f2d...b9c1 // REV_04 // {new Date().getFullYear()}
+        </div>
+        <div class="flex gap-4 font-mono text-[9px] text-on-surface-variant uppercase tracking-widest">
+          <a href="https://github.com/notpepejulian" class="hover:text-primary transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/" class="hover:text-primary transition-colors">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .a4-container {
+    width: 100%;
+    max-width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background-color: #0f141a;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(129, 236, 255, 0.05);
+    padding: 40mm 20mm;
+    position: relative;
+  }
+  @media (max-width: 640px) {
+    .a4-container {
+      padding: 2rem 1.5rem;
+      min-height: auto;
+    }
+  }
+  .doc-border {
+    position: absolute;
+    top: 8mm;
+    bottom: 8mm;
+    left: 8mm;
+    right: 8mm;
+    border: 1px solid rgba(129, 236, 255, 0.04);
+    pointer-events: none;
+  }
+  .section-header {
+    border-bottom: 1px solid rgba(68, 72, 79, 0.4);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  @media print {
+    nav, footer, button { display: none !important; }
+    .a4-container { box-shadow: none; padding: 20mm 15mm; }
+    body { background: white !important; }
+    * { color: black !important; border-color: #ccc !important; }
+    .text-primary { color: #006976 !important; }
+    .text-secondary { color: #006d35 !important; }
+  }
+</style>
