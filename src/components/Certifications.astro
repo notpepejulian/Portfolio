@@ -16,22 +16,31 @@ const certifications = [
     issuer: "GitHub",
     status: t("certifications.status_completed"),
     description: t("certifications.cert_2_desc"),
-    badge: "/certifications/github_actions.png",
-    link: lang === 'es' ? "https://docs.github.com/es/actions" : "https://docs.github.com/en/actions",
+    badge: "/certifications/01.webp",
+    link:
+      lang === "es"
+        ? "https://docs.github.com/es/actions"
+        : "https://docs.github.com/en/actions",
     color: "tertiary",
   },
   {
     title: t("certifications.cert_4_title"),
     issuer: "Amazon Web Services",
     status: t("certifications.status_progress"),
-    badge: "/certifications/cloudops.png",
+    badge: "/certifications/02.webp",
     description: t("certifications.cert_4_desc"),
-    link: lang === 'es' ? "https://aws.amazon.com/es/certification/certified-cloudops-engineer-associate/" : "https://aws.amazon.com/certification/certified-cloudops-engineer-associate/",
+    link:
+      lang === "es"
+        ? "https://aws.amazon.com/es/certification/certified-cloudops-engineer-associate/"
+        : "https://aws.amazon.com/certification/certified-cloudops-engineer-associate/",
     color: "primary",
-  }
+  },
 ];
 
-const title = lang === 'es' ? "Nacho Sánchez | Hitos Profesionales" : "Nacho Sánchez | Professional Milestones";
+const title =
+  lang === "es"
+    ? "Nacho Sánchez | Hitos Profesionales"
+    : "Nacho Sánchez | Professional Milestones";
 ---
 
 <Layout title={title}>

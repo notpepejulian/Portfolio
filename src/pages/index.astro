@@ -1,5 +1,4 @@
 ---
-import Home from "./../components/Home.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+return Astro.redirect(getRelativeLocaleUrl("es", ""));
 ---
-
-<Home lang="es" />
