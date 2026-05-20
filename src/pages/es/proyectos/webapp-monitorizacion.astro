@@ -1,9 +1,9 @@
 ---
-import { useTranslations, defaultLang } from "../../utils/i18n";
+import { useTranslations, defaultLang } from "../../../utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 const lang = Astro.currentLocale || defaultLang;
 const t = useTranslations(lang);
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 ---
 
 <Layout title="Nacho Sánchez | Cloud Monitoring">

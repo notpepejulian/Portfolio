@@ -1,7 +1,7 @@
 ---
 import "../styles/base.css";
 import { useTranslations, defaultLang } from "../utils/i18n";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = Astro.currentLocale || defaultLang;
 const { title = "Nacho Sánchez | Portfolio" } = Astro.props;
@@ -10,27 +10,36 @@ const t = useTranslations(lang);
 // Helper to check current path and swap language
 const currentPath = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const cleanPath = currentPath
-  .replace(/^en\//, '')
-  .replace(/^es\//, '')
-  // swap english slugs back to spanish when computing esUrl
-  .replace(/^projects\//, 'proyectos/')
-  .replace(/^knowledge\//, 'conocimientos/')
-  .replace(/^certifications\//, 'certificaciones/');
+	.replace(/^en\//, "")
+	.replace(/^es\//, "")
+	// swap english slugs back to spanish when computing esUrl
+	.replace(/^projects\//, "proyectos/")
+	.replace(/^knowledge\//, "conocimientos/")
+	.replace(/^certifications\//, "certificaciones/");
 
-const esUrl = getRelativeLocaleUrl('es', cleanPath);
+const esUrl = getRelativeLocaleUrl("es", cleanPath);
 // For EN, swap Spanish slugs to English
 const enCleanPath = currentPath
-  .replace(/^en\//, '')
-  .replace(/^es\//, '')
-  .replace(/^proyectos\//, 'projects/')
-  .replace(/^conocimientos\//, 'knowledge/')
-  .replace(/^certificaciones\//, 'certifications/');
-const enUrl = getRelativeLocaleUrl('en', enCleanPath);
+	.replace(/^en\//, "")
+	.replace(/^es\//, "")
+	.replace(/^proyectos\//, "projects/")
+	.replace(/^conocimientos\//, "knowledge/")
+	.replace(/^certificaciones\//, "certifications/");
+const enUrl = getRelativeLocaleUrl("en", enCleanPath);
 
 // Locale-aware nav paths
-const navPaths = lang === 'en'
-  ? { knowledge: 'knowledge/', projects: 'projects/', certifications: 'certifications/' }
-  : { knowledge: 'conocimientos/', projects: 'proyectos/', certifications: 'certificaciones/' };
+const navPaths =
+	lang === "en"
+		? {
+				knowledge: "knowledge/",
+				projects: "projects/",
+				certifications: "certifications/",
+			}
+		: {
+				knowledge: "conocimientos/",
+				projects: "proyectos/",
+				certifications: "certificaciones/",
+			};
 ---
 
 <!doctype html>
@@ -45,45 +54,114 @@ const navPaths = lang === 'en'
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-		
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+
 		<style>
-			body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f1f5f9; }
-			.font-headline { font-family: 'Space Grotesk', sans-serif; }
-			.font-mono { font-family: 'JetBrains Mono', monospace; }
-			.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+			body {
+				font-family: "Inter", sans-serif;
+				background-color: #020617;
+				color: #f1f5f9;
+			}
+			.font-headline {
+				font-family: "Space Grotesk", sans-serif;
+			}
+			.font-mono {
+				font-family: "JetBrains Mono", monospace;
+			}
+			.material-symbols-outlined {
+				font-variation-settings:
+					"FILL" 0,
+					"wght" 400,
+					"GRAD" 0,
+					"opsz" 24;
+			}
 		</style>
 	</head>
-	<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary font-body">
+	<body
+		class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary font-body"
+	>
 		<!-- TopNavBar -->
 		<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-			<div class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto">
-				<div class="text-xl font-black tracking-tighter gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)] font-headline uppercase group flex items-center gap-2">
-					<a href={getRelativeLocaleUrl(lang, "/")} class="transition-all">Nacho Sánchez</a>
+			<div
+				class="flex justify-between items-center px-6 py-4 max-w-screen-2xl mx-auto"
+			>
+				<div
+					class="text-xl font-black tracking-tighter gradient-text drop-shadow-[0_0_30px_rgba(0,242,255,0.3)] font-headline uppercase group flex items-center gap-2"
+				>
+					<a
+						href={getRelativeLocaleUrl(lang, "/")}
+						class="transition-all">Nacho Sánchez</a
+					>
 				</div>
-				
-				<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase">
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, "/")}>{t('nav.index')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.knowledge)}>{t('nav.knowledge')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.projects)}>{t('nav.projects')}</a>
-					<a class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded" href={getRelativeLocaleUrl(lang, navPaths.certifications)}>{t('nav.certifications')}</a>
+
+				<div
+					class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase"
+				>
+					<a
+						class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded"
+						href={getRelativeLocaleUrl(lang, "/")}
+						>{t("nav.index")}</a
+					>
+					<a
+						class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded"
+						href={getRelativeLocaleUrl(lang, navPaths.knowledge)}
+						>{t("nav.knowledge")}</a
+					>
+					<a
+						class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded"
+						href={getRelativeLocaleUrl(lang, navPaths.projects)}
+						>{t("nav.projects")}</a
+					>
+					<a
+						class="text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all px-2 py-1 rounded"
+						href={getRelativeLocaleUrl(
+							lang,
+							navPaths.certifications,
+						)}>{t("nav.certifications")}</a
+					>
 				</div>
 
 				<div class="flex items-center gap-6">
-                    <!-- Native Language Selector -->
-                    <div class="relative group/lang flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-full border border-outline-variant/30 hover:border-primary/40 transition-all duration-300">
-                        <span class="material-symbols-outlined text-[16px] text-primary opacity-70 group-hover/lang:animate-spin-slow">language</span>
-                        <div class="flex gap-1">
-                            <a href={esUrl} class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'es' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>ES</a>
-                            <a href={enUrl} class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === 'en' ? 'bg-primary text-on-primary shadow-glow-sm' : 'text-on-surface-variant hover:text-on-surface'}`}>EN</a>
-                        </div>
-                    </div>
+					<!-- Native Language Selector -->
+					<div
+						class="relative group/lang flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-full border border-outline-variant/30 hover:border-primary/40 transition-all duration-300"
+					>
+						<span
+							class="material-symbols-outlined text-[16px] text-primary opacity-70 group-hover/lang:animate-spin-slow"
+							>language</span
+						>
+						<div class="flex gap-1">
+							<a
+								href={esUrl}
+								class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === "es" ? "bg-primary text-on-primary shadow-glow-sm" : "text-on-surface-variant hover:text-on-surface"}`}
+								>ES</a
+							>
+							<a
+								href={enUrl}
+								class={`px-2 py-0.5 rounded-full text-[10px] font-black transition-all ${lang === "en" ? "bg-primary text-on-primary shadow-glow-sm" : "text-on-surface-variant hover:text-on-surface"}`}
+								>EN</a
+							>
+						</div>
+					</div>
 
 					<!-- <a href="https://github.com/notpepejulian" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5">terminal</a> -->
-					<a href={getRelativeLocaleUrl(lang, 'CV/')} class="bg-primary text-on-primary px-5 py-2.5 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded-lg hover:scale-105 hover:shadow-glow-md duration-300 transition-all">{t('nav.cv')}</a>
+					<a
+						href={getRelativeLocaleUrl(lang, "CV/")}
+						class="bg-primary text-on-primary px-5 py-2.5 font-headline text-[10px] font-black tracking-[0.2em] uppercase rounded-lg hover:scale-105 hover:shadow-glow-md duration-300 transition-all"
+						>{t("nav.cv")}</a
+					>
 				</div>
 			</div>
 		</nav>
@@ -91,22 +169,58 @@ const navPaths = lang === 'en'
 		<slot />
 
 		<!-- Footer -->
-		<footer class="bg-black w-full py-16 border-t border-outline-variant/10 mt-20 relative overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
-			<div class="flex flex-col md:flex-row justify-between items-center px-10 gap-8 max-w-screen-2xl mx-auto">
+		<footer
+			class="bg-black w-full py-16 border-t border-outline-variant/10 mt-20 relative overflow-hidden"
+		>
+			<div
+				class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"
+			>
+			</div>
+			<div
+				class="flex flex-col md:flex-row justify-between items-center px-10 gap-8 max-w-screen-2xl mx-auto"
+			>
 				<div class="flex flex-col">
-					<span class="gradient-text font-black font-headline text-lg tracking-tighter uppercase mb-2">NACHO_SÁNCHEZ</span>
-					<span class="font-mono text-[9px] tracking-[0.2em] uppercase text-on-surface-variant/40">© {new Date().getFullYear()} {t('footer.system_signature')}</span>
+					<span
+						class="gradient-text font-black font-headline text-lg tracking-tighter uppercase mb-2"
+						>NACHO_SÁNCHEZ</span
+					>
+					<span
+						class="font-mono text-[9px] tracking-[0.2em] uppercase text-on-surface-variant/40"
+						>© {new Date().getFullYear()}
+						{t("footer.system_signature")}</span
+					>
 				</div>
-				<div class="flex flex-wrap justify-center gap-8 font-mono text-[9px] tracking-[0.3em] uppercase">
-					<a class="text-on-surface-variant hover:text-primary transition-all" href="https://github.com/notpepejulian">GitHub</a>
-					<a class="text-on-surface-variant hover:text-secondary transition-all" href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/">LinkedIn</a>
+				<div
+					class="flex flex-wrap justify-center gap-8 font-mono text-[9px] tracking-[0.3em] uppercase"
+				>
+					<a
+						class="text-on-surface-variant hover:text-primary transition-all"
+						href="https://github.com/notpepejulian">GitHub</a
+					>
+					<a
+						class="text-on-surface-variant hover:text-secondary transition-all"
+						href="https://www.linkedin.com/in/nacho-s%C3%A1nchez-garc%C3%ADa/"
+						>LinkedIn</a
+					>
 					<!-- <a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">StackOverflow</a> -->
-					<a class="text-on-surface-variant hover:text-accent transition-all" href="mailto:[nachooosnchezz@gmail.com]">nachooosnchezz@gmail.com</a>
+					<a
+						class="text-on-surface-variant hover:text-accent transition-all"
+						href="mailto:[nachooosnchezz@gmail.com]"
+						>nachooosnchezz@gmail.com</a
+					>
 				</div>
-				<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/10">
-					<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shadow-glow-sm" style="--glow-color: rgba(0, 255, 149, 0.5)"></div>
-					<span class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase">{t('footer.uptime')}</span>
+				<div
+					class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/10"
+				>
+					<div
+						class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse shadow-glow-sm"
+						style="--glow-color: rgba(0, 255, 149, 0.5)"
+					>
+					</div>
+					<span
+						class="text-tertiary font-mono text-[9px] tracking-[0.2em] font-bold uppercase"
+						>{t("footer.uptime")}</span
+					>
 				</div>
 			</div>
 		</footer>
