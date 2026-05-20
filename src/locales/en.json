@@ -25,7 +25,7 @@
     "cv": "View_CV"
   },
   "hero": {
-    "status": "System Status: Operational",
+    "status": "Welcome to My Portfolio",
     "title_start": "Automating the",
     "title_end": "Cloud Ecosystem.",
     "description": "I'm Nacho Sánchez — Cloud Engineer specializing in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",

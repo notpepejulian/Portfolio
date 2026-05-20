@@ -54,24 +54,24 @@ import Layout from "../../../layouts/Layout.astro";
     >
         <div class="max-w-4xl w-full text-center z-10">
             <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-400/30 mb-6"
+                class="inline-flex items-center gap-4 px-4 py-1.5 border border-amber-400/20 rounded bg-amber-500/10 mb-6"
             >
                 <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"
                 ></span>
-                <span class="text-amber-300 font-semibold text-sm"
+                <span class="text-amber-300 font-mono text-[10px] tracking-widest uppercase font-bold"
                     >{t('projects.in_progress')}</span
                 >
             </div>
             <h1
-                class="text-6xl sm:text-7xl font-black bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent mb-6 tracking-tight"
+                class="font-headline text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent mb-6"
             >
                 AutoTest.es
             </h1>
-            <p class="text-xl sm:text-2xl font-medium text-white/80 mb-6">
+            <p class="text-xl sm:text-2xl font-light text-on-surface-variant mb-6">
                 Plataforma Educativa de Tests de Autoescuela
             </p>
             <p
-                class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
+                class="text-lg text-on-surface-variant font-light mb-10 max-w-2xl mx-auto leading-relaxed"
             >
                 Plataforma web completa para realizar tests de autoescuela con
                 generación automática de exámenes, gestión de preguntas DGT y
@@ -81,19 +81,14 @@ import Layout from "../../../layouts/Layout.astro";
                 <a
                     href="https://github.com/notpepejulian/AutoTest"
                     target="_blank"
-                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group"
+                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-white font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 group"
                 >
-                    <i class="fa-brands fa-github mr-2"></i>
                     <span>Ver en GitHub</span>
-                    <i
-                        class="fa-solid fa-arrow-up-right-from-square ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                    ></i>
                 </a>
                 <a
                     href={getRelativeLocaleUrl(lang, 'projects/')}
-                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-red-300 font-semibold shadow-lg transition-all duration-200 text-base border border-red-400/30"
+                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-red-300 font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 border border-red-400/30"
                 >
-                    <i class="fa-solid fa-arrow-left mr-2"></i>
                     {t('projects.back')}
                 </a>
             </div>
@@ -105,13 +100,13 @@ import Layout from "../../../layouts/Layout.astro";
             <!-- Vista del Proyecto -->
             <div>
                 <h2
-                    class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
                 >
                     Vista del Proyecto
                 </h2>
                 <div class="max-w-5xl mx-auto">
                     <div
-                        class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm overflow-hidden"
+                        class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-500 border border-red-400/20 hover:border-red-400/40 hover-glow-red rounded-[2.5rem] p-3 md:p-6 backdrop-blur-md overflow-hidden"
                     >
                         <div class="rounded-lg overflow-hidden shadow-2xl">
                             <img
@@ -145,8 +140,8 @@ import Layout from "../../../layouts/Layout.astro";
                         <div
                             class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-book-open"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">menu_book</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Práctica de Exámenes
@@ -158,10 +153,10 @@ import Layout from "../../../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-chart-line"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">monitoring</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Seguimiento de Progreso
@@ -172,10 +167,10 @@ import Layout from "../../../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-graduation-cap"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">school</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Preparación Integral
@@ -187,10 +182,10 @@ import Layout from "../../../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-clock"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">schedule</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Exámenes Cronometrados
@@ -202,10 +197,10 @@ import Layout from "../../../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-user-graduate"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">person</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Perfiles de Usuario
@@ -216,10 +211,10 @@ import Layout from "../../../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
-                            <div class="text-red-400 text-3xl mb-3">
-                                <i class="fa-solid fa-database"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-red-400">database</span>
                             </div>
                             <h3 class="text-red-300 font-semibold text-lg mb-2">
                                 Base de Datos DGT
@@ -243,7 +238,7 @@ import Layout from "../../../layouts/Layout.astro";
                 <div class="max-w-5xl mx-auto">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div
-                            class="bg-gradient-to-br from-red-900/20 to-slate-900/40 border border-red-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-red-400/20 rounded-[2rem] p-6 hover-glow-red backdrop-blur-md relative overflow-hidden"
                         >
                             <div class="flex items-center gap-3 mb-4">
                                 <div
@@ -293,15 +288,13 @@ import Layout from "../../../layouts/Layout.astro";
                         </div>
 
                         <div
-                            class="bg-gradient-to-br from-orange-900/20 to-slate-900/40 border border-orange-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-orange-400/20 rounded-[2rem] p-6 hover-glow-orange backdrop-blur-md relative overflow-hidden"
                         >
                             <div class="flex items-center gap-3 mb-4">
                                 <div
-                                    class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center"
+                                    class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center"
                                 >
-                                    <i
-                                        class="fa-solid fa-server text-2xl text-orange-400"
-                                    ></i>
+                                    <span class="material-symbols-outlined text-orange-400">dns</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-orange-300">
                                     Backend
@@ -333,15 +326,13 @@ import Layout from "../../../layouts/Layout.astro";
                         </div>
 
                         <div
-                            class="bg-gradient-to-br from-cyan-900/20 to-slate-900/40 border border-cyan-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-cyan-400/20 rounded-[2rem] p-6 hover-glow-cyan backdrop-blur-md relative overflow-hidden"
                         >
                             <div class="flex items-center gap-3 mb-4">
                                 <div
-                                    class="w-12 h-12 rounded-lg bg-cyan-500/20 flex items-center justify-center"
+                                    class="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center"
                                 >
-                                    <i
-                                        class="fa-solid fa-database text-2xl text-cyan-400"
-                                    ></i>
+                                    <span class="material-symbols-outlined text-cyan-400">database</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-cyan-300">
                                     Base de Datos
@@ -373,15 +364,13 @@ import Layout from "../../../layouts/Layout.astro";
                         </div>
 
                         <div
-                            class="bg-gradient-to-br from-blue-900/20 to-slate-900/40 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm"
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] p-6 hover-glow-blue backdrop-blur-md relative overflow-hidden"
                         >
                             <div class="flex items-center gap-3 mb-4">
                                 <div
-                                    class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center"
+                                    class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"
                                 >
-                                    <i
-                                        class="fa-brands fa-docker text-2xl text-blue-400"
-                                    ></i>
+                                    <span class="material-symbols-outlined text-blue-400">deployed_code</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-blue-300">
                                     Docker
@@ -416,13 +405,13 @@ import Layout from "../../../layouts/Layout.astro";
             <!-- Flujo de Funcionamiento -->
             <div>
                 <h2
-                    class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
                 >
                     Flujo de Funcionamiento
                 </h2>
                 <div class="max-w-4xl mx-auto">
                     <div
-                        class="bg-gradient-to-br from-slate-900/40 to-slate-800/40 border border-red-400/20 rounded-xl p-8 backdrop-blur-sm"
+                        class="bg-surface-container/40 border border-red-400/20 rounded-[2.5rem] p-8 md:p-12 backdrop-blur-md"
                     >
                         <div class="space-y-8">
                             <div>
@@ -438,7 +427,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         Registro y Autenticación
                                     </h3>
                                 </div>
-                                <div class="ml-14 space-y-2 text-gray-300">
+                                <div class="ml-14 space-y-2 text-on-surface-variant font-light">
                                     <p class="flex items-start gap-2">
                                         <span class="text-red-400 mt-1">·</span>
                                         <span
@@ -475,7 +464,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         Generación de Examen
                                     </h3>
                                 </div>
-                                <div class="ml-14 space-y-2 text-gray-300">
+                                <div class="ml-14 space-y-2 text-on-surface-variant font-light">
                                     <p class="flex items-start gap-2">
                                         <span class="text-red-400 mt-1">·</span>
                                         <span
@@ -513,7 +502,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         Evaluación y Resultados
                                     </h3>
                                 </div>
-                                <div class="ml-14 space-y-2 text-gray-300">
+                                <div class="ml-14 space-y-2 text-on-surface-variant font-light">
                                     <p class="flex items-start gap-2">
                                         <span class="text-red-400 mt-1">·</span>
                                         <span
@@ -544,7 +533,7 @@ import Layout from "../../../layouts/Layout.astro";
             <!-- Tecnologías Empleadas -->
             <div>
                 <h2
-                    class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
                 >
                     Tecnologías Empleadas
                 </h2>
@@ -739,7 +728,7 @@ import Layout from "../../../layouts/Layout.astro";
             <!-- Características Principales -->
             <div>
                 <h2
-                    class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-orange-400 to-red-500 mb-8 text-center"
                 >
                     Características Principales
                 </h2>
@@ -753,9 +742,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -763,7 +750,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Preguntas Oficiales DGT
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Base de datos completa con preguntas
                                             oficiales de la Dirección General de
                                             Tráfico.
@@ -774,9 +761,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -784,7 +769,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Generación Automática
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Scripts Python para generar exámenes
                                             y tests automáticamente desde la
                                             base de datos.
@@ -795,9 +780,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -805,7 +788,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Sistema de Autenticación
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Gestión completa de usuarios con
                                             registro, login y sesiones seguras.
                                         </p>
@@ -817,9 +800,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -827,7 +808,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Estadísticas y Progreso
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Seguimiento detallado del progreso
                                             con gráficos y métricas de
                                             rendimiento.
@@ -838,9 +819,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -848,7 +827,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Docker Compose
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Despliegue simplificado con
                                             contenedores Docker para desarrollo
                                             y producción.
@@ -859,9 +838,7 @@ import Layout from "../../../layouts/Layout.astro";
                                     <div
                                         class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1"
                                     >
-                                        <i
-                                            class="fa-solid fa-check text-red-400"
-                                        ></i>
+                                        <span class="material-symbols-outlined text-red-400">check_circle</span>
                                     </div>
                                     <div>
                                         <h4
@@ -869,7 +846,7 @@ import Layout from "../../../layouts/Layout.astro";
                                         >
                                             Scripts de Gestión
                                         </h4>
-                                        <p class="text-gray-300 text-sm">
+                                        <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
                                             Herramientas Python para insertar
                                             preguntas, generar tests y gestionar
                                             la base de datos.
@@ -986,7 +963,7 @@ import Layout from "../../../layouts/Layout.astro";
             <!-- Botón Volver -->
             <div class="text-center pt-8">
                 <a
-                    href={getRelativeLocaleUrl(lang, 'projects/')}
+                    href={getRelativeLocaleUrl(lang, 'proyectos/')}
                     class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-red-500 hover:bg-red-400 text-white font-semibold shadow-lg transition-all duration-200 text-base group"
                 >
                     <i class="fa-solid fa-arrow-left mr-2"></i>

@@ -25,7 +25,7 @@
     "cv": "Ver_CV"
   },
   "hero": {
-    "status": "Estado del Sistema: Operativo",
+    "status": "Bienvenido a mi Portfolio",
     "title_start": "Automatizando el",
     "title_end": "Ecosistema Cloud.",
     "description": "Soy Nacho Sánchez — Ingeniero Cloud especializado en infraestructura de alta disponibilidad, orquestación CI/CD y escalado de Kubernetes. Cerrando la brecha entre la agilidad del desarrollo y la estabilidad operativa.",
