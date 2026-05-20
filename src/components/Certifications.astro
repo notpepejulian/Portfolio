@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from "../utils/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const certifications = [
+  {
+    title: t("certifications.cert_2_title"),
+    issuer: "GitHub",
+    status: t("certifications.status_completed"),
+    description: t("certifications.cert_2_desc"),
+    badge: "/certifications/github_actions.png",
+    link: lang === 'es' ? "https://docs.github.com/es/actions" : "https://docs.github.com/en/actions",
+    color: "tertiary",
+  },
+  {
+    title: t("certifications.cert_4_title"),
+    issuer: "Amazon Web Services",
+    status: t("certifications.status_progress"),
+    badge: "/certifications/cloudops.png",
+    description: t("certifications.cert_4_desc"),
+    link: lang === 'es' ? "https://aws.amazon.com/es/certification/certified-cloudops-engineer-associate/" : "https://aws.amazon.com/certification/certified-cloudops-engineer-associate/",
+    color: "primary",
+  }
+];
+
+const title = lang === 'es' ? "Nacho Sánchez | Hitos Profesionales" : "Nacho Sánchez | Professional Milestones";
+---
+
+<Layout title={title}>
+  <main class="pt-24 min-h-screen">
+    <!-- Header -->
+    <section
+      class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden text-center md:text-left"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 blur-[120px] -z-10 animate-pulse"
+      >
+      </div>
+      <div
+        class="absolute top-0 left-0 w-[600px] h-px bg-gradient-to-r from-primary/40 to-transparent"
+      >
+      </div>
+      <div class="max-w-3xl">
+        <p
+          class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-70"
+        >
+          {t("certifications.label")}
+        </p>
+        <h1
+          class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8"
+        >
+          {t("certifications.title")}
+          <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]"
+            >{t("certifications.title_span")}</span
+          >
+        </h1>
+        <p
+          class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light"
+        >
+          {t("certifications.description")}
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications Grid -->
+    <section class="px-6 pb-40 max-w-screen-2xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {
+          certifications.map((cert) => (
+            <div
+              class={`group bg-surface-container rounded-3xl border border-outline-variant/10 hover-glow-${cert.color} transition-all duration-500 overflow-hidden flex flex-col md:flex-row relative`}
+            >
+              <div class="p-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-8">
+                    <div
+                      class={`px-3 py-1 rounded bg-${cert.color}/10 border border-${cert.color}/20 text-${cert.color} text-[10px] font-mono font-bold tracking-[0.2em] uppercase`}
+                    >
+                      {cert.status}
+                    </div>
+                    <div class="text-[9px] font-label text-on-surface-variant uppercase tracking-widest opacity-60 font-black">
+                      {cert.issuer}
+                    </div>
+                  </div>
+                  <h3 class="font-headline text-3xl font-bold mb-6 tracking-tight group-hover:text-glow-primary transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-10 opacity-80 font-light">
+                    {cert.description}
+                  </p>
+                </div>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  class={`inline-flex items-center gap-3 text-[10px] font-headline font-black text-on-surface hover:text-${cert.color} uppercase tracking-[0.3em] transition-all group/link`}
+                >
+                  {t("certifications.cta_verify")}
+                  <span class="material-symbols-outlined text-sm group-hover/link:translate-x-3 transition-transform">
+                    fingerprint
+                  </span>
+                </a>
+              </div>
+              {cert.badge && (
+                <div class="md:w-56 bg-surface-container-high/30 flex items-center justify-center p-10 border-t md:border-t-0 md:border-l border-outline-variant/5">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${cert.badge}`}
+                    alt={cert.title}
+                    class="w-24 h-24 object-contain filter group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all grayscale group-hover:grayscale-0 duration-700"
+                  />
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

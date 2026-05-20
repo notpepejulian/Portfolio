@@ -1,0 +1,808 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from "../../utils/i18n";
+import Layout from "../../layouts/Layout.astro";
+
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+
+const backUrl = lang === 'es' ? getRelativeLocaleUrl(lang, 'proyectos/') : getRelativeLocaleUrl(lang, 'projects/');
+---
+
+<style>
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Animación de tecnologías desplazándose */
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.tech-scroll {
+		animation: scroll 30s linear infinite;
+	}
+
+	.tech-scroll:hover {
+		animation-play-state: paused;
+	}
+
+	.tech-container {
+		overflow: hidden;
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+	}
+</style>
+
+<Layout title={lang === 'es' ? "Nacho Sánchez | DevOps Pipeline" : "Nacho Sánchez | DevOps Pipeline"}>
+	<main
+		class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative"
+	>
+		<div class="max-w-4xl w-full text-center z-10">
+            <div
+                class="inline-flex items-center gap-4 px-4 py-1.5 border border-emerald-400/20 rounded bg-emerald-500/10 mb-6"
+            >
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+                ></span>
+                <span class="text-emerald-300 font-mono text-[10px] tracking-widest uppercase font-bold"
+                    >{t('project_data.devops-pipeline.status')}</span
+                >
+            </div>
+            <h1
+                class="font-headline text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent mb-6"
+            >
+                {t('project_data.devops-pipeline.title')}
+            </h1>
+            <p class="text-xl sm:text-2xl font-light text-on-surface-variant mb-6">
+                {t('project_pages.devops-pipeline.subtitle')}
+            </p>
+            <p
+                class="text-lg text-on-surface-variant font-light mb-10 max-w-2xl mx-auto leading-relaxed"
+            >
+                {t('project_pages.devops-pipeline.description')}
+            </p>
+            <a
+                href={backUrl}
+                class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-emerald-300 font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 border border-emerald-400/30"
+            >
+                {t('projects.back')}
+            </a>
+		</div>
+	</main>
+
+	<section class="mt-10 mb-40 w-full flex flex-col items-center px-6">
+		<div class="w-full max-w-6xl mx-auto space-y-24">
+			<!-- Casos de Uso -->
+			<div>
+				<h2
+					class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center"
+				>
+					{t('project_pages.devops-pipeline.cases.title')}
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<p
+						class="text-lg text-gray-300 leading-relaxed mb-6 text-center"
+						set:html={t('project_pages.devops-pipeline.cases.intro')}
+					/>
+					<div class="grid md:grid-cols-3 gap-6 mt-8">
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">deployed_code</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c1.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c1.desc')}
+							</p>
+						</div>
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">cloud</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c2.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c2.desc')}
+							</p>
+						</div>
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">power_settings_new</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c3.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c3.desc')}
+							</p>
+						</div>
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">route</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c4.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c4.desc')}
+							</p>
+						</div>
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">science</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c5.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c5.desc')}
+							</p>
+						</div>
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-emerald-400">sync</span>
+                            </div>
+							<h3
+								class="text-emerald-300 font-semibold text-lg mb-2"
+							>
+								{t('project_pages.devops-pipeline.cases.c6.title')}
+							</h3>
+							<p class="text-gray-300 text-sm leading-relaxed">
+								{t('project_pages.devops-pipeline.cases.c6.desc')}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Arquitectura -->
+			<div>
+				<h2
+					class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center"
+				>
+					{t('project_pages.devops-pipeline.architecture.title')}
+				</h2>
+				<div class="max-w-5xl mx-auto">
+					<div class="grid md:grid-cols-2 gap-6">
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+						>
+							<div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-emerald-400">commit</span>
+                                </div>
+								<h3 class="text-xl font-bold text-emerald-300">
+									{t('project_pages.devops-pipeline.architecture.bitbucket.title')}
+								</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-emerald-300"
+									>{t('project_pages.devops-pipeline.architecture.bitbucket.subtitle')}</strong
+								>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.bitbucket.f1')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.bitbucket.f2')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-emerald-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.bitbucket.f3')}</span>
+								</li>
+							</ul>
+						</div>
+
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] p-6 hover-glow-blue backdrop-blur-md relative overflow-hidden"
+						>
+							<div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-blue-400">deployed_code</span>
+                                </div>
+								<h3 class="text-xl font-bold text-blue-300">
+									{t('project_pages.devops-pipeline.architecture.docker.title')}
+								</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-blue-300"
+									>{t('project_pages.devops-pipeline.architecture.docker.subtitle')}</strong
+								>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.docker.f1')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.docker.f2')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-blue-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.docker.f3')}</span>
+								</li>
+							</ul>
+						</div>
+
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-orange-400/20 rounded-[2rem] p-6 hover-glow-orange backdrop-blur-md relative overflow-hidden"
+						>
+							<div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-orange-400">cloud</span>
+                                </div>
+								<h3 class="text-xl font-bold text-orange-300">
+									{t('project_pages.devops-pipeline.architecture.aws.title')}
+								</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-orange-300"
+									>{t('project_pages.devops-pipeline.architecture.aws.subtitle')}</strong
+								>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.aws.f1')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.aws.f2')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-orange-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.aws.f3')}</span>
+								</li>
+							</ul>
+						</div>
+
+						<div
+							class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-purple-400/20 rounded-[2rem] p-6 hover-glow-purple backdrop-blur-md relative overflow-hidden"
+						>
+							<div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-purple-400">code</span>
+                                </div>
+								<h3 class="text-xl font-bold text-purple-300">
+									{t('project_pages.devops-pipeline.architecture.codedeploy.title')}
+								</h3>
+							</div>
+							<p class="text-gray-300 text-sm mb-3">
+								<strong class="text-purple-300"
+									>{t('project_pages.devops-pipeline.architecture.codedeploy.subtitle')}</strong
+								>
+							</p>
+							<ul class="text-gray-300 text-sm space-y-1.5">
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.codedeploy.f1')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.codedeploy.f2')}</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-purple-400 mt-1">•</span>
+									<span>{t('project_pages.devops-pipeline.architecture.codedeploy.f3')}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Flujo de Automatización -->
+			<div>
+				<h2
+					class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center"
+				>
+					{t('project_pages.devops-pipeline.flow.title')}
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div
+						class="bg-surface-container/40 border border-emerald-400/20 rounded-[2.5rem] p-8 md:p-12 backdrop-blur-md"
+					>
+						<div class="space-y-8">
+							<div>
+								<div class="flex items-center gap-3 mb-4">
+									<div
+										class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"
+									>
+										<span class="text-emerald-400 font-bold"
+											>1</span
+										>
+									</div>
+									<h3
+										class="text-xl font-bold text-emerald-300"
+									>
+										{t('project_pages.devops-pipeline.flow.step1.title')}
+									</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-on-surface-variant font-light">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step1.desc1')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step1.desc2')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step1.desc3')}</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div
+										class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"
+									>
+										<span class="text-emerald-400 font-bold"
+											>2</span
+										>
+									</div>
+									<h3
+										class="text-xl font-bold text-emerald-300"
+									>
+										{t('project_pages.devops-pipeline.flow.step2.title')}
+									</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-on-surface-variant font-light">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step2.desc1')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step2.desc2')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step2.desc3')}</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div
+										class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"
+									>
+										<span class="text-emerald-400 font-bold"
+											>3</span
+										>
+									</div>
+									<h3
+										class="text-xl font-bold text-emerald-300"
+									>
+										{t('project_pages.devops-pipeline.flow.step3.title')}
+									</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-on-surface-variant font-light">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step3.desc1')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step3.desc2')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step3.desc3')}</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="border-t border-emerald-400/20 pt-8">
+								<div class="flex items-center gap-3 mb-4">
+									<div
+										class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"
+									>
+										<span class="text-emerald-400 font-bold"
+											>4</span
+										>
+									</div>
+									<h3
+										class="text-xl font-bold text-emerald-300"
+									>
+										{t('project_pages.devops-pipeline.flow.step4.title')}
+									</h3>
+								</div>
+								<div class="ml-14 space-y-2 text-on-surface-variant font-light">
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step4.desc1')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step4.desc2')}</span>
+									</p>
+									<p class="flex items-start gap-2">
+										<span class="text-emerald-400 mt-1"
+											>·</span
+										>
+										<span>{t('project_pages.devops-pipeline.flow.step4.desc3')}</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tecnologías Empleadas -->
+			<div>
+				<h2
+					class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center"
+				>
+					{t('project_pages.devops-pipeline.tech_title')}
+				</h2>
+				<div class="tech-container">
+					<div class="flex tech-scroll gap-8">
+						<!-- Primera copia -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">commit</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>Bitbucket</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-blue"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-blue-400 mb-2">deployed_code</span>
+								<span
+									class="text-[13px] text-blue-300 font-medium text-center"
+									>Docker</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-orange-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-orange"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-orange-400 mb-2">cloud</span>
+								<span
+									class="text-[13px] text-orange-300 font-medium text-center"
+									>AWS</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">dns</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>ECS</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-purple-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-purple"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-purple-400 mb-2">code</span>
+								<span
+									class="text-[13px] text-purple-300 font-medium text-center"
+									>CodeDeploy</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-cyan-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-cyan"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-cyan-400 mb-2">database</span>
+								<span
+									class="text-[13px] text-cyan-300 font-medium text-center"
+									>RDS/ECR</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">settings</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>CI/CD</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-green-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-green-400 mb-2">account_tree</span>
+								<span
+									class="text-[13px] text-green-300 font-medium text-center"
+									>Git</span
+								>
+							</div>
+						</div>
+						<!-- Segunda copia para loop infinito -->
+						<div class="flex gap-8 flex-shrink-0">
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">commit</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>Bitbucket</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-blue"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-blue-400 mb-2">deployed_code</span>
+								<span
+									class="text-[13px] text-blue-300 font-medium text-center"
+									>Docker</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-orange-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-orange"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-orange-400 mb-2">cloud</span>
+								<span
+									class="text-[13px] text-orange-300 font-medium text-center"
+									>AWS</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">dns</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>ECS</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-purple-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-purple"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-purple-400 mb-2">code</span>
+								<span
+									class="text-[13px] text-purple-300 font-medium text-center"
+									>CodeDeploy</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-cyan-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-cyan"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-cyan-400 mb-2">database</span>
+								<span
+									class="text-[13px] text-cyan-300 font-medium text-center"
+									>RDS/ECR</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-emerald-400 mb-2">settings</span>
+								<span
+									class="text-[13px] text-emerald-300 font-medium text-center"
+									>CI/CD</span
+								>
+							</div>
+							<div
+								class="flex flex-col items-center justify-center w-32 group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-green-400/20 rounded-[2rem] backdrop-blur-sm p-6 hover-glow-emerald"
+							>
+                                <span class="material-symbols-outlined text-[3rem] text-green-400 mb-2">account_tree</span>
+								<span
+									class="text-[13px] text-green-300 font-medium text-center"
+									>Git</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Características Principales -->
+			<div>
+				<h2
+					class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 mb-8 text-center"
+				>
+					{t('project_pages.devops-pipeline.features.title')}
+				</h2>
+				<div class="max-w-4xl mx-auto">
+					<div
+						class="bg-surface-container/40 border border-emerald-400/20 rounded-[2.5rem] p-8 md:p-12 backdrop-blur-md"
+					>
+						<div class="grid md:grid-cols-2 gap-6">
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f1.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f1.desc')}
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f2.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f2.desc')}
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f3.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f3.desc')}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="space-y-4">
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f4.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f4.desc')}
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f5.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f5.desc')}
+										</p>
+									</div>
+								</div>
+								<div class="flex items-start gap-3">
+									<div
+										class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1"
+									>
+										<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+									</div>
+									<div>
+										<h4
+											class="text-emerald-300 font-semibold mb-1"
+										>
+											{t('project_pages.devops-pipeline.features.f6.title')}
+										</h4>
+										<p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+											{t('project_pages.devops-pipeline.features.f6.desc')}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Botón Volver -->
+			<div class="text-center pt-8">
+				<a
+					href={backUrl}
+					class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 group"
+				>
+					{t('projects.back')}
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

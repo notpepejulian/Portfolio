@@ -181,5 +181,464 @@
       "status": "Alpha",
       "tag": "#Automatización"
     }
+  },
+  "project_pages": {
+    "ChatSender": {
+      "subtitle": "Mensajería Anónima con Autenticación Criptográfica Zero-Knowledge",
+      "description": "Plataforma de comunicación ultra-privada que elimina la necesidad de datos personales, utilizando identidades basadas en llaves Ed25519 y el protocolo Matrix para cifrado E2EE.",
+      "github_cta": "Ver en GitHub",
+      "architecture": {
+        "title": "Arquitectura de Seguridad",
+        "auth": {
+          "title": "Auth Zero-Knowledge",
+          "subtitle": "Firmas Ed25519",
+          "f1": "Sin contraseñas, emails ni teléfonos",
+          "f2": "Identidad basada en llaves públicas/privadas",
+          "f3": "Challenge-Response en el cliente"
+        },
+        "matrix": {
+          "title": "Matrix Synapse",
+          "subtitle": "Motor de Mensajería",
+          "f1": "Cifrado de Extremo a Extremo (E2EE)",
+          "f2": "Despliegue Federado u Omnicanal",
+          "f3": "Persistencia en MariaDB / Redis"
+        },
+        "infra": {
+          "title": "Infraestructura",
+          "subtitle": "Seguridad en Capas",
+          "f1": "WireGuard VPN integrada",
+          "f2": "Políticas SELinux restrictivas",
+          "f3": "Proxy inverso seguro con Nginx"
+        },
+        "tech": {
+          "title": "Tecnologías",
+          "subtitle": "Stack Moderno",
+          "f1": "Backend con FastAPI (Python)",
+          "f2": "Frontend con Astro & Tailwind",
+          "f3": "Contenerización con Docker"
+        }
+      },
+      "flow": {
+        "title": "Flujo de Conexión Segura",
+        "step1": {
+          "title": "Generación de Identidad",
+          "desc": "El usuario genera un par de llaves Ed25519 localmente mediante",
+          "note": "La llave privada NUNCA sale del dispositivo del usuario"
+        },
+        "step2": {
+          "title": "Handshake Criptográfico",
+          "desc": "El servidor envía un desafío aleatorio. El cliente lo firma con su llave privada. El servidor verifica la firma con la llave pública almacenada."
+        },
+        "step3": {
+          "title": "Mensajería Efímera",
+          "desc": "Una vez autenticado, los mensajes fluyen cifrados vía Matrix. El sistema soporta autodestrucción y no almacena logs de acceso ni direcciones IP."
+        }
+      },
+      "stack_title": "Stack del Proyecto",
+      "privacy": {
+        "title": "Características de Privacidad",
+        "p1": {
+          "title": "Identidad Efímera",
+          "desc": "Las identidades pueden ser temporales y no están vinculadas a ninguna base de datos centralizada."
+        },
+        "p2": {
+          "title": "Anti-Tracking",
+          "desc": "Ofuscación de metadatos y protección contra fingerprinting de red."
+        },
+        "p3": {
+          "title": "Autodestrucción",
+          "desc": "Borrado seguro de mensajes y chats tras un periodo configurable."
+        }
+      }
+    },
+    "devops-pipeline": {
+      "subtitle": "Automatización de Despliegues y Builds en AWS",
+      "description": "Implementación de pipelines CI/CD para automatizar builds de Docker, despliegues en AWS, gestión de entornos de prueba y CodeDeploys automáticos.",
+      "cases": {
+        "title": "Casos de Uso",
+        "intro": "Estos pipelines están diseñados para <strong class=\"text-emerald-300\">automatizar completamente el ciclo de vida</strong> del desarrollo y despliegue de aplicaciones. Algunos casos de uso incluyen:",
+        "c1": {
+          "title": "Builds Automáticos",
+          "desc": "Construcción automática de imágenes Docker desde Dockerfiles al hacer commits, optimizando el proceso de build y testing."
+        },
+        "c2": {
+          "title": "Despliegues en AWS",
+          "desc": "Despliegue automático de contenedores Docker en AWS tras builds exitosos, con actualización de servicios y tareas."
+        },
+        "c3": {
+          "title": "Gestión de Entornos",
+          "desc": "Automatización del apagado y encendido de entornos de prueba según horarios o eventos, optimizando costos."
+        },
+        "c4": {
+          "title": "CodeDeploy Automático",
+          "desc": "Despliegues automáticos mediante AWS CodeDeploy al detectar commits en repositorios, sin intervención manual."
+        },
+        "c5": {
+          "title": "Testing Continuo",
+          "desc": "Ejecución automática de tests en cada build, garantizando calidad antes del despliegue a producción."
+        },
+        "c6": {
+          "title": "CI/CD Completo",
+          "desc": "Integración y despliegue continuo con Bitbucket Pipelines, automatizando todo el flujo desde código hasta producción."
+        }
+      },
+      "architecture": {
+        "title": "Arquitectura del Pipeline",
+        "bitbucket": {
+          "title": "Bitbucket Pipelines",
+          "subtitle": "CI/CD Platform",
+          "f1": "Ejecución de pipelines en cada commit",
+          "f2": "Configuración mediante bitbucket-pipelines.yml",
+          "f3": "Integración con repositorios Git"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Containerización",
+          "f1": "Build automático de imágenes desde Dockerfile",
+          "f2": "Push a registros de contenedores (ECR)",
+          "f3": "Optimización de capas y cache"
+        },
+        "aws": {
+          "title": "AWS",
+          "subtitle": "Container Service",
+          "f1": "Despliegue automático de contenedores",
+          "f2": "Actualización de servicios y tareas",
+          "f3": "Escalado automático y alta disponibilidad"
+        },
+        "codedeploy": {
+          "title": "AWS CodeDeploy",
+          "subtitle": "Despliegue Automático",
+          "f1": "Despliegues automáticos desde repositorios",
+          "f2": "Estrategias de despliegue configurables",
+          "f3": "Rollback automático en caso de fallos"
+        }
+      },
+      "flow": {
+        "title": "Flujo de Automatización",
+        "step1": {
+          "title": "Commit y Trigger",
+          "desc1": "Desarrollador hace commit y push al repositorio",
+          "desc2": "Bitbucket Pipelines detecta el cambio automáticamente",
+          "desc3": "Se inicia el pipeline configurado según la rama"
+        },
+        "step2": {
+          "title": "Build de Docker",
+          "desc1": "Construcción automática de imagen Docker desde Dockerfile",
+          "desc2": "Ejecución de tests y validaciones durante el build",
+          "desc3": "Push de la imagen a AWS ECR (Elastic Container Registry)"
+        },
+        "step3": {
+          "title": "Despliegue en AWS",
+          "desc1": "Actualización automática del servicio ECS con la nueva imagen",
+          "desc2": "Despliegue gradual con health checks",
+          "desc3": "Notificaciones de estado del despliegue"
+        },
+        "step4": {
+          "title": "Gestión de Entornos",
+          "desc1": "Apagado automático de entornos de prueba en horarios no laborables",
+          "desc2": "Encendido automático al detectar actividad o commits",
+          "desc3": "Optimización de costos mediante gestión inteligente de recursos"
+        }
+      },
+      "tech_title": "Tecnologías Empleadas",
+      "features": {
+        "title": "Características Principales",
+        "f1": {
+          "title": "Builds Automáticos de Docker",
+          "desc": "Construcción automática de imágenes Docker desde Dockerfiles al detectar commits, con optimización de capas y cache."
+        },
+        "f2": {
+          "title": "Despliegue en AWS ECS",
+          "desc": "Despliegue automático de contenedores en ECS tras builds exitosos, con actualización de servicios y health checks."
+        },
+        "f3": {
+          "title": "Gestión Inteligente de Entornos",
+          "desc": "Apagado y encendido de los servicios en entornos de prueba, de manera manual en función de la necesidad de los desarrolladores."
+        },
+        "f4": {
+          "title": "CodeDeploy Automático",
+          "desc": "Despliegues automáticos mediante AWS CodeDeploy al detectar commits, con estrategias configurables y rollback automático."
+        },
+        "f5": {
+          "title": "Testing Continuo",
+          "desc": "Ejecución automática de tests en cada build, garantizando calidad antes del despliegue a producción."
+        },
+        "f6": {
+          "title": "Integración Completa",
+          "desc": "Pipeline completo desde código hasta producción, con notificaciones y monitoreo del estado de despliegues."
+        }
+      }
+    },
+    "AutoTest": {
+      "subtitle": "Plataforma Educativa de Tests de Autoescuela",
+      "description": "Plataforma web completa para realizar tests de autoescuela con generación automática de exámenes, gestión de preguntas DGT y sistema de autenticación.",
+      "github_cta": "Ver en GitHub",
+      "view_title": "Vista del Proyecto",
+      "view_alt": "Vista de la plataforma AutoTest.es mostrando la interfaz principal con estadísticas y opciones de tests",
+      "cases": {
+        "title": "Casos de Uso",
+        "intro": "Esta plataforma está diseñada para <strong class=\"text-red-300\">estudiantes de autoescuela</strong> que necesitan practicar y prepararse para el examen teórico. Algunos casos de uso incluyen:",
+        "c1": {
+          "title": "Práctica de Exámenes",
+          "desc": "Realiza tests ilimitados con preguntas oficiales de la DGT para prepararte para el examen teórico."
+        },
+        "c2": {
+          "title": "Seguimiento de Progreso",
+          "desc": "Monitorea tu progreso y mejora tus resultados con estadísticas detalladas de tus exámenes."
+        },
+        "c3": {
+          "title": "Preparación Integral",
+          "desc": "Accede a un banco completo de preguntas oficiales con explicaciones y respuestas correctas."
+        },
+        "c4": {
+          "title": "Exámenes Cronometrados",
+          "desc": "Practica con exámenes que simulan las condiciones reales del examen oficial con tiempo limitado."
+        },
+        "c5": {
+          "title": "Perfiles de Usuario",
+          "desc": "Crea tu cuenta y guarda tu historial de exámenes, resultados y estadísticas personales."
+        },
+        "c6": {
+          "title": "Base de Datos DGT",
+          "desc": "Preguntas oficiales actualizadas de la Dirección General de Tráfico para máxima precisión."
+        }
+      },
+      "architecture": {
+        "title": "Arquitectura del Proyecto",
+        "frontend": {
+          "title": "Frontend",
+          "subtitle": "Interfaz de Usuario",
+          "f1": "Interfaz moderna y responsive",
+          "f2": "Experiencia de usuario optimizada",
+          "f3": "Visualización de resultados y estadísticas"
+        },
+        "backend": {
+          "title": "Backend",
+          "subtitle": "API y Lógica de Negocio",
+          "f1": "API REST para gestión de exámenes",
+          "f2": "Sistema de autenticación y usuarios",
+          "f3": "Generación automática de tests"
+        },
+        "database": {
+          "title": "Base de Datos",
+          "subtitle": "Almacenamiento de Datos",
+          "f1": "Preguntas oficiales DGT",
+          "f2": "Historial de exámenes y resultados",
+          "f3": "Gestión de usuarios y autenticación"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Contenedores",
+          "f1": "Orquestación con docker-compose",
+          "f2": "Despliegue simplificado",
+          "f3": "Entorno de desarrollo consistente"
+        }
+      },
+      "flow": {
+        "title": "Flujo de Funcionamiento",
+        "step1": {
+          "title": "Registro y Autenticación",
+          "f1": "Usuario se registra o inicia sesión en la plataforma",
+          "f2": "Sistema de autenticación seguro",
+          "f3": "Acceso al panel de usuario personalizado"
+        },
+        "step2": {
+          "title": "Generación de Examen",
+          "f1": "El sistema genera un examen aleatorio desde la base de datos DGT",
+          "f2": "Preguntas oficiales seleccionadas automáticamente",
+          "f3": "Examen cronometrado con tiempo limitado"
+        },
+        "step3": {
+          "title": "Evaluación y Resultados",
+          "f1": "Corrección automática del examen",
+          "f2": "Visualización de resultados y estadísticas",
+          "f3": "Historial guardado para seguimiento del progreso"
+        }
+      },
+      "tech_title": "Tecnologías Empleadas",
+      "features": {
+        "title": "Características Principales",
+        "f1": {
+          "title": "Preguntas Oficiales DGT",
+          "desc": "Base de datos completa con preguntas oficiales de la Dirección General de Tráfico."
+        },
+        "f2": {
+          "title": "Generación Automática",
+          "desc": "Scripts Python para generar exámenes y tests automáticamente desde la base de datos."
+        },
+        "f3": {
+          "title": "Sistema de Autenticación",
+          "desc": "Gestión completa de usuarios con registro, login y sesiones seguras."
+        },
+        "f4": {
+          "title": "Estadísticas y Progreso",
+          "desc": "Seguimiento detallado del progreso con gráficos y métricas de rendimiento."
+        },
+        "f5": {
+          "title": "Docker Compose",
+          "desc": "Despliegue simplificado con contenedores Docker para desarrollo y producción."
+        },
+        "f6": {
+          "title": "Scripts de Gestión",
+          "desc": "Herramientas Python para insertar preguntas, generar tests y gestionar la base de datos."
+        }
+      },
+      "requirements": {
+        "title": "Requisitos e Instalación",
+        "reqs_title": "Requisitos",
+        "r1": "<strong>Python 3.x</strong> para scripts y backend",
+        "r2": "<strong>Astro</strong> para el frontend",
+        "r3": "<strong>Docker</strong> y Docker Compose",
+        "r4": "<strong>MySQL</strong> como base de datos",
+        "run_title": "Cómo Ejecutar",
+        "step1": "1. Clonar el repositorio:",
+        "step2": "2. Iniciar con Docker:",
+        "step3": "3. Ejecutar scripts de inicialización:",
+        "step3_desc": "Usa los scripts Python para poblar la base de datos con preguntas DGT"
+      }
+    },
+    "blockchain-integracion-bd": {
+      "subtitle": "Integración de MySQL y BigchainDB con API-REST y Tendermint",
+      "description": "API REST diseñada para integrar una base de datos relacional MySQL con BigchainDB, proporcionando almacenamiento rápido y seguro combinado con inmutabilidad y trazabilidad.",
+      "github_cta": "Ver en GitHub",
+      "architecture": {
+        "title": "Arquitectura del Proyecto",
+        "api": {
+          "title": "API REST",
+          "subtitle": "Node.js + Express",
+          "f1": "Endpoints para crear y validar registros",
+          "f2": "Gestión de conexiones MySQL y BigchainDB",
+          "f3": "Cifrado y descifrado de datos sensibles"
+        },
+        "mysql": {
+          "title": "MySQL",
+          "subtitle": "Base de Datos Relacional",
+          "f1": "Almacenamiento de datos estructurados",
+          "f2": "Consultas rápidas y eficientes",
+          "f3": "Relaciones entre tablas"
+        },
+        "bigchain": {
+          "title": "BigchainDB",
+          "subtitle": "Base de Datos Distribuida",
+          "f1": "Inmutabilidad garantizada",
+          "f2": "Registro de transacciones y hashes",
+          "f3": "Tendermint para tolerancia a fallos"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Contenedores",
+          "f1": "Gestión de MySQL, BigchainDB",
+          "f2": "MongoDB (backend de BigchainDB)",
+          "f3": "Tendermint (motor de consenso)"
+        }
+      },
+      "flow": {
+        "title": "Flujo de Datos",
+        "step1": {
+          "title": "Inserción de Datos",
+          "f1": "Cliente realiza solicitud <code class=\"bg-fuchsia-900/50 px-2 py-0.5 rounded text-fuchsia-300 text-sm\">POST</code> a la API REST",
+          "f2": "Datos validados y almacenados en <strong class=\"text-fuchsia-300\">MySQL</strong>",
+          "f3": "Se genera un <strong class=\"text-fuchsia-300\">hash</strong> y se registra en <strong class=\"text-fuchsia-300\">BigchainDB</strong>",
+          "f4": "El ID de transacción queda actualizado en MySQL"
+        },
+        "step2": {
+          "title": "Validación de Datos",
+          "desc": "Los datos en <strong class=\"text-fuchsia-300\">MySQL</strong> se comparan con el hash registrado en <strong class=\"text-fuchsia-300\">BigchainDB</strong> para garantizar integridad."
+        },
+        "step3": {
+          "title": "Cifrado y Descifrado",
+          "desc": "Los datos se cifran antes de almacenarse. Solo usuarios autorizados pueden descifrarlos. Registros inmutables en BigchainDB."
+        }
+      },
+      "tech_title": "Tecnologías Empleadas",
+      "endpoints": {
+        "title": "Endpoints Principales",
+        "method": "Método",
+        "endpoint": "Endpoint",
+        "description": "Descripción",
+        "e1_desc": "Crea un registro en MySQL y una transacción en BigchainDB. Devuelve el hash.",
+        "e2_desc": "Valida la integridad de un registro de MySQL comparándolo con BigchainDB.",
+        "e3_desc": "Obtiene y descifra datos asociados a una transacción específica."
+      },
+      "cases": {
+        "title": "Casos de Uso",
+        "intro": "Este proyecto es ideal para aplicaciones donde la <strong class=\"text-fuchsia-300\">integridad</strong> y la <strong class=\"text-fuchsia-300\">autenticidad</strong> de los datos son fundamentales. Algunos casos de uso incluyen:",
+        "c1": {
+          "title": "Cadena de Suministro",
+          "desc": "Trazabilidad completa e inmutable de productos desde el origen hasta el consumidor final."
+        },
+        "c2": {
+          "title": "Auditorías",
+          "desc": "Registro inmutable de transacciones y cambios para cumplimiento normativo y auditorías."
+        },
+        "c3": {
+          "title": "Registros Académicos",
+          "desc": "Certificación y verificación de títulos y credenciales académicas de forma segura."
+        },
+        "c4": {
+          "title": "Contratos Inteligentes",
+          "desc": "Registro de acuerdos y contratos con garantía de inmutabilidad y trazabilidad."
+        },
+        "c5": {
+          "title": "Historial Médico",
+          "desc": "Almacenamiento seguro e inmutable de registros médicos y tratamientos."
+        },
+        "c6": {
+          "title": "Certificaciones",
+          "desc": "Emisión y verificación de certificados digitales con garantía de autenticidad."
+        }
+      },
+      "requirements": {
+        "title": "Requisitos e Instalación",
+        "reqs_title": "Requisitos",
+        "r1": "<strong class=\"text-fuchsia-300\">Node.js v14</strong> o superior",
+        "r2": "<strong class=\"text-fuchsia-300\">Docker</strong> (con MySQL, BigchainDB, MongoDB y Tendermint configurados)",
+        "r3": "Archivo <code class=\"bg-fuchsia-900/50 px-2 py-1 rounded text-fuchsia-300 text-sm\">.env</code> con las configuraciones necesarias",
+        "run_title": "Cómo Ejecutar",
+        "step1": "1. Instalar dependencias:",
+        "step2": "2. Iniciar el servidor:",
+        "step3": "3. Probar endpoints:",
+        "step3_desc": "Usa herramientas como Postman o cURL"
+      }
+    }
+  },
+  "cv": {
+    "tab_title": "Nacho Sánchez | CV — Ingeniero Cloud",
+    "print_cta": "Imprimir / Exportar",
+    "role": "Ingeniero Cloud & DevOps",
+    "location": "España / Remoto",
+    "english_level": "Nivel Inglés",
+    "profile_title": "Perfil_Profesional",
+    "profile_desc": "Ingeniero Cloud especializado en el diseño y mantenimiento de infraestructuras desacopladas y automatizadas. Dominio de la orquestación de entornos cloud complejos con foco en alta disponibilidad, escalabilidad y despliegues de cero tiempo de inactividad.Desarrollo de Infrastructure as Code (IaC) y flujos de trabajo GitOps modernos (Pipelines). A lo largo de mi experiencia laboral busco una innovación adaptable y resiliente donde la automatización es el principal punto fuerte de una infraestructura sólida.",
+    "stack_title": "Tech_Stack_Matrix",
+    "stack_cloud": "Cloud & Infraestructura",
+    "stack_containers": "Contenedores & Orquestación",
+    "stack_automation": "Automatización & CI/CD",
+    "stack_security": "Linux & Seguridad",
+    "stack_languages": "Lenguajes",
+    "stack_databases": "Bases de Datos",
+    "experience_title": "Registro_Cronológico",
+    "experience_role": "Cloud Engineer",
+    "experience_company": "Epam NEORIS",
+    "experience_date": "Jul 2025 — Presente",
+    "experience_bullets": [
+      "Gestión y optimización de infraestructura cloud.",
+      "Liderazgo de proyectos de migración de sistemas legacy a arquitecturas cloud-native.",
+      "Reducción de costes operativos.",
+      "Monitorización.",
+      "Estrategias de seguridad cloud y recuperación ante desastres.",
+      "CI/CD con GitHub Actions y Bitbucket Pipelines.",
+      "Contenedores con Kubernetes & Docker.",
+      "Infrastructure as Code — AWS CDK con TypeScript y CloudFormation.",
+      "Administración AWS (EC2, ECS, EKS, RDS, S3, Lambda, IAM, etc).",
+      "Administración Linux, scripting Bash y hardening de seguridad."
+    ],
+    "projects_title": "Proyectos_Destacados",
+    "certifications_title": "Certificaciones_&_Formación",
+    "cert_saa_title": "AWS Solutions Architect Associate",
+    "cert_saa_subtitle": "Amazon Web Services // En Progreso",
+    "cert_saa_badge": "EN_PROGRESO",
+    "cert_asir_title": "ASIR (Administración de Sistemas y Redes)",
+    "cert_asir_subtitle": "CampusFP // Completado"
   }
 }
