@@ -11,17 +11,29 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const certifications = [
+  // {
+  //   title: t("certifications.cert_2_title"),
+  //   issuer: "GitHub",
+  //   status: t("certifications.status_completed"),
+  //   description: t("certifications.cert_2_desc"),
+  //   badge: "/certifications/01.webp",
+  //   link:
+  //     lang === "es"
+  //       ? "https://docs.github.com/es/actions"
+  //       : "https://docs.github.com/en/actions",
+  //   color: "tertiary",
+  // },
   {
     title: t("certifications.cert_2_title"),
     issuer: "GitHub",
-    status: t("certifications.status_completed"),
+    status: t("certifications.status_progress"),
     description: t("certifications.cert_2_desc"),
     badge: "/certifications/01.webp",
     link:
       lang === "es"
         ? "https://docs.github.com/es/actions"
         : "https://docs.github.com/en/actions",
-    color: "tertiary",
+    color: "primary",
   },
   {
     title: t("certifications.cert_4_title"),
