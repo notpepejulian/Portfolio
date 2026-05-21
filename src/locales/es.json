@@ -254,6 +254,7 @@
     "devops-pipeline": {
       "subtitle": "Automatización de Despliegues y Builds en AWS",
       "description": "Implementación de pipelines CI/CD para automatizar builds de Docker, despliegues en AWS, gestión de entornos de prueba y CodeDeploys automáticos.",
+      "github_cta": "Ver en GitHub",
       "cases": {
         "title": "Casos de Uso",
         "intro": "Estos pipelines están diseñados para <strong class=\"text-emerald-300\">automatizar completamente el ciclo de vida</strong> del desarrollo y despliegue de aplicaciones. Algunos casos de uso incluyen:",
@@ -635,7 +636,7 @@
     ],
     "projects_title": "Proyectos_Destacados",
     "certifications_title": "Certificaciones_&_Formación",
-    "cert_saa_title": "AWS Solutions Architect Associate",
+    "cert_saa_title": "AWS CloudOps Engineer - Associate",
     "cert_saa_subtitle": "Amazon Web Services // En Progreso",
     "cert_saa_badge": "EN_PROGRESO",
     "cert_asir_title": "ASIR (Administración de Sistemas y Redes)",

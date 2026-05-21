@@ -78,12 +78,21 @@ const backUrl = lang === 'es' ? getRelativeLocaleUrl(lang, 'proyectos/') : getRe
             >
                 {t('project_pages.devops-pipeline.description')}
             </p>
-            <a
-                href={backUrl}
-                class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-emerald-300 font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 border border-emerald-400/30"
-            >
-                {t('projects.back')}
-            </a>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+				<a
+					href="https://github.com/notpepejulian/devops-pipeline"
+					target="_blank"
+					class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 group"
+				>
+					<span>{t('project_pages.devops-pipeline.github_cta')}</span>
+				</a>
+				<a
+					href={backUrl}
+					class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-emerald-300 font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 border border-emerald-400/30"
+				>
+					{t('projects.back')}
+				</a>
+			</div>
 		</div>
 	</main>
 
