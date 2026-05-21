@@ -1,0 +1,646 @@
+{
+  "ui": {
+    "diagnostic": "Diagnostic_Scan_Active",
+    "live": "REC",
+    "unmute": "Unmute_Audio",
+    "mute": "Mute_Audio",
+    "integration": "Integration_Successful"
+  },
+  "maintenance": {
+    "title": "Oops!",
+    "subtitle": "Under Maintenance",
+    "description": "or finishing some adjustments...",
+    "note": "I'm working on this page... Come back soon! In the meantime, you can browse other projects or sections of the site.",
+    "cta_home": "Back to Home",
+    "cta_projects": "View Projects",
+    "contact_label": "Need to contact me?",
+    "contact_desc": "You can visit other sections of the portfolio in the meantime"
+  },
+  "nav": {
+    "index": "Home",
+    "projects": "Projects",
+    "knowledge": "Knowledge",
+    "ai": "AI",
+    "certifications": "Certifications",
+    "cv": "View_CV"
+  },
+  "hero": {
+    "status": "Welcome to My Portfolio",
+    "title_start": "Automating the",
+    "title_end": "Cloud Ecosystem.",
+    "description": "I'm Nacho Sánchez — Cloud Engineer specializing in high-availability infrastructure, CI/CD orchestration, and Kubernetes scaling. Bridging the gap between development agility and operational stability.",
+    "cta_projects": "Explore_Projects",
+    "cta_knowledge": "Knowledge"
+  },
+  "about": {
+    "label": "Core Competencies",
+    "title": "Modular Infrastructure",
+    "skills_label": "Technical Skills",
+    "metrics_label": "Proactivity & Evolution",
+    "diagnostic": "Diagnostic_Scan_Active",
+    "bio_title": "Architecting for Scalability <br/>and Resilience.",
+    "bio_desc": "My engineering approach focuses on creating decoupled, automated infrastructures that grow seamlessly with organizational demands.",
+    "skill_1": "CDK & TypeScript / IaC",
+    "skill_2": "KUBERNETES / DOCKER",
+    "skill_3": "AWS / ARCHITECTURE",
+    "learning_title": "Continuous Learning",
+    "learning_desc": "Proactive pursuit of new technologies and updated methodologies.",
+    "rnd_title": "Constant R&D",
+    "rnd_desc": "Active experimentation with the latest trends in the Cloud ecosystem.",
+    "cta_stack": "View_Technical_Stack"
+  },
+  "deep_dive": {
+    "label": "Deep Dive Session",
+    "title": "Thought",
+    "title_span": "Process.",
+    "description": "Throughout my work experience, I have realized that I am not content with just designing and maintaining architectures; I seek adaptable and resilient innovation where automation is the main strength of a solid infrastructure. My idea is to design solid pillars that lead to solid infrastructures.",
+    "context_label": "Context & Strategy",
+    "context_subtitle": "Cloud Deployment Best Practices",
+    "cta_unmute": "Unmute_Audio",
+    "cta_mute": "Mute_Audio",
+    "deployment_rate": "Deployment Rate"
+  },
+  "footer": {
+    "docs": "Documentation",
+    "uptime": "Stable_Uptime",
+    "system_signature": "PORTFOLIO // SYST_OK"
+  },
+  "projects": {
+    "label": "Case Studies & Lab",
+    "title": "Featured",
+    "title_span": "Architectures.",
+    "description": "A selection of engineering projects focused on cloud scalability, security automation, and developer experience. Each project represents a technical challenge solved with best-in-class tools.",
+    "cta_repo": "View_Repository",
+    "placeholder_title": "Initializing New Node...",
+    "placeholder_subtitle": "Streaming Repository Updates",
+    "back": "Back to Projects",
+    "in_progress": "In Development"
+  },
+  "knowledge": {
+    "label": "Knowledge Graph v1.0",
+    "title": "Technical",
+    "title_span": "Core.",
+    "description": "My technical expertise is centered around cloud-native architectures and automated operations. I build systems that are not just functional, but demonstrably resilient and scalable.",
+    "strategy_label": "Infrastructure Strategy",
+    "strategy_title": "Reliability through",
+    "strategy_span": "Code.",
+    "strategy_desc": "I advocate for GitOps workflows where every change is versioned, peer-reviewed, and automatically validated before deployment. This reduces manual toil and eliminates configuration drift.",
+    "cat_cloud": "Cloud & Infrastructure",
+    "cat_containers": "Containers & Orchestration",
+    "cat_automation": "Automation & CI/CD",
+    "cat_security": "Linux & Security",
+    "cat_db": "Databases & Storage",
+    "cat_dev": "Development & Web",
+    "stat_iac": "IaC_Versioned",
+    "stat_drift": "Zero_Manual_Drift",
+    "operational_label": "Operational Excellence",
+    "operational_title": "Operational",
+    "operational_span": "Excellence",
+    "skill_cloud": "Cloud & Infrastructure",
+    "skill_containers": "Containers & Orchestration",
+    "skill_cicd": "Automation & CI/CD",
+    "skill_linux": "Linux & Security",
+    "skill_databases": "Databases",
+    "skill_languages": "Programming Languages",
+    "ops": "Control of",
+    "ops_vcs_span": "Versions",
+    "ops_span": "Processes"
+  },
+  "certifications": {
+    "label": "Regulatory Compliance & Validation",
+    "title": "Technical",
+    "title_span": "Credentials.",
+    "description": "My professional competencies are backed by industry-standard certifications in cloud architecture, DevOps automation, and secure system administration.",
+    "cta_verify": "Verify_Hash_Protocol",
+    "roadmap_title": "Uplink to",
+    "roadmap_span": "Expertise_v5.",
+    "status_progress": "IN PROGRESS",
+    "status_completed": "COMPLETED",
+    "roadmap_1_title": "Cloud Master",
+    "roadmap_1_desc": "Focus on AWS Solutions Architect Professional to master large-scale infrastructure orchestration.",
+    "roadmap_2_title": "Security Sentinel",
+    "roadmap_2_desc": "Moving towards DevSecOps specialization with a focus on automated threat modeling and IAM governance.",
+    "stat_verified": "Nodes_Verified",
+    "stat_ops": "Learning_Ops_v",
+    "cert_1_title": "AWS Solutions Architect Associate",
+    "cert_1_desc": "Design and deployment of scalable, highly available, and fault-tolerant systems on AWS.",
+    "cert_2_title": "GitHub Actions Automation",
+    "cert_2_desc": "Advanced CI/CD orchestration using GitHub Actions for software development and infrastructure pipelines.",
+    "cert_3_title": "AWS Cloud Practitioner",
+    "cert_3_desc": "Fundamental understanding of the AWS Cloud platform, including basic infrastructure and security.",
+    "cert_4_title": "AWS CloudOps Engineer",
+    "cert_4_desc": "Specialization in orchestration, automation, and continuous maintenance of scalable infrastructure in AWS."
+  },
+  "ai": {
+    "label": "Neural Network Interface v2.1",
+    "title": "Synthetic",
+    "title_span": "Intelligence.",
+    "description": "Query the specialized LLM agent trained on my professional trajectory, architectural methodologies, and technical stack.",
+    "terminal_status": "LIVE_UPLINK",
+    "terminal_node": "Node_Synthetix_v2",
+    "handshake": "Handshake successful. Protocols initialized. I am an autonomous intelligence mapping Nacho's cloud engineering domain. How shall we proceed with your inquiry?",
+    "cta_execute": "Execute_Query",
+    "input_placeholder": "Type instruction or query...",
+    "thinking": "Synchronizing_Neural_Cores...",
+    "error": "ERROR_CODE_404: Knowledge base unreachable. Check link status.",
+    "failure": "FAILURE_DETECTED: Connection refused by remote host."
+  },
+  "project_data": {
+    "blockchain-integracion-bd": {
+      "title": "Database Integration with Blockchain",
+      "description": "I developed the integration of traditional relational databases with blockchain technology, allowing transaction logging and immutability.",
+      "status": "In production",
+      "tag": "#Blockchain & DB"
+    },
+    "devops-pipeline": {
+      "title": "DevOps CI/CD Pipeline",
+      "description": "Implementation of CI/CD pipelines with Bitbucket Pipelines, Docker, and automatic deployment on AWS for microservices.",
+      "status": "In production",
+      "tag": "#DevOps"
+    },
+    "ChatSender": {
+      "title": "Anonymous Messaging",
+      "description": "Secure messaging system with end-to-end encryption based on the Matrix protocol for private communications.",
+      "status": "In Development",
+      "tag": "#Security"
+    },
+    "AutoTest": {
+      "title": "Educational AutoTest",
+      "description": "Educational platform for taking driving school tests with automatic generation of DGT exams.",
+      "status": "In development",
+      "tag": "#Web Development"
+    },
+    "webapp-monitorizacion": {
+      "title": "Cloud Monitoring",
+      "description": "Advanced dashboard for visualizing metrics and logs of distributed infrastructure with intelligent alerts.",
+      "status": "In development",
+      "tag": "#Monitoring"
+    },
+    "linux-scripts": {
+      "title": "Linux Automation Scripts",
+      "description": "Repository of useful scripts to automate tasks on Linux systems: backups, hardening, and system management.",
+      "status": "Alpha",
+      "tag": "#Automation"
+    }
+  },
+  "project_pages": {
+    "ChatSender": {
+      "subtitle": "Anonymous Messaging with Zero-Knowledge Cryptographic Authentication",
+      "description": "Ultra-private communication platform that eliminates the need for personal data, utilizing identities based on Ed25519 keys and the Matrix protocol for E2EE encryption.",
+      "github_cta": "View on GitHub",
+      "architecture": {
+        "title": "Security Architecture",
+        "auth": {
+          "title": "Zero-Knowledge Auth",
+          "subtitle": "Ed25519 Signatures",
+          "f1": "No passwords, emails or phone numbers",
+          "f2": "Identity based on public/private keys",
+          "f3": "Client-side Challenge-Response"
+        },
+        "matrix": {
+          "title": "Matrix Synapse",
+          "subtitle": "Messaging Engine",
+          "f1": "End-to-End Encryption (E2EE)",
+          "f2": "Federated or Omnichannel Deployment",
+          "f3": "Persistence in MariaDB / Redis"
+        },
+        "infra": {
+          "title": "Infrastructure",
+          "subtitle": "Layered Security",
+          "f1": "Integrated WireGuard VPN",
+          "f2": "Restrictive SELinux policies",
+          "f3": "Secure Nginx reverse proxy"
+        },
+        "tech": {
+          "title": "Technologies",
+          "subtitle": "Modern Stack",
+          "f1": "Backend with FastAPI (Python)",
+          "f2": "Frontend with Astro & Tailwind",
+          "f3": "Containerization with Docker"
+        }
+      },
+      "flow": {
+        "title": "Secure Connection Flow",
+        "step1": {
+          "title": "Identity Generation",
+          "desc": "The user generates an Ed25519 key pair locally using",
+          "note": "The private key NEVER leaves the user's device"
+        },
+        "step2": {
+          "title": "Cryptographic Handshake",
+          "desc": "The server sends a random challenge. The client signs it with its private key. The server verifies the signature with the stored public key."
+        },
+        "step3": {
+          "title": "Ephemeral Messaging",
+          "desc": "Once authenticated, messages flow encrypted via Matrix. The system supports self-destruction and does not store access logs or IP addresses."
+        }
+      },
+      "stack_title": "Project Stack",
+      "privacy": {
+        "title": "Privacy Features",
+        "p1": {
+          "title": "Ephemeral Identity",
+          "desc": "Identities can be temporary and are not linked to any centralized database."
+        },
+        "p2": {
+          "title": "Anti-Tracking",
+          "desc": "Metadata obfuscation and network fingerprinting protection."
+        },
+        "p3": {
+          "title": "Self-Destruction",
+          "desc": "Secure deletion of messages and chats after a configurable period."
+        }
+      }
+    },
+    "devops-pipeline": {
+      "subtitle": "Automation of Deployments and Builds on AWS",
+      "description": "Implementation of CI/CD pipelines to automate Docker builds, AWS deployments, test environment management, and automatic CodeDeploys.",
+      "github_cta": "View on GitHub",
+      "cases": {
+        "title": "Use Cases",
+        "intro": "These pipelines are designed to <strong class=\"text-emerald-300\">fully automate the application development and deployment lifecycle</strong>. Some use cases include:",
+        "c1": {
+          "title": "Automatic Builds",
+          "desc": "Automatic construction of Docker images from Dockerfiles upon committing, optimizing the build and testing process."
+        },
+        "c2": {
+          "title": "AWS Deployments",
+          "desc": "Automatic deployment of Docker containers on AWS after successful builds, with service and task updates."
+        },
+        "c3": {
+          "title": "Environment Management",
+          "desc": "Automation of starting and stopping test environments based on schedules or events, optimizing costs."
+        },
+        "c4": {
+          "title": "Automatic CodeDeploy",
+          "desc": "Automatic deployments using AWS CodeDeploy upon detecting commits in repositories, without manual intervention."
+        },
+        "c5": {
+          "title": "Continuous Testing",
+          "desc": "Automatic execution of tests on each build, ensuring quality before deploying to production."
+        },
+        "c6": {
+          "title": "Full CI/CD",
+          "desc": "Continuous integration and deployment with Bitbucket Pipelines, automating the entire flow from code to production."
+        }
+      },
+      "architecture": {
+        "title": "Pipeline Architecture",
+        "bitbucket": {
+          "title": "Bitbucket Pipelines",
+          "subtitle": "CI/CD Platform",
+          "f1": "Pipeline execution on each commit",
+          "f2": "Configuration via bitbucket-pipelines.yml",
+          "f3": "Integration with Git repositories"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Containerization",
+          "f1": "Automatic image build from Dockerfile",
+          "f2": "Push to container registries (ECR)",
+          "f3": "Layer and cache optimization"
+        },
+        "aws": {
+          "title": "AWS",
+          "subtitle": "Container Service",
+          "f1": "Automatic container deployment",
+          "f2": "Service and task updates",
+          "f3": "Automatic scaling and high availability"
+        },
+        "codedeploy": {
+          "title": "AWS CodeDeploy",
+          "subtitle": "Automatic Deployment",
+          "f1": "Automatic deployments from repositories",
+          "f2": "Configurable deployment strategies",
+          "f3": "Automatic rollback in case of failures"
+        }
+      },
+      "flow": {
+        "title": "Automation Flow",
+        "step1": {
+          "title": "Commit and Trigger",
+          "desc1": "Developer commits and pushes to repository",
+          "desc2": "Bitbucket Pipelines automatically detects the change",
+          "desc3": "The configured pipeline starts based on the branch"
+        },
+        "step2": {
+          "title": "Docker Build",
+          "desc1": "Automatic construction of Docker image from Dockerfile",
+          "desc2": "Execution of tests and validations during the build",
+          "desc3": "Push of the image to AWS ECR (Elastic Container Registry)"
+        },
+        "step3": {
+          "title": "AWS Deployment",
+          "desc1": "Automatic update of the ECS service with the new image",
+          "desc2": "Gradual deployment with health checks",
+          "desc3": "Deployment status notifications"
+        },
+        "step4": {
+          "title": "Environment Management",
+          "desc1": "Automatic shutdown of test environments during non-working hours",
+          "desc2": "Automatic power-on upon detecting activity or commits",
+          "desc3": "Cost optimization through intelligent resource management"
+        }
+      },
+      "tech_title": "Technologies Used",
+      "features": {
+        "title": "Key Features",
+        "f1": {
+          "title": "Automatic Docker Builds",
+          "desc": "Automatic construction of Docker images from Dockerfiles upon detecting commits, with layer and cache optimization."
+        },
+        "f2": {
+          "title": "AWS ECS Deployment",
+          "desc": "Automatic deployment of containers on ECS after successful builds, with service updates and health checks."
+        },
+        "f3": {
+          "title": "Intelligent Environment Management",
+          "desc": "Starting and stopping of services in test environments, manually based on developers' needs."
+        },
+        "f4": {
+          "title": "Automatic CodeDeploy",
+          "desc": "Automatic deployments using AWS CodeDeploy upon detecting commits, with configurable strategies and automatic rollback."
+        },
+        "f5": {
+          "title": "Continuous Testing",
+          "desc": "Automatic execution of tests on each build, ensuring quality before deploying to production."
+        },
+        "f6": {
+          "title": "Full Integration",
+          "desc": "Complete pipeline from code to production, with notifications and deployment status monitoring."
+        }
+      }
+    },
+    "AutoTest": {
+      "subtitle": "Educational Driving School Test Platform",
+      "description": "Complete web platform for taking driving school tests with automatic exam generation, DGT question management, and an authentication system.",
+      "github_cta": "View on GitHub",
+      "view_title": "Project View",
+      "view_alt": "View of the AutoTest.es platform showing the main interface with statistics and test options",
+      "cases": {
+        "title": "Use Cases",
+        "intro": "This platform is designed for <strong class=\"text-red-300\">driving school students</strong> who need to practice and prepare for the theory exam. Some use cases include:",
+        "c1": {
+          "title": "Exam Practice",
+          "desc": "Take unlimited tests with official DGT questions to prepare for the theory exam."
+        },
+        "c2": {
+          "title": "Progress Tracking",
+          "desc": "Monitor your progress and improve your results with detailed statistics of your exams."
+        },
+        "c3": {
+          "title": "Comprehensive Preparation",
+          "desc": "Access a complete bank of official questions with explanations and correct answers."
+        },
+        "c4": {
+          "title": "Timed Exams",
+          "desc": "Practice with exams that simulate the actual conditions of the official exam with limited time."
+        },
+        "c5": {
+          "title": "User Profiles",
+          "desc": "Create your account and save your exam history, results, and personal statistics."
+        },
+        "c6": {
+          "title": "DGT Database",
+          "desc": "Updated official questions from the General Directorate of Traffic for maximum accuracy."
+        }
+      },
+      "architecture": {
+        "title": "Project Architecture",
+        "frontend": {
+          "title": "Frontend",
+          "subtitle": "User Interface",
+          "f1": "Modern and responsive interface",
+          "f2": "Optimized user experience",
+          "f3": "Visualization of results and statistics"
+        },
+        "backend": {
+          "title": "Backend",
+          "subtitle": "API and Business Logic",
+          "f1": "REST API for exam management",
+          "f2": "Authentication and user system",
+          "f3": "Automatic generation of tests"
+        },
+        "database": {
+          "title": "Data Storage",
+          "subtitle": "Data Storage",
+          "f1": "Official DGT questions",
+          "f2": "Exam history and results",
+          "f3": "User management and authentication"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Containers",
+          "f1": "Orchestration with docker-compose",
+          "f2": "Simplified deployment",
+          "f3": "Consistent development environment"
+        }
+      },
+      "flow": {
+        "title": "Operation Flow",
+        "step1": {
+          "title": "Registration and Authentication",
+          "f1": "User registers or logs into the platform",
+          "f2": "Secure authentication system",
+          "f3": "Access to the personalized user panel"
+        },
+        "step2": {
+          "title": "Exam Generation",
+          "f1": "The system generates a random exam from the DGT database",
+          "f2": "Official questions selected automatically",
+          "f3": "Timed exam with limited time"
+        },
+        "step3": {
+          "title": "Evaluation and Results",
+          "f1": "Automatic exam grading",
+          "f2": "Visualization of results and statistics",
+          "f3": "Saved history for tracking progress"
+        }
+      },
+      "tech_title": "Technologies Used",
+      "features": {
+        "title": "Key Features",
+        "f1": {
+          "title": "Official DGT Questions",
+          "desc": "Complete database with official questions from the General Directorate of Traffic."
+        },
+        "f2": {
+          "title": "Automatic Generation",
+          "desc": "Python scripts to generate exams and tests automatically from the database."
+        },
+        "f3": {
+          "title": "Authentication System",
+          "desc": "Complete user management with registration, login, and secure sessions."
+        },
+        "f4": {
+          "title": "Statistics and Progress",
+          "desc": "Detailed progress tracking with performance charts and metrics."
+        },
+        "f5": {
+          "title": "Docker Compose",
+          "desc": "Simplified deployment with Docker containers for development and production."
+        },
+        "f6": {
+          "title": "Management Scripts",
+          "desc": "Python tools to insert questions, generate tests, and manage the database."
+        }
+      },
+      "requirements": {
+        "title": "Requirements & Installation",
+        "reqs_title": "Requirements",
+        "r1": "<strong>Python 3.x</strong> for scripts and backend",
+        "r2": "<strong>Astro</strong> for frontend",
+        "r3": "<strong>Docker</strong> and Docker Compose",
+        "r4": "<strong>MySQL</strong> as database",
+        "run_title": "How to Run",
+        "step1": "1. Clone the repository:",
+        "step2": "2. Start with Docker:",
+        "step3": "3. Run initialization scripts:",
+        "step3_desc": "Use Python scripts to populate the DGT question database"
+      }
+    },
+    "blockchain-integracion-bd": {
+      "subtitle": "MySQL and BigchainDB Integration with REST API and Tendermint",
+      "description": "REST API designed to integrate a MySQL relational database with BigchainDB, providing fast and secure storage combined with immutability and traceability.",
+      "github_cta": "View on GitHub",
+      "architecture": {
+        "title": "Project Architecture",
+        "api": {
+          "title": "REST API",
+          "subtitle": "Node.js + Express",
+          "f1": "Endpoints to create and validate records",
+          "f2": "MySQL and BigchainDB connection management",
+          "f3": "Encryption and decryption of sensitive data"
+        },
+        "mysql": {
+          "title": "MySQL",
+          "subtitle": "Relational Database",
+          "f1": "Structured data storage",
+          "f2": "Fast and efficient queries",
+          "f3": "Relationships between tables"
+        },
+        "bigchain": {
+          "title": "BigchainDB",
+          "subtitle": "Distributed Database",
+          "f1": "Guaranteed immutability",
+          "f2": "Transaction and hash logging",
+          "f3": "Tendermint for fault tolerance"
+        },
+        "docker": {
+          "title": "Docker",
+          "subtitle": "Containers",
+          "f1": "MySQL, BigchainDB management",
+          "f2": "MongoDB (BigchainDB backend)",
+          "f3": "Tendermint (consensus engine)"
+        }
+      },
+      "flow": {
+        "title": "Data Flow",
+        "step1": {
+          "title": "Data Insertion",
+          "f1": "Client makes a POST request to the REST API",
+          "f2": "Data is validated and stored in MySQL",
+          "f3": "A hash is generated and registered in BigchainDB",
+          "f4": "The transaction ID is updated in MySQL"
+        },
+        "step2": {
+          "title": "Data Validation",
+          "desc": "Data in MySQL is compared with the hash registered in BigchainDB to guarantee integrity."
+        },
+        "step3": {
+          "title": "Encryption and Decryption",
+          "desc": "Data is encrypted before being stored. Only authorized users can decrypt it. Immutable records in BigchainDB."
+        }
+      },
+      "tech_title": "Technologies Used",
+      "endpoints": {
+        "title": "Main Endpoints",
+        "method": "Method",
+        "endpoint": "Endpoint",
+        "description": "Description",
+        "e1_desc": "Creates a record in MySQL and a transaction in BigchainDB. Returns the hash.",
+        "e2_desc": "Validates the integrity of a MySQL record by comparing it against BigchainDB.",
+        "e3_desc": "Retrieves and decrypts data associated with a specific transaction."
+      },
+      "cases": {
+        "title": "Use Cases",
+        "intro": "This project is ideal for applications where data integrity and authenticity are essential. Some use cases include:",
+        "c1": {
+          "title": "Supply Chain",
+          "desc": "Complete and immutable traceability of products from origin to final consumer."
+        },
+        "c2": {
+          "title": "Audits",
+          "desc": "Immutable record of transactions and changes for regulatory compliance and audits."
+        },
+        "c3": {
+          "title": "Academic Records",
+          "desc": "Secure certification and verification of degrees and academic credentials."
+        },
+        "c4": {
+          "title": "Smart Contracts",
+          "desc": "Record of agreements and contracts with guarantee of immutability and traceability."
+        },
+        "c5": {
+          "title": "Medical Records",
+          "desc": "Secure and immutable storage of medical records and treatments."
+        },
+        "c6": {
+          "title": "Certifications",
+          "desc": "Issuance and verification of digital certificates with guarantee of authenticity."
+        }
+      },
+      "requirements": {
+        "title": "Requirements & Installation",
+        "reqs_title": "Requirements",
+        "r1": "Node.js v14 or higher",
+        "r2": "Docker (with MySQL, BigchainDB, MongoDB and Tendermint configured)",
+        "r3": ".env file with necessary configurations",
+        "run_title": "How to Run",
+        "step1": "1. Install dependencies:",
+        "step2": "2. Start the server:",
+        "step3": "3. Test endpoints:",
+        "step3_desc": "Use tools like Postman or cURL"
+      }
+    }
+  },
+  "cv": {
+    "tab_title": "Nacho Sánchez | CV — Cloud Engineer",
+    "print_cta": "Print / Export",
+    "role": "Cloud & DevOps Engineer",
+    "location": "Spain / Remote",
+    "english_level": "English Level",
+    "profile_title": "Executive_Profile",
+    "profile_desc": "Cloud Engineer specialized in designing and maintaining decoupled, automated architectures. Expert in orchestrating complex cloud environments with a focus on high availability, scalability, and zero-downtime deployments. Proficient in Infrastructure as Code (IaC) and modern GitOps workflows (Pipelines). Throughout my professional experience I have sought adaptable, resilient innovation where automation is the core strength of a solid infrastructure.",
+    "stack_title": "Tech_Stack_Matrix",
+    "stack_cloud": "Cloud & Infrastructure",
+    "stack_containers": "Containers & Orchestration",
+    "stack_automation": "Automation & CI/CD",
+    "stack_security": "Linux & Security",
+    "stack_languages": "Languages",
+    "stack_databases": "Databases",
+    "experience_title": "Chronological_Log",
+    "experience_role": "Cloud Engineer",
+    "experience_company": "Epam NEORIS",
+    "experience_date": "Jul 2025 — Present",
+    "experience_bullets": [
+      "Managing and optimizing cloud infrastructure.",
+      "Leading migration projects from legacy systems to cloud-native architectures.",
+      "Reduction in operational costs.",
+      "Monitoring with Prometheus & Grafana.",
+      "Cloud security and disaster recovery strategies.",
+      "CI/CD with GitHub Actions and Bitbucket Pipelines.",
+      "Containers with Kubernetes & Docker.",
+      "Infrastructure as Code — AWS CDK with TypeScript and CloudFormation.",
+      "AWS administration (EC2, ECS, EKS, RDS, S3, Lambda, IAM, etc).",
+      "Linux administration, Bash scripting and security hardening."
+    ],
+    "projects_title": "Featured_Projects",
+    "certifications_title": "Certifications_&_Education",
+    "cert_saa_title": "AWS CloudOps Engineer - Associate",
+    "cert_saa_subtitle": "Amazon Web Services // In Progress",
+    "cert_saa_badge": "IN_PROGRESS",
+    "cert_asir_title": "ASIR (Systems & Network Administration)",
+    "cert_asir_subtitle": "CampusFP // Completed"
+  }
+}

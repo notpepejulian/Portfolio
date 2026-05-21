@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from "../utils/i18n";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    id: "blockchain-integracion-bd",
+    color: "primary",
+    image: "01.avif"
+  },
+  {
+    id: "devops-pipeline",
+    color: "secondary",
+    image: "02.avif"
+  },
+  {
+    id: "ChatSender",
+    color: "tertiary",
+    image: "03.avif"
+  },
+  {
+    id: "AutoTest",
+    color: "accent",
+    image: "04.avif"
+  },
+  {
+    id: "webapp-monitorizacion",
+    color: "primary",
+    image: "05.avif"
+  },
+  {
+    id: "linux-scripts",
+    color: "secondary",
+    image: "06.avif"
+  }
+];
+
+const getTagColor = (tag: string, defaultColor: string) => {
+  const t = tag.toLowerCase();
+  if (t === '#seguridad' || t === '#security') return '#00ff95';
+  if (t.includes('desarrollo web') || t.includes('web development')) return '#ffb700';
+  if (t.includes('devops')) return '#ff003c';
+  if (t.includes('blockchain')) return '#00f2ff';
+  if (t.includes('monitor')) return '#7000ff';
+  if (t.includes('automatización') || t.includes('automation')) return '#ff00e5';
+  
+  const colorMap: Record<string, string> = {
+    primary: "#00f2ff",
+    secondary: "#7000ff",
+    tertiary: "#00ff95",
+    accent: "#ff00e5"
+  };
+  return colorMap[defaultColor] || defaultColor;
+};
+
+const detailPath = lang === 'es' ? 'proyectos/' : 'projects/';
+---
+
+<Layout title="Nacho Sánchez | Portfolio Projects">
+  <main class="pt-24 min-h-screen">
+    <!-- Header Section -->
+    <section class="max-w-screen-2xl mx-auto px-6 py-20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-[600px] h-px bg-gradient-to-r from-primary/40 to-transparent"></div>
+        <div class="max-w-3xl">
+            <p class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6 opacity-80">{t('projects.label')}</p>
+            <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
+                {t('projects.title')} <span class="gradient-text drop-shadow-[0_0_20px_rgba(0,242,255,0.2)]">{t('projects.title_span')}</span>
+            </h1>
+            <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
+                {t('projects.description')}
+            </p>
+        </div>
+    </section>
+
+    <!-- Project Bento Grid -->
+    <section class="px-6 pb-40">
+        <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+                <div class={`group bg-surface-container rounded-3xl border border-outline-variant/10 hover-glow-${project.color} transition-all duration-500 flex flex-col min-h-[480px] relative overflow-hidden`}>
+                    <!-- Thumbnail Area -->
+                    <div class="h-48 relative overflow-hidden">
+                        <img 
+                            src={`${import.meta.env.BASE_URL}proyectos/${project.image}`} 
+                            alt={t(`project_data.${project.id}.title`)}
+                            class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+                    </div>
+                    
+                        <!-- Content -->
+                        <div class="p-10 pt-4 flex-1 flex flex-col justify-between relative z-10">
+                            <div>
+                                <div class="flex items-center justify-between mb-8">
+                                    {(() => {
+                                        const color = getTagColor(t(`project_data.${project.id}.tag`), project.color);
+                                        return (
+                                            <span class="text-[9px] font-mono font-black tracking-widest px-3 py-1 rounded border" 
+                                                  style={`color: ${color}; background-color: ${color}1a; border-color: ${color}66;`}>
+                                                {t(`project_data.${project.id}.tag`)}
+                                            </span>
+                                        );
+                                    })()}
+                                    <span class="text-on-surface-variant/20 font-headline text-2xl font-bold italic">0{index + 1}</span>
+                                </div>
+                                <h3 class="font-headline text-2xl font-bold mb-4 tracking-tight group-hover:text-glow-primary transition-colors line-clamp-2">
+                                    {t(`project_data.${project.id}.title`)}
+                                </h3>
+                                <p class="text-on-surface-variant leading-relaxed text-xs opacity-80 font-light line-clamp-3">
+                                    {t(`project_data.${project.id}.description`)}
+                                </p>
+                            </div>
+
+                            <div class="mt-8 flex flex-col gap-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-glow-sm shadow-secondary/50"></span>
+                                    <span class="text-[9px] font-mono text-white uppercase tracking-wider">{t(`project_data.${project.id}.status`)}</span>
+                                </div>
+                                <a href={getRelativeLocaleUrl(lang, `${detailPath}${project.id}/`)} 
+                                   class="inline-flex items-center gap-3 text-[10px] font-headline font-black uppercase tracking-[0.2em] group/link border-t border-outline-variant/10 pt-6"
+                                   style={`color: ${getTagColor(t(`project_data.${project.id}.tag`), project.color)}`}>
+                                    {t('nav.projects')} 
+                                    <span class="material-symbols-outlined text-sm group-hover/link:translate-x-3 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            ))}
+            
+            <!-- Future Projects Placeholder -->
+            <div class="group bg-surface-container-low/20 rounded-3xl p-10 border border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center min-h-[480px]">
+                <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-6 border border-outline-variant/10 group-hover:border-primary/40 group-hover:text-primary transition-all duration-500 shadow-inner">
+                    <span class="material-symbols-outlined text-3xl">add</span>
+                </div>
+                <h4 class="font-headline text-xl font-bold text-on-surface-variant/60">{t('projects.placeholder_title')}</h4>
+                <p class="text-[11px] font-mono text-outline uppercase tracking-widest mt-4">{t('projects.placeholder_subtitle')}</p>
+            </div>
+        </div>
+    </section>
+  </main>
+</Layout>

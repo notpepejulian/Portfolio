@@ -1,0 +1,46 @@
+---
+import { useTranslations, defaultLang } from "../../../utils/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const lang = Astro.currentLocale || defaultLang;
+const t = useTranslations(lang);
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout title="Nacho Sánchez | Cloud Monitoring">
+    <main class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative">
+        <div class="max-w-4xl w-full text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-primary font-semibold text-[10px] tracking-widest uppercase">ACTIVE_MONITORING</span>
+            </div>
+            
+            <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
+                {t('project_data.webapp-monitorizacion.title')}
+            </h1>
+            
+            <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl mx-auto font-light mb-12">
+                {t('project_data.webapp-monitorizacion.description')}
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a
+                    href="https://github.com/notpepejulian/webapp-monitorizacion"
+                    target="_blank"
+                    class="group px-10 py-5 bg-primary text-white font-headline font-black rounded-lg border border-primary/20 hover:bg-primary/80 hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs inline-flex items-center justify-center"
+                >
+                    <span>Ver en GitHub</span>
+                </a>
+                <a href={getRelativeLocaleUrl(lang, 'proyectos/')} class="group px-10 py-5 bg-surface-container-high/50 text-on-surface font-headline font-black rounded-lg border border-outline-variant/10 hover:border-primary hover:text-primary hover:shadow-glow-sm duration-300 transition-all uppercase tracking-[0.2em] text-xs">
+                    {t('nav.projects')}
+                </a>
+            </div>
+        </div>
+
+        <!-- Technical HUD Decoration -->
+        <div class="absolute bottom-20 left-1/2 -translate-x-1/2 pointer-events-none opacity-20">
+            <div class="font-mono text-[10px] tracking-[0.5em] text-primary uppercase animate-pulse">
+                Uplink_Established_Node_0x55
+            </div>
+        </div>
+    </main>
+</Layout>

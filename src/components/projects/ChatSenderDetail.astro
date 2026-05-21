@@ -1,0 +1,599 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from "../../utils/i18n";
+import Layout from "../../layouts/Layout.astro";
+
+const { lang = 'es' } = Astro.props;
+const t = useTranslations(lang);
+
+const backUrl = lang === 'es' ? getRelativeLocaleUrl(lang, 'proyectos/') : getRelativeLocaleUrl(lang, 'projects/');
+---
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Animación de tecnologías desplazándose */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .tech-scroll {
+        animation: scroll 30s linear infinite;
+    }
+
+    .tech-scroll:hover {
+        animation-play-state: paused;
+    }
+
+    .tech-container {
+        overflow: hidden;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+    }
+</style>
+
+<Layout title={lang === 'es' ? "Nacho Sánchez | ChatSender" : "Nacho Sánchez | ChatSender"}>
+    <main
+        class="flex flex-col min-h-screen items-center justify-center px-6 py-20 bg-transparent relative"
+    >
+        <div class="max-w-4xl w-full text-center z-10">
+            <div
+                class="inline-flex items-center gap-4 px-4 py-1.5 border border-yellow-400/20 rounded bg-yellow-500/10 mb-6"
+            >
+                <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"
+                ></span>
+                <span class="text-yellow-300 font-mono text-[10px] tracking-widest uppercase font-bold"
+                    >{t('projects.in_progress')}</span
+                >
+            </div>
+            <h1
+                class="font-headline text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6"
+            >
+                ChatSender
+            </h1>
+            <p class="text-xl sm:text-2xl font-light text-on-surface-variant mb-6">
+                {t('project_pages.ChatSender.subtitle')}
+            </p>
+            <p
+                class="text-lg text-on-surface-variant font-light mb-10 max-w-2xl mx-auto leading-relaxed"
+            >
+                {t('project_pages.ChatSender.description')}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a
+                    href="https://github.com/notpepejulian/SecChat"
+                    target="_blank"
+                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 group"
+                >
+                    <span>{t('project_pages.ChatSender.github_cta')}</span>
+                </a>
+                <a
+                    href={backUrl}
+                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-blue-300 font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 border border-blue-400/30"
+                >
+                    {t('projects.back')}
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section class="mt-10 mb-40 w-full flex flex-col items-center px-6">
+        <div class="w-full max-w-6xl mx-auto space-y-24">
+            <!-- Arquitectura -->
+            <div>
+                <h2
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 text-center"
+                >
+                    {t('project_pages.ChatSender.architecture.title')}
+                </h2>
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] p-6 hover-glow-blue backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-blue-400">privacy_tip</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-blue-300">
+                                    {t('project_pages.ChatSender.architecture.auth.title')}
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong class="text-blue-300"
+                                    >{t('project_pages.ChatSender.architecture.auth.subtitle')}</strong
+                                >
+                            </p>
+                            <ul class="text-gray-300 text-sm space-y-1.5">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.auth.f1')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.auth.f2')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-blue-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.auth.f3')}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-purple-400/20 rounded-[2rem] p-6 hover-glow-purple backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-purple-400">hub</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-purple-300">
+                                    {t('project_pages.ChatSender.architecture.matrix.title')}
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong class="text-purple-300"
+                                    >{t('project_pages.ChatSender.architecture.matrix.subtitle')}</strong
+                                >
+                            </p>
+                            <ul class="text-gray-300 text-sm space-y-1.5">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-purple-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.matrix.f1')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-purple-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.matrix.f2')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-purple-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.matrix.f3')}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-emerald-400/20 rounded-[2rem] p-6 hover-glow-emerald backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-emerald-400">security</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-emerald-300">
+                                    {t('project_pages.ChatSender.architecture.infra.title')}
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong class="text-emerald-300"
+                                    >{t('project_pages.ChatSender.architecture.infra.subtitle')}</strong
+                                >
+                            </p>
+                            <ul class="text-gray-300 text-sm space-y-1.5">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.infra.f1')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.infra.f2')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.infra.f3')}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-pink-400/20 rounded-[2rem] p-6 hover-glow-pink backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center"
+                                >
+                                    <span class="material-symbols-outlined text-pink-400">memory</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-pink-300">
+                                    {t('project_pages.ChatSender.architecture.tech.title')}
+                                </h3>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong class="text-pink-300"
+                                    >{t('project_pages.ChatSender.architecture.tech.subtitle')}</strong
+                                >
+                            </p>
+                            <ul class="text-gray-300 text-sm space-y-1.5">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-pink-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.tech.f1')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-pink-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.tech.f2')}</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-pink-400 mt-1">•</span>
+                                    <span>{t('project_pages.ChatSender.architecture.tech.f3')}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flujo de Seguridad -->
+            <div>
+                <h2
+                    class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 text-center"
+                >
+                    {t('project_pages.ChatSender.flow.title')}
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <div
+                        class="bg-surface-container/40 border border-blue-400/20 rounded-[2.5rem] p-8 md:p-12 backdrop-blur-md"
+                    >
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                    >
+                                        <span class="text-blue-400 font-bold"
+                                            >1</span
+                                        >
+                                    </div>
+                                    <h3 class="text-xl font-bold text-blue-300">
+                                        {t('project_pages.ChatSender.flow.step1.title')}
+                                    </h3>
+                                </div>
+                                <div class="ml-14 space-y-2 text-on-surface-variant font-light">
+                                    <p class="flex items-start gap-2">
+                                        <span class="text-blue-400 mt-1">·</span
+                                        >
+                                        <span
+                                            >{t('project_pages.ChatSender.flow.step1.desc')} <code
+                                                class="bg-blue-900/50 px-2 py-0.5 rounded text-blue-300 text-sm"
+                                                >keygen.sh</code
+                                            ></span
+                                        >
+                                    </p>
+                                    <p class="flex items-start gap-2">
+                                        <span class="text-blue-400 mt-1">·</span
+                                        >
+                                        <span
+                                            >{t('project_pages.ChatSender.flow.step1.note')}</span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-blue-400/20 pt-8">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                    >
+                                        <span class="text-blue-400 font-bold"
+                                            >2</span
+                                        >
+                                    </div>
+                                    <h3 class="text-xl font-bold text-blue-300">
+                                        {t('project_pages.ChatSender.flow.step2.title')}
+                                    </h3>
+                                </div>
+                                <p class="ml-14 text-gray-300">
+                                    {t('project_pages.ChatSender.flow.step2.desc')}
+                                </p>
+                            </div>
+
+                            <div class="border-t border-blue-400/20 pt-8">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center"
+                                    >
+                                        <span class="text-blue-400 font-bold"
+                                            >3</span
+                                        >
+                                    </div>
+                                    <h3 class="text-xl font-bold text-blue-300">
+                                        {t('project_pages.ChatSender.flow.step3.title')}
+                                    </h3>
+                                </div>
+                                <p class="ml-14 text-on-surface-variant font-light">
+                                    {t('project_pages.ChatSender.flow.step3.desc')}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tecnologías Empleadas -->
+            <div>
+                <h2
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 text-center"
+                >
+                    {t('project_pages.ChatSender.stack_title')}
+                </h2>
+                <div class="tech-container">
+                    <div class="flex tech-scroll gap-8">
+                        <!-- Primera copia -->
+                        <div class="flex gap-8 flex-shrink-0">
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-python text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >FastAPI</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-purple-900/30 to-slate-900/50 border border-purple-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-comments text-5xl text-purple-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-purple-300 font-medium text-center"
+                                    >Matrix</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-js text-5xl text-yellow-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-yellow-300 font-medium text-center"
+                                    >Astro</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-docker text-5xl text-emerald-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-emerald-300 font-medium text-center"
+                                    >Docker</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-vial-lock text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >WireGuard</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-key text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >Ed25519</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-database text-5xl text-emerald-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-emerald-300 font-medium text-center"
+                                    >MariaDB</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-pink-900/30 to-slate-900/50 border border-pink-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-bolt text-5xl text-pink-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-pink-300 font-medium text-center"
+                                    >Redis</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Segunda copia para loop infinito -->
+                        <div class="flex gap-8 flex-shrink-0">
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-python text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >FastAPI</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-purple-900/30 to-slate-900/50 border border-purple-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-comments text-5xl text-purple-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-purple-300 font-medium text-center"
+                                    >Matrix</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-js text-5xl text-yellow-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-yellow-300 font-medium text-center"
+                                    >Astro</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-brands fa-docker text-5xl text-emerald-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-emerald-300 font-medium text-center"
+                                    >Docker</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-vial-lock text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >WireGuard</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-blue-900/30 to-slate-900/50 border border-blue-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-key text-5xl text-blue-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-blue-300 font-medium text-center"
+                                    >Ed25519</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-emerald-900/30 to-slate-900/50 border border-emerald-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-database text-5xl text-emerald-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-emerald-300 font-medium text-center"
+                                    >MariaDB</span
+                                >
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center w-32 bg-gradient-to-br from-pink-900/30 to-slate-900/50 border border-pink-400/20 rounded-xl backdrop-blur-sm p-4"
+                            >
+                                <i
+                                    class="fa-solid fa-bolt text-5xl text-pink-400 mb-2"
+                                ></i>
+                                <span
+                                    class="text-xs text-pink-300 font-medium text-center"
+                                    >Redis</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Características Principales -->
+            <div>
+                <h2
+                    class="font-headline text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-8 text-center"
+                >
+                    {t('project_pages.ChatSender.privacy.title')}
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-6 mt-8">
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-blue-400/20 rounded-[2rem] p-6 hover-glow-blue backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-blue-400">person_off</span>
+                            </div>
+                            <h3
+                                class="text-blue-300 font-semibold text-lg mb-2"
+                            >
+                                {t('project_pages.ChatSender.privacy.p1.title')}
+                            </h3>
+                            <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+                                {t('project_pages.ChatSender.privacy.p1.desc')}
+                            </p>
+                        </div>
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-purple-400/20 rounded-[2rem] p-6 hover-glow-purple backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-purple-400">masks</span>
+                            </div>
+                            <h3
+                                class="text-purple-300 font-semibold text-lg mb-2"
+                            >
+                                {t('project_pages.ChatSender.privacy.p2.title')}
+                            </h3>
+                            <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+                                {t('project_pages.ChatSender.privacy.p2.desc')}
+                            </p>
+                        </div>
+                        <div
+                            class="group bg-surface-container-low/40 hover:bg-surface-container/80 transition-all duration-300 border border-pink-400/20 rounded-[2rem] p-6 hover-glow-pink backdrop-blur-md relative overflow-hidden"
+                        >
+                            <div class="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-pink-400">delete</span>
+                            </div>
+                            <h3
+                                class="text-pink-300 font-semibold text-lg mb-2"
+                            >
+                                {t('project_pages.ChatSender.privacy.p3.title')}
+                            </h3>
+                            <p class="text-on-surface-variant font-light text-[13px] leading-relaxed">
+                                {t('project_pages.ChatSender.privacy.p3.desc')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón Volver -->
+            <div class="text-center pt-8">
+                <a
+                    href={backUrl}
+                    class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-headline tracking-wider uppercase text-xs shadow-lg transition-all duration-200 group"
+                >
+                    {t('projects.back')}
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
