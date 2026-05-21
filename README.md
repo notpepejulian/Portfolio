@@ -1,14 +1,29 @@
 # Portfolio Web - Admin Cloud
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/tuusuario/portfolio-web)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/tuusuario/portfolio-web)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/tuusuario/portfolio-web?devcontainer_path=.devcontainer/devcontainer.json)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/notpepejulian/Portfolio)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/notpepejulian/Portfolio)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/notpepejulian/Portfolio?devcontainer_path=.devcontainer/devcontainer.json)
 
 >  Portfolio basado en comandos y terminales. He plasmado mis conocimientos, certificaciones y experiencia como administrador de sistemas y cloud.
+
+## Desarrollo Local
+
+Para ejecutar el proyecto en tu entorno local:
+
+1. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+2. **Ejecutar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Construir el sitio para producción:**
+   ```bash
+   npm run build
+   ```
 
 ### Página Principal
 Presentación profesional con diseño moderno, animaciones fluidas y navegación intuitiva. Incluye video de entrevista integrado y acceso directo a todas las secciones del portfolio.
@@ -25,22 +40,10 @@ Catálogo completo de tecnologías y herramientas organizadas por categorías: C
 
 <img width="2396" height="1148" alt="Sección de conocimientos" src="public/Conocimientos_Portfolio.gif" />
 
+## Traducción del contenido
+La web contiene una lógica que permite traducir el contenido en base al idioma que selecciona el usuario.
 
-## Estructura del Proyecto
-
-```text
-/
-├── public/                # Archivos estáticos (favicon, logos)
-├── src/
-│   ├── components/        # Componentes reutilizables (terminal, layout, etc.)
-│   ├── pages/             # Páginas principales del sitio
-│   ├── layouts/           # Estructura visual
-│   └── styles/            # Estilos globales (Tailwind u otros)
-├── .github/workflows/     # CI/CD con GitHub Actions
-├── .env.example           # Variables de entorno ejemplo
-├── package.json           # Dependencias y scripts
-└── astro.config.mjs       # Configuración de Astro
-```
+<img width="2396" height="1148" alt="Sección de traduccion" src="public/Traduccion_Portfolio.gif" />
 
 ## Contenido
 
@@ -110,20 +113,8 @@ Canales de comunicación profesional:
 
 El portfolio está configurado para despliegue automático mediante CI/CD. Compatible con las siguientes plataformas:
 
-**Vercel** (Recomendado)
-```bash
-npm run build
-vercel --prod
-```
-
-**Netlify**
-```bash
-npm run build
-netlify deploy --prod --dir=dist
-```
-
 **GitHub Pages**
-Configura el workflow en `.github/workflows/deploy.yml` para despliegue automático en cada push a la rama principal.
+El workflow en `.github/workflows/deploy.yml` hace el despliegue automático en cada push a la rama principal.
 
 ---
 
