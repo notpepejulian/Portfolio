@@ -13,6 +13,9 @@ const t = useTranslations(lang);
 const bullets = t('cv.experience_bullets');
 const experienceBullets = Array.isArray(bullets) ? bullets : [];
 
+const profileBulletsRaw = t('cv.profile_bullets');
+const profileBullets = Array.isArray(profileBulletsRaw) ? profileBulletsRaw : [];
+
 const featuredProjectIds = [
   "blockchain-integracion-bd",
   "devops-pipeline",
@@ -69,9 +72,11 @@ const detailPath = lang === 'es' ? 'proyectos/' : 'projects/';
             {t('cv.profile_title')}
           </h2>
         </div>
-        <p class="text-sm leading-relaxed text-on-surface/90">
-          {t('cv.profile_desc')}
-        </p>
+        <ul class="text-sm leading-relaxed text-on-surface/90 space-y-1.5 list-disc ml-4">
+          {profileBullets.map(bullet => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
       </section>
 
       <!-- Stack Técnico -->
