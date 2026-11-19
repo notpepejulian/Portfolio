@@ -28,7 +28,7 @@
     "status": "Bienvenido a mi Portfolio",
     "title_start": "Automatizando el",
     "title_end": "Ecosistema Cloud.",
-    "description": "Soy Nacho Sánchez — Ingeniero Cloud especializado en infraestructura de alta disponibilidad, orquestación CI/CD y escalado de Kubernetes. Cerrando la brecha entre la agilidad del desarrollo y la estabilidad operativa.",
+    "description": "Soy Nacho Sánchez — Ingeniero Cloud especializado en infraestructura de alta disponibilidad, orquestación CI/CD. Cerrando la brecha entre la agilidad del desarrollo y la estabilidad operativa.",
     "cta_projects": "Explorar_Proyectos",
     "cta_knowledge": "Conocimientos"
   },
@@ -610,7 +610,14 @@
     "location": "España / Remoto",
     "english_level": "Nivel Inglés",
     "profile_title": "Perfil_Profesional",
-    "profile_desc": "Ingeniero Cloud especializado en el diseño y mantenimiento de infraestructuras desacopladas y automatizadas. Dominio de la orquestación de entornos cloud complejos con foco en alta disponibilidad, escalabilidad y despliegues de cero tiempo de inactividad.Desarrollo de Infrastructure as Code (IaC) y flujos de trabajo GitOps modernos (Pipelines). A lo largo de mi experiencia laboral busco una innovación adaptable y resiliente donde la automatización es el principal punto fuerte de una infraestructura sólida.",
+    "profile_bullets": [
+      "Especializado en diseño y mantenimiento de infraestructuras desacopladas y automatizadas.",
+      "Orquestación de entornos cloud complejos con foco en alta disponibilidad, escalabilidad y despliegues de cero tiempo de inactividad.",
+      "Infrastructure as Code (IaC) y flujos de trabajo GitOps modernos.",
+      "Migraciones de infraestructura legacy al uso de frameworks internos.",
+      "Diseño de flujos de IA para automatización de tareas de manera segura y confiable.",
+      "Diseño de lógica enfocada a la generación de contextos limpios y eficiencia de tokens."
+    ],
     "stack_title": "Tech_Stack_Matrix",
     "stack_cloud": "Cloud & Infraestructura",
     "stack_containers": "Contenedores & Orquestación",
@@ -631,8 +638,11 @@
       "CI/CD con GitHub Actions y Bitbucket Pipelines.",
       "Contenedores con Kubernetes & Docker.",
       "Infrastructure as Code — AWS CDK con TypeScript y CloudFormation.",
-      "Administración AWS (EC2, ECS, EKS, RDS, S3, Lambda, IAM, etc).",
-      "Administración Linux, scripting Bash y hardening de seguridad."
+      "Administración AWS (EC2, ECS, RDS, S3, Lambda, IAM, etc).",
+      "Administración Linux, scripting Bash y hardening de seguridad.",
+      "Migraciones de infraestructura legacy al uso de frameworks internos.",
+      "Diseño de flujos de IA buscando la automatización de tareas de manera segura y confiable.",
+      "Diseño de lógica enfocada a la generación de contextos limpios y ahorro/eficiencia de tokens."
     ],
     "projects_title": "Proyectos_Destacados",
     "certifications_title": "Certificaciones_&_Formación",
